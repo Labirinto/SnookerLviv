@@ -1,0 +1,88 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+.list-match-lobby {
+	display: inline-block;
+}
+.list-match-lobby-table {
+	display: inline-block;
+	max-width: 50%;
+	margin-top: 40px;   /*  відступ зверху  */
+}
+.list-match-lobby-info {
+	padding: 12px;
+	margin-bottom: 0;
+	background-color: #222629;
+	color: white;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 12px;
+	border-top: 5px solid #61892F;
+}
+.list-match-lobby-frame-section tbody {
+	display: table-row-group;
+}
+.list-match-lobby-player-table {
+	display: inline-block;
+	background-color: #474B4F;
+    border-bottom: 5px solid #61892F;
+    padding-top: 20px;
+}
+.list-match-lobby-player {
+	padding: 10px 40px;
+	float: left;
+	position: relative;
+	display: block;
+	box-sizing: border-box;	
+}
+.list-match-lobby-frame-section {
+	float: left;
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+}
+.list-match-lobby-player-name {
+	color: white;
+	font-size: 15px;
+
+}
+.list-match-lobby-player-img {
+	max-width: 100px;
+	height: auto;
+}
+.list-match-lobby-frame-section tr th {
+	font-size: 11px;
+	font-weight: 300;
+	background-color: #222629;
+	color: #6B6E70;
+	text-align: center;
+	padding: 1px 20px;
+	vertical-align: middle;
+	text-transform: uppercase;
+}
+.list-match-lobby-frame-section tr td {
+	font-size: 20px;
+	font-weight: 500;
+	color: #fff;
+	text-align: center;
+	padding: 5px 10px;
+	vertical-align: middle;
+}
+.list-match-lobby-frame-section {
+	padding: 0px 20px;
+	margin-top: 20px;
+}
+.list-match-lobby-frame-section table tr.list-match-lobby-frame-details td {
+	font-size: 10px;
+	background-color: #474B4F;
+	color: #fff;
+	text-align: center;
+	border: solid 1px #222629;
+	border-bottom: solid 5px #474B4F;
+	padding: 3px 0;
+	vertical-align: middle;
+	border-top: solid 1px #222629;
+}
+tr.list-match-lobby-frame-details td {
+	height:20px;
+}

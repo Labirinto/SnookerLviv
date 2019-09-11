@@ -1,0 +1,301 @@
+body {
+	font-family: Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	margin: 0 auto;
+	display: block;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+}
+
+.clearfix:after {
+	content:'';
+	display: table;
+	width: 100%;
+	clear: both;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+.logologin {
+	background-color: #232b2b;
+	width: 100%;
+	top: 0;
+	/*position: fixed;*/
+}
+
+.logologin img {
+	width: 55px;
+	height: 36px;
+	display: block;
+	background-color: #4caf50;
+	float: left;
+	padding: 10px;
+	padding-top: 10px;
+}
+
+.login {
+	padding: 10px 0px;
+	margin-top: 2px;
+	float: right;
+}
+.login input[type="text"],
+.login input[type="password"] {
+	background-color: #3b444b;
+	border: 0px;
+	margin: 2px 2px;
+	padding: 4px 0px 4px 6px;
+	outline: none;
+}
+
+.login input[type="submit"] {
+	border: 0px;	
+	margin-right: 35px;
+	padding: 4px 10px;
+	background-color: #4caf50;
+	color: white;
+	outline: none;
+}
+
+.login input[type="submit"]:hover {
+	background-color: #2d6b30;
+}
+
+
+/* GENERAL NAVIGATION */
+
+.navigation {
+	box-sizing: border-box;
+}
+.navigation a {
+	box-sizing: border-box;
+	font-size: 90%;
+	display: block;
+	padding: 20px 45px 20px 45px;
+	color: white;
+	background-color: #232b2b;
+	text-transform: uppercase;
+	text-align: center;
+}
+.navigation ul {
+	margin: 0px;
+}
+.navigation ul li {
+	float: left;
+	list-style: none;
+}
+.navigation li a:hover {
+	background-color: #3d4747;
+}
+
+
+/* NAVIGATION IN TOURNAMENT*/
+
+.tournamentNavigation {
+	margin: 20px 20px;
+	box-sizing: border-box;
+	display: block;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+}
+.tournamentNavigation form {
+	display: block;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+}
+.tournamentNavigation form button[type="submit"]{
+	font-size: 90%;
+	box-sizing: border-box;
+	display: block;
+	padding: 10px 25px 10px 25px;
+	color: white;
+	background-color: #232b2b;
+	text-transform: uppercase;
+	text-align: center;
+	border:0px;
+}
+.tournamentNavigation form button[type="submit"]:hover {
+	background-color: #3d4747;
+}
+
+/* TOURNAMENT LOBBY */
+
+.lobbyBlock {
+	margin: 0 20px 20px 20px;
+}
+
+/*BRACKETS*/
+
+#bracket {
+	width: 100%;
+	margin: 50px 50px 50px 50px;
+	/*overflow: hidden;*/
+	background-color: #fff;
+	font-size: 12px;
+
+	display: block;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+}
+
+.round {
+    display: block;
+    float: left;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    margin: 0 2%;
+    width: 137px;
+}
+/*.UP-1, .KO-1{
+    margin: 0 3% 0 0;
+}*/
+
+.matchup {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.K\/O-1 .match-details, .UP-1 .match-details {
+    padding-top: 10%;
+}
+.K\/O-1 .first-match, .UP-1 .first-match{
+    padding-top: 5%;
+}
+
+.K\/O-2 .match-details, .UP-2 .match-details,
+.LOW-1 .match-details, .LOW-2 .match-details {
+    padding-top: 76%;
+}
+.K\/O-2 .first-match, .UP-2 .first-match,
+.LOW-1 .first-match, .LOW-2 .first-match {
+    padding-top: 38%;
+}
+
+.K\/O-3 .match-details, .UP-3 .match-details,
+.LOW-3 .match-details, .LOW-4 .match-details {
+    padding-top: 210%;
+}
+.K\/O-3 .first-match, .UP-3 .first-match,
+.LOW-3 .first-match, .LOW-4 .first-match {
+    padding-top: 105%;
+}
+
+.K\/O-4 .match-details, .UP-4 .match-details,
+.LOW-5 .match-details, .LOW-6 .match-details {
+    padding-top: 460%;
+}
+.K\/O-4 .first-match, .UP-4 .first-match,
+.LOW-5 .first-match, .LOW-6 .first-match {
+    padding-top: 230%;
+}
+.K\/O-5 .match-details, .UP-5 .match-details,
+.LOW-7 .match-details, .LOW-8 .match-details {
+    padding-top: 900%;
+}
+.K\/O-5 .first-match, .UP-5 .first-match,
+.LOW-7 .first-match, .LOW-8 .first-match {
+    padding-top: 450%;
+}
+
+.round li {
+    background-color: #e1e1e1;
+    box-shadow: none;
+}
+
+.match-number {
+    font-size: 11px;
+    display: inline-block;
+    position: static;
+    float: left;
+    width: 20px;
+    padding: 4px;
+    background-color: #2C7399;
+    color: #fff;
+    text-align: center;
+}
+.youtube-logo{
+    margin: 0;
+    display: block;
+    flex-direction: row;
+    padding-left: 120px;
+	height:20px;
+	width: 137px;
+}
+.youtube-logo img {
+    height: 17px;
+    width: 17px;
+}
+.team {
+    padding: 0 5px;
+    margin: 3px 0;
+    height: 25px;
+    line-height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    color: #000;
+}
+.team-top {
+    margin-top: 0px;
+}
+.score {
+    font-size: 11px;
+    text-transform: uppercase;
+    float: right;
+    color: #2C7399;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+    position: absolute;
+    right: 5px;
+}
+
+/* NOT USED */
+.round-details {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    color: #2C7399;
+    text-transform: uppercase;
+    text-align: center;
+    height: 40px;
+}
+

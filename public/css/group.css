@@ -1,0 +1,43 @@
+.groups{
+	display: block;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+.group {
+	display: inline-block;
+}
+.group-number {
+	float: left;
+	color: #474ab6;
+	font-size: 23px;
+}
+.group-table tr>* {
+	border: 1px solid #494bb7;
+	padding: 10px 15px;
+}
+.group-table {
+	margin-top:20px;
+	background-color: #F7F7FF;
+}
+.group-table tr>:nth-child(1) {
+	background-color: #9271f6; 
+	color: white;
+	font-size: 17px;
+ }
+.group-table tr>:nth-child(2) {
+	padding-right: 100px; 
+ }
+.group-first-row >* {
+ 	background-color: #9271f6;
+ 	color: white;
+ 	text-align: center;
+ }
+ .lastname-uppercase {
+ 	text-transform: uppercase;
+ }
