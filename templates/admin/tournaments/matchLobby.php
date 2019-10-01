@@ -1,6 +1,6 @@
 <?php list($tournamentName, $tournamentID, $status) = getMainData($matchID);?>
 
-<div class="lobbyBlock">
+<div class="sub-container">
 	<a href="lobby.php?id=<?=$tournamentID?>"><h1><?=$tournamentName?></h1></a>
 
 <?php
@@ -19,26 +19,38 @@ function lobby($matchID)
 function printLobby($counter, $roundType, $roundNo, $bestOF, $id1, $name1, $score1, $id2, $name2, $score2)
 { ?>
 
-	<table class="lobby">
-		<tbody class="lobby-tbody">
-			<tr>
-				<td class="match-info" colspan="3"><i>Зустріч №<?=$counter?> | Раунд <?=$roundNo?>(<?=$roundType?>)</i></td>
-			</tr>
-			<tr class="versus">
-				<td class="player01">
-					<div><h3 class="lobby3"><?=$name1?></h3></div>
-					<div><img alt="player01" height="100px" width="100px" src="../../img/brain.png"></div>
-				</td>
-				<td class="versus-info">
-					<h4 class="lobby4"><?=$score1?> &nbsp &nbsp &nbsp <span class="versus-symbol">v</span> &nbsp &nbsp &nbsp <?=$score2?></h4> <h5 class="lobby5">best of <?=$bestOF?></h5>
-				</td>
-				<td class="player02">
-					<div><h3 class="lobby3"><?=$name2?></h3></div>
-					<div><img alt="player02" height="100px" width="100px" src="../../img/brain.png"></div>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="match_lobby">
+		<h3 class="match_lobby_info">Зустріч #<?=$counter?> | Раунд <?=$roundNo?>(<?=$roundType?>) </h3>
+		<div class="match_lobby_player-table">
+			<div class="match_lobby_player01">
+				<span class="match_lobby_player01-name"><?=$name1?></span>
+				<p>
+					<img class="match_lobby_player01-img" alt="player01" src="../../img/lev.jpg"></img>
+				</p>
+			</div>
+			<div class="match_lobby_frame-section">
+				<table class="match_lobby_frame-table">
+					<tbody>
+						<tr>
+							<td><?=$score1?></td>
+							<th>v</th>
+							<td><?=$score2?></td>
+						</tr>
+						<tr class="match_lobby_frame-details">
+							<td colspan="3">Best of <?=$bestOF?></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="match_lobby_player02">
+				<span class="match_lobby_player02-name"><?=$name2?></span>
+				<p>
+					<img class="match_lobby_player02-img" alt="player02" src="../../img/dan02.jpg"></img>
+				</p>
+			</div>
+		</div>
+	</div>
+	<br>
 
 <?php }
 
@@ -46,29 +58,32 @@ function printLobby($counter, $roundType, $roundNo, $bestOF, $id1, $name1, $scor
 function framesHeader()
 { ?>
 
-<div class="frames-info">
-	<table class="frames-table">
-		<tfoot class="frames-tfoot">
-		<tr>
-			<th>breaks</th>
-			<th>points</th>
-			<th>frames</th>
-			<th>points</th>
-			<th>breaks</th>
-		</tr>
-
+<div class="match_lobby_framesBreaksPoints_table">
+	<table class="match_lobby_table">
+		<thead class="match_lobby_table_thead">
+			<tr>
+				<th><span>breaks</span></th>
+				<th><span>points</span></th>
+				<th><span>frame</span></th>
+				<th><span>points</span></th>
+				<th><span>breaks</span></th>
+			</tr>
+		</thead>
+		<tbody class="match_lobby_table_tbody">
 <?php }
 
 
 function printFrame($counter, $score1, $score2, $breaks1, $breaks2)
-{ ?>
+{ 
+	$e_o = ($counter%2) ? "odd" : "even"
+?>
 
-	<tr>
-		<td><?=$breaks1?></td>
-		<td><?=$score1?></td>
-		<td><?=$counter?></td>
-		<td><?=$score2?></td>
-		<td><?=$breaks2?></td>
+	<tr class="match_lobby_table_tbody_<?=$e_o?>">
+		<td class="match_lobby_table_name_left"><?=$breaks1?></td>
+		<td class="match_lobby_table_name_left"><?=$score1?></td>
+		<td class="match_lobby_table_number_<?=$e_o?>"><?=$counter?></td>
+		<td class="match_lobby_table_date_center"><?=$score2?></td>
+		<td class="match_lobby_table_date_left"><?=$breaks2?></td>
 	</tr>
 
 <?php }
@@ -76,7 +91,7 @@ function printFrame($counter, $score1, $score2, $breaks1, $breaks2)
 function framesFooter()
 { ?>
 
-		</tfoot>
+		</tbody>
 	</table>
 </div>
 

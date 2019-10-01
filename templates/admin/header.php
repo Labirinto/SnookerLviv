@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/public/css/group.css"> 
     <link rel="stylesheet" type="text/css" href="/public/css/matches-list.css"> 
     <link rel="stylesheet" type="text/css" href="/public/css/lobby_list_styles.css"> 
+    <link rel="stylesheet" type="text/css" href="/public/css/match_lobby_style.css"> 
+    <link rel="stylesheet" type="text/css" href="/public/css/tournament_list_style.css"> 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>

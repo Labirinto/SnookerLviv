@@ -1,21 +1,7 @@
-body {
-	font-family: 'Open Sans', Arial, sans-serif;
-/*	background-color: #222629;*/
-}
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
- 	box-sizing: border-box;
-}
 .matches_list_table_round_num {
 	text-transform: uppercase;
 	font-size: 18px;
 	text-align: left;
-}
-table {
-	border-collapse: collapse;
-	display: table;
-	border-spacing: 0;
 }
 table col[class*="col-"] {
 	position: static;
@@ -23,9 +9,7 @@ table col[class*="col-"] {
 	display: table-column;
 }
 .matches_list_table{
-	color:#fff;
 	margin-bottom: 30px;
-	width:1005px;
 }
 table.matches_list_table .col-1 {
  	width: 5%;
@@ -51,19 +35,18 @@ table.matches_list_table .col-5 {
 .matches_list_table thead th {
 	text-transform: uppercase;
 	padding: 15px;
-	/*border-bottom: 20px solid #222629;*/
 	border-top: 5px solid #61892F;
 	font-size: 12px;
 }
 .matches_list_table_thead{
-	color:#000;
+	color:#fff;
 }
 .matches_list_table tbody tr td {
-	padding: 1px;
+	padding: 5px;
 
 }
 .matches_list_table_youtube img {
-	height: 40px;
+	height: 20px;
 	width: auto;
 }
 .matches_list_table_name_right {
@@ -88,11 +71,9 @@ table.matches_list_table .col-5 {
 }
 .matches_list_table_tbody_odd {
 	background-color: #54595E;
-	height:46px;
 }
 .matches_list_table_tbody_even {
 	background-color: #474B4F;
-	height:46px;
 }
 .matches_list_table_number {
 	background-color: #61892F;

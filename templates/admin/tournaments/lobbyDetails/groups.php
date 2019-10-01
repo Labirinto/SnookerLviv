@@ -10,9 +10,7 @@ for($i = 1; $i <= $G_R; $i++)
 	<div class="group">
 		<h2 class="group-number">Group <?=$i?></h2></br>
 		<table class="group-table">	
-			<tbody>
-				<?php printGroup($tournamentID, $i); ?>
-			</tbody>
+			<?php printGroup($tournamentID, $i); ?>
 		</table>
 	</div>
 <?php }
@@ -66,8 +64,8 @@ function printMatches($id, $groupNum, $playerNum, $nrOfPlayers)
 
 function firstRow($nrOfPlayers)
 { ?>
-	<tr class="group-first-row">
-		<th>№</th> <th>Player</th>
+	<tr>
+		<th>#</th> <th>Player</th>
     	<?php for($i=1;$i<=$nrOfPlayers;$i++) print("<th>$i</th>"); ?>
 		<th>m</th><th>+m</th><th>-m</th><th>Δm</th>
 		<th>+f</th><th>-f</th><th>Δf</th><th>%</th>
@@ -93,7 +91,11 @@ function printGroup($tournID, $groupNo)
 
     $data = query($query, $tournID, $groupNo);
 	$nrOfPlayers = count($data);
+	
+	?><thead><?php
 	firstRow($nrOfPlayers);
+	?></thead>
+	<tbody><?php
 
 	for($i = 0; $i < $nrOfPlayers; $i++)
     {
@@ -103,6 +105,7 @@ function printGroup($tournID, $groupNo)
 
 		playerRow($playerName, $playerNum, $playerID, $seed, $nrOfPlayers, $groupNo, $tournID);
     }
+	?></tbody><?php
 }
 ?>
 

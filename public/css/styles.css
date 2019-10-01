@@ -2,21 +2,34 @@ body {
 	font-family: Arial, sans-serif;
 	padding: 0;
 	margin: 0;
+	background-color: #222629;
 }
-
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
 .container {
-	margin: 0 auto;
-	display: block;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-direction: column;
-	flex-direction: column;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
 }
-
+.sub-container {
+    color: #fff;
+    text-align: center;
+	margin: 20px 20px 20px 20px;
+	display: inline-block;
+}
+table {
+    border-collapse: collapse;
+	color: #fff;
+    display: table;
+    border-spacing: 0;
+}
 .clearfix:after {
 	content:'';
 	display: table;
@@ -26,11 +39,6 @@ body {
 
 div {
 	box-sizing: border-box;
-}
-
-a {
-	text-decoration: none;
-	color: #000;
 }
 
 .logologin {
@@ -144,12 +152,6 @@ a {
 }
 .tournamentNavigation form button[type="submit"]:hover {
 	background-color: #3d4747;
-}
-
-/* TOURNAMENT LOBBY */
-
-.lobbyBlock {
-	margin: 0 20px 20px 20px;
 }
 
 /*BRACKETS*/

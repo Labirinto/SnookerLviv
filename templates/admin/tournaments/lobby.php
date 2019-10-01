@@ -27,7 +27,7 @@ function announcedLobby($tournamentID, $onClick)
 
 
 //lobby block to show data
-	?><div class="lobbyBlock"><?php
+	?><div class="sub-container"><?php
 
 
 //close lobby block
@@ -41,7 +41,7 @@ function registrationLobby($tournamentID, $onClick)
 
 
 //lobby block to show data
-	?><div class="lobbyBlock"><?php
+	?><div class="sub-container"><?php
 
 
 //show appropriate data
@@ -66,7 +66,7 @@ function standbyLobby($tournamentID, $onClick)
 
 
 //lobby block to show data
-	?><div class="lobbyBlock"><?php
+	?><div class="sub-container"><?php
 
 
 //show appropriate data
@@ -99,7 +99,7 @@ function liveLobby($bracket, $tournamentID, $onClick)
 		redirect("");
 
 //lobby block to show data
-	?><div class="lobbyBlock"><?php
+	?><div class="sub-container"><?php
 
 
 //show appropriate data
@@ -138,7 +138,7 @@ function finishedLobby($bracket, $tournamentID, $onClick)
 		redirect("");
 	
 //lobby block to show data
-	?><div class="lobbyBlock"><?php
+	?><div class="sub-container"><?php
 
 
 //show appropriate data
