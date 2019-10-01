@@ -153,11 +153,13 @@ CREATE VIEW ranking AS
 CREATE VIEW generalTournamentView AS
 SELECT
     T.id AS tournamentID, T.name AS tournament, T.status AS status,
-    B.name AS billiard, A.name AS age, L.sex AS sex, T.bracket AS bracket, T.clubID
+    B.name AS billiard, A.name AS age, L.sex AS sex, 
+	T.bracket AS bracket, C.name AS clubName
 FROM tournament T
     JOIN league L ON T.leagueID=L.id
     JOIN age A ON L.ageID = A.id
-    JOIN billiard B ON L.billiardID = B.id;
+    JOIN billiard B ON L.billiardID = B.id
+    JOIN club C ON T.clubID = C.id;
 -- --------------------------------------------------------------------
 
 
