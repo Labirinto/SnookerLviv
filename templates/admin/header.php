@@ -4,8 +4,9 @@
     <title><?=htmlspecialchars($title)?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/public/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/bracket.css">
     <link rel="stylesheet" type="text/css" href="/public/css/styles.css"> 
-    <link rel="stylesheet" type="text/css" href="/public/css/lobby-styles.css"> 
     <link rel="stylesheet" type="text/css" href="/public/css/group.css"> 
     <link rel="stylesheet" type="text/css" href="/public/css/matches-list.css"> 
     <link rel="stylesheet" type="text/css" href="/public/css/lobby_list_styles.css"> 
@@ -13,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/public/css/tournament_list_style.css"> 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="/public/img/balls01.png">
 </head>
 
 

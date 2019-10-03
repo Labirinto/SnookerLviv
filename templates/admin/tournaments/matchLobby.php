@@ -10,13 +10,19 @@ lobby($matchID);
 
 function lobby($matchID)
 {
-	list($counter,$roundType,$roundNo,$bestOF,$id1,$name1,$score1,$id2,$name2,$score2) = getMatchData($matchID);
-	printLobby($counter,$roundType,$roundNo,$bestOF,$id1,$name1,$score1,$id2,$name2,$score2);
+	list($counter, $roundType, $roundNo, $bestOF,
+		$id1, $name1, $score1, $img1,
+		$id2, $name2, $score2, $img2) = getMatchData($matchID);
+	
+	printLobby($counter, $roundType, $roundNo, $bestOF,
+		$id1, $name1, $score1, $img1, $id2, $name2, $score2, $img2);
+	
 	printFrames($matchID);
 }
 
 
-function printLobby($counter, $roundType, $roundNo, $bestOF, $id1, $name1, $score1, $id2, $name2, $score2)
+function printLobby($counter, $roundType, $roundNo, $bestOF, 
+	$id1, $name1, $score1, $img1, $id2, $name2, $score2, $img2)
 { ?>
 
 	<div class="match_lobby">
@@ -25,7 +31,7 @@ function printLobby($counter, $roundType, $roundNo, $bestOF, $id1, $name1, $scor
 			<div class="match_lobby_player01">
 				<span class="match_lobby_player01-name"><?=$name1?></span>
 				<p>
-					<img class="match_lobby_player01-img" alt="player01" src="../../img/lev.jpg"></img>
+					<img class="match_lobby_player01-img" alt="player01" src="<?=PLAYER_IMG.$img1?>"></img>
 				</p>
 			</div>
 			<div class="match_lobby_frame-section">
@@ -45,7 +51,7 @@ function printLobby($counter, $roundType, $roundNo, $bestOF, $id1, $name1, $scor
 			<div class="match_lobby_player02">
 				<span class="match_lobby_player02-name"><?=$name2?></span>
 				<p>
-					<img class="match_lobby_player02-img" alt="player02" src="../../img/dan02.jpg"></img>
+					<img class="match_lobby_player02-img" alt="player02" src="<?=PLAYER_IMG.$img2?>"></img>
 				</p>
 			</div>
 		</div>
@@ -134,12 +140,12 @@ function printFrames($matchID)
 function getMatchData($matchID)
 {
 	$query = "SELECT MV.counter, MV.roundType, MV.roundNo, MV.bestOF,
-		MV.player1ID, MV.Player1, MV.player1Score,
-		MV.player2ID, MV.Player2, MV.player2Score
+		MV.player1ID, MV.Player1, MV.player1Score, MV.photo1,
+		MV.player2ID, MV.Player2, MV.player2Score, MV.photo2
 		FROM matchView MV WHERE matchID = ?"; 
 	$data = query($query, $matchID);
 
-	return array($data[0][0],$data[0][1],$data[0][2],$data[0][3],$data[0][4],$data[0][5],$data[0][6],$data[0][7],$data[0][8],$data[0][9]);
+	return array($data[0][0],$data[0][1],$data[0][2],$data[0][3],$data[0][4],$data[0][5],$data[0][6],$data[0][7],$data[0][8],$data[0][9],$data[0][10],$data[0][11]);
 	
 }
 

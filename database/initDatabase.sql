@@ -123,6 +123,7 @@ CREATE TABLE player(
 	id INT NOT NULL AUTO_INCREMENT,
 	firstName VARCHAR(20) NOT NULL,
 	lastName VARCHAR(30) NOT NULL,	
+	photo VARCHAR(50) NOT NULL DEFAULT "default.png",
 	
 	birthday DATE,
 	country VARCHAR(30),

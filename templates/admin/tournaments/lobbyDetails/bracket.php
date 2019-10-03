@@ -3,16 +3,27 @@
 
 if(!strcmp($bracket, "K/O"))
 {
-?> <section id="bracket"> <?php    
+?>
+<section>
+	<div class="bracket">
+<?php    
 	
 	$data = query("select KO_Rounds, seeded_Round from tournament where id=?", $tournamentID);
     
 	$KO_R = $data[0][0]; $seeded_R = $data[0][1];
 	prepareRound("K/O", 0, $KO_R, $seeded_R, $tournamentID);
 }
-else if(!strcmp($bracket, "D/E"))
+?>
+	</div>
+</section>
+<?php
+
+if(!strcmp($bracket, "D/E"))
 {
-?> <section id="bracket"> <?php	
+?>
+<section>
+	<div class="bracket">
+<?php	
 	
 	$data = query("select UP_Rounds,LOW_Rounds,KO_Rounds,seeded_Round from tournament where id=?", $tournamentID);
    
@@ -23,16 +34,27 @@ else if(!strcmp($bracket, "D/E"))
 	prepareRound("UP", 0, $UP_R, $seeded_R, $tournamentID);
 	prepareRound("K/O", $UP_R-1, $KO_R, $seeded_R, $tournamentID);
 }
-else if(!strcmp($bracket, "GroupKO"))
+?>
+	</div>
+</section>
+<?php
+
+if(!strcmp($bracket, "GroupKO"))
 {
-?> <section id="bracket"> <?php	
+?>
+<section>
+	<div class="bracket">
+<?php	
 	
 	$data = query("select KO_Rounds, seeded_Round from tournament where id=?", $tournamentID);
     
 	$KO_R = $data[0][0]; $seeded_R = $data[0][1];
 	prepareRound("K/O", 0, $KO_R, $seeded_R, $tournamentID);
 }
-?> </section> <?php
+?>
+	</div>
+</section>
+<?php
 
 
 function prepareRound($roundType, $offset, $R, $seeded_R, $tournamentID)
@@ -41,7 +63,7 @@ function prepareRound($roundType, $offset, $R, $seeded_R, $tournamentID)
 	{
 		for($i = $R; $i >= 1; $i--)
 		{ ?>
-			<div class="round <?=$roundType?>-<?=$i?>">
+			<div class="split <?=$roundType?>-<?=$i?>">
 			<?php printRound($tournamentID, $i, $roundType, ($i==$R)?true:false);?>
 			</div>
 		<?php
@@ -51,7 +73,7 @@ function prepareRound($roundType, $offset, $R, $seeded_R, $tournamentID)
 	{
 		for($i = 1; $i < $seeded_R; $i++)
 		{ ?>
-			<div class="round <?=$roundType?>-1">
+			<div class="split <?=$roundType?>-1">
 			<?php printRound($tournamentID, $i, $roundType, false);?>
 			</div>
 		<?php 
@@ -59,7 +81,7 @@ function prepareRound($roundType, $offset, $R, $seeded_R, $tournamentID)
 
 		for($i = $seeded_R; $i <= $R; $i++)
 		{ ?>
-			<div class="round <?=$roundType?>-<?=$i+$offset-$seeded_R+1?>">
+			<div class="split <?=$roundType?>-<?=$i+$offset-$seeded_R+1?>">
 			<?php printRound($tournamentID, $i, $roundType, false);?>
 			</div>
 		<?php 
@@ -98,43 +120,58 @@ function printRound($tournID, $Rno, $Rtype, $lowFlag)
 	
 		//if( (!strcmp($Rtype,"UP") || !strcmp($Rtype,"K/O")) && $Rno === 1 )
 		//{
-			if( strcmp($player1, "WALK OVER") )
-				$player1 = "($seed1)$player1";
-			if( strcmp($player2, "WALK OVER") )
-				$player2 = "($seed2)$player2";
+			//if( strcmp($player1, "WALK OVER") )
+			//	$player1 = "($seed1)$player1";
+			//if( strcmp($player2, "WALK OVER") )
+			//	$player2 = "($seed2)$player2";
 		//}
 
-		printBracketMatch($i, $matchID, $counter, $player1, $player1Score, $player2, $player2Score, $lowFlag, $upFlag, $loserMatch, $winnerMatch, $youtube);
+		printBracketMatch($i, $matchID, $counter, $player1, $player1Score, $seed1, $player2, $player2Score, $seed2, $lowFlag, $upFlag, $loserMatch, $winnerMatch, $youtube);
     }
 }
 
-function printBracketMatch($i, $matchID, $matchNum, $player1, $score1, $player2, $score2, $lowFlag, $upFlag, $loserID, $winnerID, $youtube)
+function printBracketMatch($i, $matchID, $matchNum, $player1, $score1, $seed1, $player2, $score2, $seed2, $lowFlag, $upFlag, $loserID, $winnerID, $youtube)
 { ?>
-	<div class="<?php 
-		if($i==0) print("first-match");
-		else print("match-details"); ?>
-	">
+	<div class="bracket_item">
 		<div class="match-number"> <?=$matchNum?> </div>
-		<div class="youtube-logo">
-			<?php if(isset($youtube)) { ?>
-			<a href="<?=YT_HEADER.$youtube?>">
-				<img src="../../img/youtube.png" alt="Youtube">
-			</a>
-			<?php } ?>
-		</div>
-	</div>
-
-	<a href="matchLobby.php?id=<?=$matchID?>">
-		<ul class="matchup">
-			<li class="team team-top">
-				<?=$player1?><span class="score"><?=$score1?></span>
-			</li>
-			<li class="team team-bottom">
-				<?=$player2?><span class="score"><?=$score2?></span>
-			</li>
-		</ul>
-	</a>
-	<style>.sokol-loh{padding-top:2px;margin-top:-5px; margin-bottom:-5px; height:10px;font-size:10px;} </style>
-	<?php if($upFlag){ ?> <h6 class="sokol-loh">Loser goes to <?=$loserID?></h6> <?php } ?>
-	<?php if($lowFlag){ ?> <h6 class="sokol-loh">Winner goes to <?=$winnerID?></h6> <?php } ?>
+		<table class="brackets_match_table">
+			<thead>
+				<tr>
+					<td>
+						<i class="pre_numbers01"><?=$seed1?></i>
+						<i class="pre_numbers02"><?=$seed2?></i>
+					</td>
+					<td>
+						<i class="fab fa-youtube"></i>
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<div class="player_name"><?=$player1?></div>
+					</td>
+					<td>
+						<div class="player_points"><?=$score1?></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="player_name"><?=$player2?></div>
+					</td>
+					<td>
+						<div class="player_points"><?=$score2?></div>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2">
+<?php if($upFlag){ ?> <i>переможець на <?=$loserID?></i> <?php } ?>
+<?php if($lowFlag){ ?> <i>переможений на <?=$winnerID?></i> <?php } ?>
 <?php } ?>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>

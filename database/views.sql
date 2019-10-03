@@ -25,8 +25,8 @@ DROP VIEW IF EXISTS breakView;
 CREATE VIEW matchView AS
 SELECT
     M.id AS matchID, M.counter, M.player1ID, M.player2ID,
-    CONCAT(X.firstName, ' ', X.lastName) AS Player1,
-    CONCAT(Y.firstName, ' ', Y.lastName) AS Player2,
+    CONCAT(X.firstName, ' ', X.lastName) AS Player1, X.photo AS photo1,
+    CONCAT(Y.firstName, ' ', Y.lastName) AS Player2, Y.photo AS photo2,
     M.player1Score, M.player2Score,
     M.bestOf, M.winnerMatchID, M.loserMatchID, M.loserPlaces,
     M.youtube, MD.status, tbl._number,
@@ -154,7 +154,7 @@ CREATE VIEW generalTournamentView AS
 SELECT
     T.id AS tournamentID, T.name AS tournament, T.status AS status,
     B.name AS billiard, A.name AS age, L.sex AS sex, 
-	T.bracket AS bracket, C.name AS clubName
+	T.bracket AS bracket, C.id AS clubID, C.name AS clubName
 FROM tournament T
     JOIN league L ON T.leagueID=L.id
     JOIN age A ON L.ageID = A.id
@@ -169,6 +169,7 @@ SELECT
     M.id AS matchID, M.counter, MD.status, M.youtube, 
     CONCAT(X.firstName, ' ', X.lastName) AS player1Name, M.player1ID,
     CONCAT(Y.firstName, ' ', Y.lastName) AS player2Name, M.player2ID,
+	X.photo AS photo1, Y.photo AS photo2,
 	SX.seed AS player1Seed, SY.seed AS player2Seed,
     M.player1Score, M.player2Score, M.bestOF,
     M.winnerMatchID, M.winnerMatchCounter,

@@ -10,5 +10,6 @@ define("OTHER_ERROR", "Oops, something went wrong");
 define("HOME_DIR", "/var/www/snookerLviv");
 
 define("YT_HEADER", "https://www.youtube.com/watch?v=");
+define("PLAYER_IMG", "/public/img/player/");
 
 ?>
