@@ -1,8 +1,9 @@
 /* GENERAL NAVIGATION */
 
-.navigation {
-    box-sizing: border-box;
-	display: inline;
+.navigation-down {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
 }
 .navigation a {
     box-sizing: border-box;
