@@ -66,7 +66,7 @@ function standbyLobby($tournamentID, $onClick)
 
 
 //lobby block to show data
-	?><div class="sub-container"><?php
+	?><div class="sub_container"><?php
 
 
 //show appropriate data
@@ -98,27 +98,31 @@ function liveLobby($bracket, $tournamentID, $onClick)
 	else
 		redirect("");
 
-//lobby block to show data
-	?><div class="sub-container"><?php
-
 
 //show appropriate data
 	if( !strcmp($onClick, "default") || !strcmp($onClick, "bracket") )
+	{
+	?><div class="bracket_section"><?php
 		require("lobbyDetails/bracket.php");
-	else if( !strcmp($onClick, "matches") )
-		require("lobbyDetails/matches.php");
-	else if( !strcmp($onClick, "players") )
-		require("lobbyDetails/registeredPlayersList.php");
-	else if( !strcmp($onClick, "live") )
-		require("lobbyDetails/live.php");
-	else if( !strcmp($onClick, "groups") ) 
-		require("lobbyDetails/groups.php");
-	else if( !strcmp($onClick, "groupStanding") ) 
-		require("lobbyDetails/groupStanding.php");
-	else if( !strcmp($onClick, "breaks") )
-		require("lobbyDetails/breaks.php");
+	}
 	else
-		redirect("");
+	{
+	?><div class="sub_continer"><?php
+		if( !strcmp($onClick, "matches") )
+			require("lobbyDetails/matches.php");
+		else if( !strcmp($onClick, "players") )
+			require("lobbyDetails/registeredPlayersList.php");
+		else if( !strcmp($onClick, "live") )
+			require("lobbyDetails/live.php");
+		else if( !strcmp($onClick, "groups") ) 
+			require("lobbyDetails/groups.php");
+		else if( !strcmp($onClick, "groupStanding") ) 
+			require("lobbyDetails/groupStanding.php");
+		else if( !strcmp($onClick, "breaks") )
+			require("lobbyDetails/breaks.php");
+		else
+			redirect("");
+	}
 
 
 //close lobby block
@@ -137,26 +141,32 @@ function finishedLobby($bracket, $tournamentID, $onClick)
 	else
 		redirect("");
 	
-//lobby block to show data
-	?><div class="sub-container"><?php
-
 
 //show appropriate data
-	if( !strcmp($onClick, "default") || !strcmp($onClick, "standings") )
+	if( !strcmp($onClick, "default")||!strcmp($onClick, "standings") )
+	{
+	?><div class="sub_continer"><?php
 		require("lobbyDetails/standings.php");
+	}
 	else if( !strcmp($onClick, "bracket") )
+	{
+	?><div class="bracket_section"><?php
 		require("lobbyDetails/bracket.php");
-	else if( !strcmp($onClick, "matches") )
-		require("lobbyDetails/matches.php");
-	else if( !strcmp($onClick, "groups") )
-		require("lobbyDetails/groups.php");
-	else if( !strcmp($onClick, "groupStanding") ) 
-		require("lobbyDetails/groupStanding.php");
-	else if( !strcmp($onClick, "brakes") ) 
-		require("lobbyDetails/breaks.php");
+	}
 	else
-		redirect("");
-
+	{
+	?><div class="sub_continer"><?php
+		if( !strcmp($onClick, "matches") )
+			require("lobbyDetails/matches.php");
+		else if( !strcmp($onClick, "groups") )
+			require("lobbyDetails/groups.php");
+		else if( !strcmp($onClick, "groupStanding") ) 
+			require("lobbyDetails/groupStanding.php");
+		else if( !strcmp($onClick, "brakes") ) 
+			require("lobbyDetails/breaks.php");
+		else
+			redirect("");
+	}
 
 //close lobby block
 	?></div><?php

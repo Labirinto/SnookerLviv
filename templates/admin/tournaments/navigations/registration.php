@@ -1,6 +1,6 @@
 <?php $header = "lobby.php?id=$tournamentID"; ?>
 
-<nav class="navigation">
+<nav class="navigation navigation-down">
     <ul>
         <li><a href="<?=$header?>&onClick=players">Players</a></li>
         <li><a href="<?=$header?>&onClick=register">Register</a></li>
