@@ -26,7 +26,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
             $_SESSION["id"] = ["login"=>$login, "type"=>$type];
 
 			if($_SESSION["id"]["type"] == "admin")
-        		redirect("/public/admin");
+        		redirect(PATH_H."admin");
 			else if($_SESSION["id"]["type"] == "regular")
 				redirect("playerHome.php");
 		}

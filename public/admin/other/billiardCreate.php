@@ -21,7 +21,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 	}
 	
 	query("INSERT INTO billiard(name) VALUES(?)", $name);
-	redirect("/public/admin/other");
+	redirect(PATH_H."admin/other");
 }
 
 ?>

@@ -41,7 +41,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 	
 	query($query, $pl1ID, $pl2ID, $hand1, $hand2, $clubID, $bestOF);
 
-	redirect("/public/admin/matches");
+	redirect(PATH_H."admin/matches");
 }
 
 ?>

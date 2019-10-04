@@ -1,6 +1,6 @@
 <fieldset>
 	<legend>Registration:</legend>
-	<form action="/public/register.php" method="post">
+	<form action="<?=PATH_H?>register.php" method="post">
 		First name: <input autofocus name="first" type="text"/></br>
 		Last name: <input name="last" type="text"/></br>
 		</br></br>

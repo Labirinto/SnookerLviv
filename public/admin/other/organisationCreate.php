@@ -22,7 +22,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 	}
 	
 	query("INSERT INTO organisation(name) VALUES(?)", $name);
-	redirect("/public/admin/other");
+	redirect(PATH_H."admin/other");
 }
 
 ?>

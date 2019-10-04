@@ -1,1 +1,1 @@
-<a href="/public/logout.php">log out</a>
+<a href="<?=PATH_H?>logout.php">log out</a>

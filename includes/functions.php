@@ -307,6 +307,7 @@ function logout()
 
 function redirect($destination)
 {
+	//$destination = HOME_DIR . $destination;
 	// handle URL
 	if (preg_match("/^https?:\/\//", $destination))
 	{

@@ -4,7 +4,7 @@
 <h4><mark>TODO: </br>1.Unregister player</br>2.(maybe) delete tournament</mark></h4>
 
 <div class="page_header">
-	<img class="header_icon" alt="calendar" src="/public/img/web/calendar.png"> 
+	<img class="header_icon" alt="calendar" src="<?=PATH_H?>img/web/calendar.png"> 
 	<h1 class="tournament_list_table_header">Каледар</h1>
 </div>
 
@@ -43,15 +43,15 @@ function printHeader($status)
 				<tr>
 					<th>#</th>
 					<th>
-						<img class="thead_icon" alt="trophy_image" src="/public/img/web/trophy.png"> 
+						<img class="thead_icon" alt="trophy_image" src="<?=PATH_H?>img/web/trophy.png"> 
 						<span>Турнір</span>
 					</th>
 					<th>
-						<img class="thead_icon" alt="trophy_image" width="9" src="/public/img/web/location.png"> 
+						<img class="thead_icon" alt="trophy_image" width="9" src="<?=PATH_H?>img/web/location.png"> 
 						<span>Місце</span>
 					</th>
 					<th>
-						<img class="thead_icon" alt="trophy_image" src="/public/img/web/calendar.png"> 
+						<img class="thead_icon" alt="trophy_image" src="<?=PATH_H?>img/web/calendar.png"> 
 						<span>Дата</span>
 					</th>
 				</tr>
