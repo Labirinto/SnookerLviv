@@ -66,7 +66,7 @@ function standbyLobby($tournamentID, $onClick)
 
 
 //lobby block to show data
-	?><div class="sub_container"><?php
+	?><div class="sub-container"><?php
 
 
 //show appropriate data
@@ -107,7 +107,7 @@ function liveLobby($bracket, $tournamentID, $onClick)
 	}
 	else
 	{
-	?><div class="sub_continer"><?php
+	?><div class="sub-container"><?php
 		if( !strcmp($onClick, "matches") )
 			require("lobbyDetails/matches.php");
 		else if( !strcmp($onClick, "players") )
@@ -145,7 +145,7 @@ function finishedLobby($bracket, $tournamentID, $onClick)
 //show appropriate data
 	if( !strcmp($onClick, "default")||!strcmp($onClick, "standings") )
 	{
-	?><div class="sub_continer"><?php
+	?><div class="sub-container"><?php
 		require("lobbyDetails/standings.php");
 	}
 	else if( !strcmp($onClick, "bracket") )
@@ -155,7 +155,7 @@ function finishedLobby($bracket, $tournamentID, $onClick)
 	}
 	else
 	{
-	?><div class="sub_continer"><?php
+	?><div class="sub-container"><?php
 		if( !strcmp($onClick, "matches") )
 			require("lobbyDetails/matches.php");
 		else if( !strcmp($onClick, "groups") )
