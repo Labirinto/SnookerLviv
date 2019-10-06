@@ -7,7 +7,7 @@ session_start();
 
 if(!adminCheck())
 {
-	redirect("<?=PATH_H?>logout.php");
+	redirect(PATH_H."logout.php");
 }
 
 ?>
