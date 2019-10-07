@@ -120,7 +120,7 @@ function printMatch($counter, $matchID, $player1, $score1, $player2, $score2, $b
 		<td class="matches_list_table_youtube <?=($counter%2)?"":"even_youtube"?>">
 			<?php if(isset($youtube)){ ?>
 			<a href="<?=(YT_HEADER.$youtube)?>">
-				<img src="../../img/youtube.png" alt="Youtube">
+				<img src="/~levko/img/youtube.png">
 			</a>
 			<?php } ?>
 		</td>
