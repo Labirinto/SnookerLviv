@@ -1,8 +1,5 @@
-
-<h3><mark>TODO playerLobby with href</mark></h3>
-
+</br></br>
 <a href="create.php">Create Player</a>
-<h1>List of ALL Players:</h1>
 
 <?php 
 
@@ -17,18 +14,18 @@ if(count($data) > 0)
 	for($i = 0; $i<count($data); $i++)
 	{
 		$id = $data[$i][0];
-		$fName = $data[$i][1];
-		$lName = $data[$i][2];
+		$lName = $data[$i][1];
+		$fName = $data[$i][2];
 		$img = $data[$i][3];
 
 		printPlayer($id, $fName, $lName, $img);
-		//print("<a href=\"lobby.php?id=".$id."\">".$fName." ".$lName."</a></br>\n");
 	}
 }
 
 
 function generateHeader()
 { ?>
+	<script type="text/javascript" src="/~levko/js/player_search.js"> </script>
      <header>
 		<i class="fas fa-user"></i>
 		<h1 class="players_list_header">Гравці</h1>
