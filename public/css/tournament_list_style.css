@@ -20,11 +20,11 @@
 	text-align: left;
 	font-weight: 100;
 }
-table col[class*="col-"] {
+/*table col[class*="col-"] {
 	position: static;
 	float: none;
 	display: table-column;
-}
+}*/
 .tournament_list_table{
 	margin-bottom: 30px;
 }
