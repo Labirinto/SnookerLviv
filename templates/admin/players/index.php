@@ -27,7 +27,7 @@ function generateHeader()
 { ?>
 	<script type="text/javascript" src="/~levko/js/player_search.js"> </script>
      <header>
-		<i class="fas fa-user"></i>
+		<i class="fas fa-user float_left"></i>
 		<h1 class="players_list_header">Гравці</h1>
 	</header>
 

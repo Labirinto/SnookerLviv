@@ -1,4 +1,3 @@
-		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 	<section>
 		<div class="player_profile_section01">
 			<div class="player_profile_photo">
@@ -11,7 +10,7 @@
 					<th colspan="2">
 						<div class="player_profile_playerName">
 							<i class="fas fa-user"></i>
-							<div class="players_list_header"><?=$fName?> <span class="player_profile_surname"> <?=$lName?></span>
+							<div class="player_profile_header"><?=$fName?> <span class="player_profile_surname"> <?=$lName?></span>
 							</div>
 						</div>
 						

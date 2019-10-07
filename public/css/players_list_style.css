@@ -1,7 +1,3 @@
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
 .players_u-list_item {
 	display: flex;
   flex-direction: row;
@@ -17,7 +13,6 @@ html, body {
 	justify-content: center;
 }
 .fa-user {
-	float: left;
 	margin-top: 5px;
 }
 .players_list_header {

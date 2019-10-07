@@ -16,6 +16,12 @@ a {
     text-decoration: none;
     color: #fff;
 }
+.float_left {
+	float: left;
+}
+.float_right {
+	float: right;
+}
 .container {
     color: #fff;
     text-align: center;
