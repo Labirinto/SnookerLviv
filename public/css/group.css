@@ -1,5 +1,10 @@
 .group {
 	display: inline-block;
+	width: 1067px;
+    max-width: 1067px;
+    height: 306px;
+    max-height: 306px;
+    margin-bottom: 150px;
 }
 .group-table tbody {
     border-style: hidden;
@@ -15,6 +20,10 @@
 .group-table {
     background-color: #474B4F;
     margin-top: 50px;
+    width: 1067px;
+    max-width: 1067px;
+    min-width: 1067px;
+/*TODO with sokol	border-radius: 3px; */
 }
 .group-table th {
     border: none;
@@ -27,6 +36,7 @@
     background-color: #61892F;
     color: #fff;
     font-size: 17px;
+	border-bottom: 1px solid #86C232;
  }
  .group-table tbody tr>:last-child {
     border-right: none;

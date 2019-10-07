@@ -59,7 +59,7 @@ function printGroup($tournID, $groupNo)
 
     $data = query($query, $tournID, "Group", $groupNo);
     
-	?><div><h3 class="matches_list_table_round_num">GROUP <?=$groupNo?></h3></div><?php
+	?><div class="round_num"><h3 class="matches_list_table_round_num">GROUP <?=$groupNo?></h3></div><?php
 
 	printHeader();
 
@@ -105,7 +105,7 @@ function printMatch($counter, $matchID, $player1, $score1, $player2, $score2, $b
 { ?>
 	<tr onclick="window.location.href='matchLobby.php?id=<?=$matchID?>';"
 		class="matches_list_table_tbody_<?=($counter%2)?odd:even?> matches_list_table_pointer">
-		<td class="matches_list_table_number"><?=$counter?></td>
+		<td class="matches_list_table_number <?=($counter%2)?"odd_num":""?>"><?=$counter?></td>
 		<td class="matches_list_table_name_right"><?=$player1?></td>
 		<td class="matches_list_table_score">
 			<table class="matches_list_table_score_row">
@@ -117,7 +117,7 @@ function printMatch($counter, $matchID, $player1, $score1, $player2, $score2, $b
 			</table>
 		</td>
 		<td class="matches_list_table_name_left"><?=$player2?></td>
-		<td class="matches_list_table_youtube">
+		<td class="matches_list_table_youtube <?=($counter%2)?"":"even_youtube"?>">
 			<?php if(isset($youtube)){ ?>
 			<a href="<?=(YT_HEADER.$youtube)?>">
 				<img src="../../img/youtube.png" alt="Youtube">
@@ -132,7 +132,7 @@ function prepareRound($roundType, $R, $tournamentID)
 {
 	for($i = 1; $i <= $R; $i++)
 	{ ?>
-		<div><h3 class="matches_list_table_round_num"><?=$roundType?> <?=$i?></h3></div><?php
+		<div class="round_num"><h3 class="matches_list_table_round_num"><?=$roundType?> <?=$i?></h3></div><?php
 
 		printHeader();
 		
