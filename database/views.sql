@@ -120,7 +120,7 @@ SELECT
     tbl.id AS tableID, tbl._number, tbl.clubID, C.name AS clubName,
     tbl.status AS tableStatus, MD.status AS matchStatus,
     M.counter AS matchCounter, tbl.matchID,
-	M.player1ID, M.player2ID,
+	M.player1ID, M.player2ID, X.photo AS photo1, Y.photo AS photo2,
     CONCAT(X.firstName, ' ', X.lastName) AS Player1,
     CONCAT(Y.firstName, ' ', Y.lastName) AS Player2,
     M.player1Score, M.player2Score, M.bestOf, M.youtube,
