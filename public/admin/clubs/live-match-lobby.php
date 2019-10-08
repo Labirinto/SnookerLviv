@@ -10,7 +10,7 @@ if( !exists("_table", $tableID) ) {
 $query = "SELECT TV._number, TV.clubName, TV.tableStatus, TV.matchStatus, TV.matchCounter,
 		TV.Player1, TV.Player2, TV.player1Score, TV.player2Score, TV.bestOf, TV.tournamentName,
 		TV.points1, TV.points2, TV.break1, TV.break2,
-		TV.roundType, TV.roundNo, TV.groupID
+		TV.roundType, TV.roundNo, TV.groupID, TV.photo1, TV.photo2
 		FROM tableView TV WHERE TV.tableID = ?";
 $data = query($query, $tableID);
 $tableNum = $data[0][0]; $clubName = $data[0][1];
@@ -20,6 +20,7 @@ $player1 = $data[0][5]; $player2 = $data[0][6]; $bestOf = $data[0][9];
 $score1 = $data[0][7]; $score2 = $data[0][8]; 
 $points1 = $data[0][11]; $points2 = $data[0][12]; $break1 = $data[0][13]; $break2 = $data[0][14];
 $roundType = $data[0][15]; $roundNo = $data[0][16]; $groupID = $data[0][17];
+$img1 = $data[0][18]; $img2 = $data[0][19];
 
 $player1class = "live-match-lobby-player"; $player2class = "live-match-lobby-player";
 ( nonEmpty($break1) ) ? ($player1class .= " highlight") : ($player2class .= " highlight");
