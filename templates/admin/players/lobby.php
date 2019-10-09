@@ -33,7 +33,7 @@
 						<td>
 							<div class="player_profile_age">
 								<div class="player_profile_tableHeader">дата народження</div>
-								<div class="player_profile_tabelMean">14.08.1997</div>
+								<div class="player_profile_tabelMean"><?=$birthday?></div>
 							</div>
 						</td>
 						<td>

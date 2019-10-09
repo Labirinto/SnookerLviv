@@ -11,6 +11,13 @@ else if($_SERVER["REQUEST METHOD"] = "POST")
 	$fName = $_POST["first"];
     $lName = $_POST["last"];
 
+	$birthday = date('Y-m-d', strtotime($_POST["birthday"]) );
+	if( !$birthday)
+	{
+        adminApology(INPUT_ERROR, "Date error");
+        exit;
+	}
+
     if( !nonEmpty($fName, $lName) )
 	{
         adminApology(INPUT_ERROR, "All fields are required");
@@ -38,9 +45,9 @@ else if($_SERVER["REQUEST METHOD"] = "POST")
 		}
 	}
  
-	$query = "INSERT INTO player(firstName, lastName, photo) VALUES(?,?,?)";
+	$query = "INSERT INTO player(firstName, lastName, photo, birthday) VALUES(?,?,?,?)";
     
-	query($query, $fName, $lName, $photo);
+	query($query, $fName, $lName, $photo, $birthday);
     redirect("");
 }
 

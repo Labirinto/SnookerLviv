@@ -10,8 +10,8 @@
 			redirect("");
 
 
-		list($fName, $lName, $img) = getPlayer($playerID); 
-		adminRender("players/lobby.php", ["title" => "Player lobby", "fName"=>$fName, "lName"=>$lName, "img"=>$img, "playerID" => $playerID]);
+		list($fName, $lName, $img, $birthday) = getPlayer($playerID); 
+		adminRender("players/lobby.php", ["title" => "Player lobby", "fName"=>$fName, "lName"=>$lName, "img"=>$img, "playerID" => $playerID, "birthday" => $birthday]);
 	}
 	else
 	{
@@ -21,10 +21,12 @@
 
 function getPlayer($id)
 {
-	$query="SELECT firstName, lastName, photo FROM player WHERE id=?";
+	$query="SELECT firstName,lastName,photo,birthday
+			FROM player WHERE id=?";
 
 	$data = query($query, $id);
-	return array($data[0][0], $data[0][1], $data[0][2]);
+	$birthday = date('Y-m-d', strtotime($data[0][3]));
+	return array($data[0][0], $data[0][1], $data[0][2], $birthday);
 }
 
 ?>
