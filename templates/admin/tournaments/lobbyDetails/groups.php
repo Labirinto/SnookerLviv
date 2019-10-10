@@ -83,7 +83,7 @@ function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPl
 		$isBottom = "";
 ?>
 	<tr class="group_row_<?=$e_o?>">
-		<td class="group_<?=$e_o?>_num <?php if($last)print("group_border_radius-bl");?>"><?=$playerNum?></td>
+		<td class="group_<?=$e_o?>_num <?=($last)?"group_border_radius-bl":""?>"><?=$playerNum?></td>
 		<td><?=$playerName?>(<?=$seed?>)</td>
 		<?php
 			

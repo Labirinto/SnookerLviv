@@ -1,6 +1,6 @@
 .matches_list_table_round_num {
 	text-transform: uppercase;
-	font-size: 20px;
+	font-size: 22px;
 	text-align: left;
 }
 table col[class*="col-"] {
@@ -10,14 +10,13 @@ table col[class*="col-"] {
 }
 .matches_list_table{
     margin-bottom: 50px;
-    width: 700px;
-    max-width: 700px;
-    min-width: 700px;
-	border-radius: 3px;
+    width: 1067px;
+    max-width: 1067px;
+    min-width: 1067px;
 }
 .round_num {
- 	width: 700px;
- 	max-width: 700px;
+ 	width: 1067px;
+ 	max-width: 1067px;
 }
 table.matches_list_table .col-1 {
  	width: 5%;
@@ -34,6 +33,9 @@ table.matches_list_table .col-4 {
 table.matches_list_table .col-5 {
  	width: 5%;
 }
+table.matches_list_table .col-6 {
+ 	width: 5%;
+}
 .matches_list_table_score {
 	text-align: center;
 }
@@ -43,12 +45,14 @@ table.matches_list_table .col-5 {
 .matches_list_table thead th {
 	text-transform: uppercase;
 	padding: 15px;
-	border-top: 3px solid #61892F;
-	font-size: 12px;
+	font-size: 13px;
 	text-align: center;
 }
+.matches_list_table_thead{
+	color: #fff;
+}
 .matches_list_table tbody tr td {
-	padding: 5px;
+	padding: 7px;
 }
 .matches_list_table_youtube img {
 	height: 20px;
@@ -104,4 +108,14 @@ table.matches_list_table .col-5 {
 }
 .matches_list_table thead tr>:nth-child(4) {
     text-align: left;
+}
+.matches_list_table_borRad_div {
+    border-top: 3px solid #61892F;
+    border-radius: 3px;
+}
+.border-bl {
+	border-bottom-left-radius: 3px;
+}
+.border-br {
+	border-bottom-right-radius: 3px;
 }

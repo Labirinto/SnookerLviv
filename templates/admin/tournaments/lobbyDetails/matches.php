@@ -57,29 +57,33 @@ function printGroup($tournID, $groupNo)
         WHERE TV.tournamentID=? AND TV.roundType=? AND groupNum=?
         ORDER BY TV.counter";
 
-    $data = query($query, $tournID, "Group", $groupNo);
-    
-	?><div class="round_num"><h3 class="matches_list_table_round_num">GROUP <?=$groupNo?></h3></div><?php
+	?><div class="round_num"><h3 class="matches_list_table_round_num">ГРУПА <?=$groupNo?></h3></div><?php
 
 	printHeader();
-
-	for($i = 0; $i < count($data); $i++)
+    
+	$data = query($query, $tournID, "Group", $groupNo);
+	
+	$data_counter = count($data);
+	for($i = 0; $i < $data_counter; $i++)
     {
         $counter = $data[$i][0]; $matchID = $data[$i][1];
         $player1 = $data[$i][2]; $player2 = $data[$i][3];
         $bestOf = $data[$i][4];
         $score1 = $data[$i][5]; $score2 = $data[$i][6];
 		$youtube = $data[$i][7];
+		$last = ($i+1 < $data_counter) ? false : true;
 
-		printMatch($counter, $matchID, $player1, $score1, $player2, $score2, $bestOf, $youtube);
+		printMatch($counter,$last,$matchID, $player1, $score1, $player2, $score2, $bestOf, $youtube);
     }
 
 	print("</tbody>\n");
 	print("</table>\n");
+	print("</div>\n");
 }
 
 function printHeader()
 { ?>
+	<div class="matches_list_table_borRad_div">
 	<table class="matches_list_table">
 		<colgroup>
 			<col class="col-1">
@@ -87,6 +91,7 @@ function printHeader()
 			<col class="col-3">
 			<col class="col-4">
 			<col class="col-5">
+			<col class="col-6">
 		</colgroup>
 		<thead class="matches_list_table_thead">
 			<tr>
@@ -101,11 +106,11 @@ function printHeader()
 <?php }
 
 
-function printMatch($counter, $matchID, $player1, $score1, $player2, $score2, $bestOf, $youtube)
+function printMatch($counter, $last,$matchID, $player1, $score1, $player2, $score2, $bestOf, $youtube)
 { ?>
 	<tr onclick="window.location.href='matchLobby.php?id=<?=$matchID?>';"
 		class="matches_list_table_tbody_<?=($counter%2)?odd:even?> matches_list_table_pointer">
-		<td class="matches_list_table_number <?=($counter%2)?"odd_num":""?>"><?=$counter?></td>
+		<td class="matches_list_table_number <?=($counter%2)?"odd_num":""?> <?=($last)?"border-bl":""?>"><?=$counter?></td>
 		<td class="matches_list_table_name_right"><?=$player1?></td>
 		<td class="matches_list_table_score">
 			<table class="matches_list_table_score_row">
@@ -117,7 +122,7 @@ function printMatch($counter, $matchID, $player1, $score1, $player2, $score2, $b
 			</table>
 		</td>
 		<td class="matches_list_table_name_left"><?=$player2?></td>
-		<td class="matches_list_table_youtube <?=($counter%2)?"":"even_youtube"?>">
+		<td class="matches_list_table_youtube <?=($counter%2)?"":"even_youtube"?> <?=($last)?"border-br":""?>">
 			<?php if(isset($youtube)){ ?>
 			<a href="<?=(YT_HEADER.$youtube)?>">
 				<img src="/~levko/img/youtube.png">
@@ -154,16 +159,18 @@ function printRound($tournID, $Rno, $Rtype)
         ORDER BY TV.counter";
 
     $data = query($query, $tournID, $Rno, $Rtype);
-
-    for($i = 0; $i < count($data); $i++)
+	
+	$data_counter = count($data);
+    for($i = 0; $i < $data_counter; $i++)
     {
         $counter = $data[$i][0]; $matchID = $data[$i][1];
 		$bestOf = $data[$i][4];
         $player1 = $data[$i][2]; $player2 = $data[$i][3];
         $score1 = $data[$i][5]; $score2 = $data[$i][6];
-		$youtube = $data[$i][7];    
+		$youtube = $data[$i][7];
+		$last = ($i+1 < $data_counter) ? false : true;
 	
-		printMatch($counter, $matchID, $player1, $score1, $player2, $score2, $bestOf, $youtube);
+		printMatch($counter,$last,$matchID, $player1, $score1, $player2, $score2, $bestOf, $youtube);
 	}
 }
 
