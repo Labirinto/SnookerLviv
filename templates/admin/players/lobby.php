@@ -39,7 +39,7 @@
 						<td>
 							<div class="player_profile_maxBreak">
 								<div class="player_profile_tableHeader">найвищий турнірний<br>брейк</div>
-								<div class="player_profile_tabelMean max_break">128</div>
+								<div class="player_profile_tabelMean max_break"><?=$highestBreak?></div>
 							</div>
 						</td>
 					</tr>
@@ -50,30 +50,32 @@
 			<!-- SECTION 02 (CIRCLES) -->
 
 		<div class="player_profile_section02">
-			<a class="circle_hover" href="#">
-			<div class="player_profile_tournamentCircle player_profile_circle">
+			<a class="circle_hover" href="tournamentList.php?id=<?=$playerID?>">
+			<div class="player_profile_circle">
 				<div class="little_circle">37</div>
-				<i class="fas fa-trophy"></i>
+				<i class="fas fa-trophy"></i><br>
+				<span class="circle_text">турніри</span>
 			</div>
 			</a>
-			<a class="circle_hover" href="#">
-			<div class="player_profile_tournamentBreakCircle player_profile_circle">
+			<a class="circle_hover" href="tournamentBreaks.php?id=<?=$playerID?>">
+			<div class="player_profile_circle">
 				<div class="little_circle">19</div>
-				<i class="fas fa-trophy break_icon"></i> <br>
-				<span class="circle_break">брейки</span>
+				<i class="fas fa-trophy"></i> <br>
+				<span class="circle_text">брейки</span>
 			</div>
 			</a>
 			<a class="circle_hover" href="#" >
-			<div class="player_profile_sparingCircle player_profile_circle">
+			<div class="player_profile_circle">
 				<div class="little_circle">80</div>
-				<i class="fas fa-user-friends"></i>
+				<i class="fas fa-user-friends"></i><br>
+				<span class="circle_text">спаринги</span>
 			</div>
 			</a>
 			<a class="circle_hover" href="#">
-			<div class="player_profile_sparingBreakCircle player_profile_circle">
+			<div class="player_profile_circle">
 				<div class="little_circle">44</div>
-				<i class="fas fa-user-friends break_icon"></i> <br>
-				<span class="circle_break">брейки</span>
+				<i class="fas fa-user-friends"></i> <br>
+				<span class="circle_text">брейки</span>
 			</div>
 			</a>
 		</div>

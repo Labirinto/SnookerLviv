@@ -101,16 +101,12 @@
 }
 .fa-trophy,
 .fa-user-friends {
-	font-size: 50px;
+	font-size: 40px;
 	margin-top: 32px;
 	margin-bottom: 10px;
 	text-align: center;
 }
-.break_icon {
-	font-size: 40px;
-	margin-left: 5px;
-}
-.circle_break {
+.circle_text {
 	font-family: 'Exo 2', sans-serif;
 	text-transform: uppercase;
 }
