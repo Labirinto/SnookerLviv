@@ -8,16 +8,18 @@ $G_R = $data[0][0];
 for($i = 1; $i <= $G_R; $i++)
 {?>
 	<div class="group">
-		<h2 class="group-number">Group <?=$i?></h2></br>
+		<div class="round_num_div"><h3 class="matches_list_table_round_num">група <?=$i?></h3></div>
+		<div class="group_border_radius">
 		<table class="group-table">	
 			<?php printGroup($tournamentID, $i); ?>
 		</table>
+		</div>
 	</div>
 <?php }
 
 ?></div><?php
 
-function printMatches($id, $groupNum, $playerNum, $nrOfPlayers)
+function printMatches($id, $groupNum, $playerNum, $nrOfPlayers, $isBottom)
 {
 	$query = "SELECT PG.id, PG.mWon, PG.mLost, PG.fWon, PG.fLost 
 		FROM playerGroup PG JOIN groupTournament GT ON PG.groupID = GT.id
@@ -59,13 +61,13 @@ function printMatches($id, $groupNum, $playerNum, $nrOfPlayers)
 	?><td><?=$matches?></td> <td><?=$mWon?></td> <td><?=$mLost?></td>
 	<td><?=($mWon-$mLost)?></td>
 	<td><?=$fWon?></td> <td><?=$fLost?></td> 
-	<td><?=($fWon-$fLost)?></td> <td><?=$res?>%</td><?php
+	<td><?=($fWon-$fLost)?></td> <td <?=$isBottom?>><?=$res?>%</td><?php
 }
 
 function firstRow($nrOfPlayers)
 { ?>
 	<tr>
-		<th>#</th> <th>Player</th>
+		<th>#</th> <th>Гравець</th>
     	<?php for($i=1;$i<=$nrOfPlayers;$i++) print("<th>$i</th>"); ?>
 		<th>m</th><th>+m</th><th>-m</th><th>Δm</th>
 		<th>+f</th><th>-f</th><th>Δf</th><th>%</th>
@@ -73,12 +75,21 @@ function firstRow($nrOfPlayers)
 
 <?php }
 
-function playerRow($playerName, $playerNum, $playerID, $seed, $nrOfPlayers, $groupNum, $id)
-{ ?>
-	<tr>
-		<td><?=$playerNum?></td>
+function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPlayers, $groupNum, $id)
+{ 
+	if($last)
+		$isBottom = "class=\"group_border_radius-br\"";
+	else
+		$isBottom = "";
+?>
+	<tr class="group_row_<?=$e_o?>">
+		<td class="group_<?=$e_o?>_num <?php if($last)print("group_border_radius-bl");?>"><?=$playerNum?></td>
 		<td><?=$playerName?>(<?=$seed?>)</td>
-		<?php printMatches($id, $groupNum, $playerNum, $nrOfPlayers); ?>
+		<?php
+			
+			printMatches($id, $groupNum, $playerNum, $nrOfPlayers, $isBottom);
+
+		?>
 	</tr>
 <?php }
 
@@ -102,8 +113,10 @@ function printGroup($tournID, $groupNo)
         $playerNum = $data[$i][0];
         $playerName = $data[$i][1]; $playerID = $data[$i][2];
         $seed = $data[$i][3];
+		$e_o = ($i%2) ? "even" : "odd";
+		$last = ($i+1 < $nrOfPlayers) ? false : true;
 
-		playerRow($playerName, $playerNum, $playerID, $seed, $nrOfPlayers, $groupNo, $tournID);
+		playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPlayers, $groupNo, $tournID);
     }
 	?></tbody><?php
 }
