@@ -19,6 +19,7 @@ DROP PROCEDURE IF EXISTS resetTable;
 DROP PROCEDURE IF EXISTS checkIfAvailableMatchExists;
 DROP PROCEDURE IF EXISTS getMinForRound;
 DROP PROCEDURE IF EXISTS scoreIncrement;
+DROP PROCEDURE IF EXISTS updateHighestBreak;
 
 DROP PROCEDURE IF EXISTS scoreCheck;
 DROP TRIGGER IF EXISTS scoreTrigger;
@@ -129,6 +130,27 @@ BEGIN
 END;
 
 
+-- update highest break after match finishes
+CREATE PROCEDURE updateHighestBreak(IN matchID INT, IN playerID INT)
+BEGIN
+	DECLARE matchHighest, totalHighest INT DEFAULT 0;
+
+ -- get general highest
+	SELECT P.highestBreak INTO totalHighest
+	FROM player P WHERE P.id = playerID;
+	
+ -- get match highest
+	SELECT MAX(B.points) INTO matchHighest
+	FROM break B WHERE B.matchID = matchID AND B.playerID = playerID;
+
+ -- compare
+	IF ISNULL(totalHighest) OR
+ 	(!ISNULL(matchHighest) AND matchHighest > totalHighest) THEN
+		UPDATE player P SET P.highestBreak = matchHighest
+		WHERE P.id = playerID;
+	END IF;
+END;
+
 
 
 -- trigger invoked only if match status is changed
@@ -164,6 +186,9 @@ BEGIN
 		SELECT M.roundType, M.roundNo, M.player1ID, M.player2ID, M.tournamentID
 		INTO roundType, roundNo, player1ID, player2ID, tournamentID
 		FROM _match M WHERE M.id = NEW.matchID;
+
+		CALL updateHighestBreak(NEW.matchID, player1ID);
+		CALL updateHighestBreak(NEW.matchID, player2ID);
 	
 	-- update player group
 		IF roundType = "Group" THEN
