@@ -131,7 +131,7 @@ END;
 
 
 
--- trigger invoked only match status is changed
+-- trigger invoked only if match status is changed
 -- TODO less computation in trigger
 CREATE TRIGGER finishMatch AFTER UPDATE ON matchDetails
 FOR EACH ROW
@@ -467,6 +467,9 @@ START TRANSACTION;
 	WHERE matchID = _matchID;
 
 	DELETE FROM frame
+	WHERE matchID = _matchID;
+
+	DELETE FROM break
 	WHERE matchID = _matchID;
 
 -- reset table status

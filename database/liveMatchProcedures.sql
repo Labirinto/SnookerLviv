@@ -9,7 +9,8 @@ CREATE PROCEDURE getBreakData(IN matchID INT, IN xORy INT, INOUT player INT, INO
 BEGIN 
 	SELECT LM.frameCounter INTO frame
 	FROM liveMatch LM WHERE LM.matchID = matchID;
-	
+
+-- true: player1; false: player2;
 	IF xORy THEN
 		SELECT M.player1ID, M.tournamentID, M.player2ID
 		INTO player, tournament, opponent
@@ -99,7 +100,8 @@ START TRANSACTION;
 			CALL scoreIncrement(false, tableID);
 		END IF;
 
-		UPDATE liveMatch LM SET LM.points1=0, LM.points2=0, LM.break1=0, LM.break2=null, LM.frameCounter = frameCounter+1;
+		UPDATE liveMatch LM SET LM.points1=0, LM.points2=0, LM.break1=0, LM.break2=null, LM.frameCounter = frameCounter+1
+			WHERE LM.matchID = matchID;
 	END IF;
 
 COMMIT;
