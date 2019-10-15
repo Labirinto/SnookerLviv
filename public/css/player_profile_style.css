@@ -17,7 +17,7 @@
 	background-color: #33373B;
 	float: left;
 	margin-bottom: 30px;
-	border-radius: 3px;
+	border-radius: 4px;
 	overflow: hidden;
 }
 .player_profile_img {
@@ -33,7 +33,7 @@
 	background-color: #33373B;
 	display: inline-block;
 	margin-bottom: 30px;
-	border-radius: 3px;
+	border-radius: 4px;
 	border-top: 3px solid #61892F;
 }
 .player_profile_personalInfo table {

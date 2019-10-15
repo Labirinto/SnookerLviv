@@ -16,8 +16,8 @@ body {
 	text-transform: uppercase;
 	font-weight: normal;
 	font-size: 12px;
-	border-top: 5px solid #61892F;
-	border-radius: 3px;
+	border-top: 3px solid #61892F;
+	border-radius: 4px;
 }
 .list-match-lobby-frame-section tbody {
 	display: table-row-group;
@@ -27,8 +27,8 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	background-color: #474B4F;
-    border-bottom: 5px solid #61892F;
-	border-radius: 3px;
+    border-bottom: 3px solid #61892F;
+	border-radius: 4px;
     padding-top: 10px;
 	height: 280px;
 	max-height: 280px;
