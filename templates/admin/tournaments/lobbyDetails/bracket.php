@@ -104,9 +104,9 @@ function printBracketMatch($i, $matchID, $matchNum, $player1, $score1, $seed1, $
 		print("<div class=\"bracket_item\">"); ?>
 		
 		<div class="null"></div>
-		<a href="matchLobby.php?id=<?=$matchID?>">
-			<div class="match_number"> <?=$matchNum?> </div>
-		</a>
+		<div class="match_number"> 
+			<a href="matchLobby.php?id=<?=$matchID?>"><?=$matchNum?> </a>
+		</div>
 		<div class="youtube_logo">
 			<?php if(isset($youtube)) { ?>
             <a href="<?=YT_HEADER.$youtube?>">
