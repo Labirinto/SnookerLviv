@@ -50,7 +50,7 @@ function printPlayer($name, $img)
 function printLiveMatch($matchNum, $player1, $score1, $points1, $break1, $img1, $player2, $score2, $points2, $break2, $img2, $bestOf)
 { ?>
 
-   <div class="list-match-lobby-table">
+   <div class="list-match-lobby">
 		<h3 class="list-match-lobby-info">Раунд 1 - Зустріч <?=$matchNum?></h3>
 		<div class="list-match-lobby-player-table">
 			<?php printPlayer($player1, $img1); ?>
@@ -59,7 +59,7 @@ function printLiveMatch($matchNum, $player1, $score1, $points1, $break1, $img1, 
 					<tbody>
 						<tr>
 							<td><?=$score1?></td>
-							<th>Frames</th>
+							<th>Фрейми</th>
 							<td><?=$score2?></td>
 						</tr>
 						<tr class="list-match-lobby-frame-details">
@@ -67,7 +67,7 @@ function printLiveMatch($matchNum, $player1, $score1, $points1, $break1, $img1, 
 						</tr>
 						<tr>
 							<td><?=$points1?></td>
-							<th>Points</th>
+							<th>Очки</th>
 							<td><?=$points2?></td>
  						</tr>
 						<tr class="list-match-lobby-frame-details">
@@ -75,7 +75,7 @@ function printLiveMatch($matchNum, $player1, $score1, $points1, $break1, $img1, 
 						</tr>
 						<tr>
 							<td><?=$break1?></td>
-							<th>Break</th>
+							<th>Брейки</th>
 							<td><?=$break2?></td>
 						</tr>
 					</tbody>
