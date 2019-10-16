@@ -195,7 +195,8 @@ FROM _match M
 CREATE VIEW playerTournamentView AS
 SELECT
     PT.playerID AS playerID, CONCAT(P.lastName, ' ', P.firstName) AS playerName,
-    PT.seed, PT.tournamentID, T.name AS tournamentName
+    P.photo AS photo, PT.seed, PT.tournamentID, P.birthday AS birthday,
+	T.name AS tournamentName
 FROM playerTournament PT 
     JOIN player P ON PT.playerID=P.id
 	JOIN tournament T ON PT.tournamentID=T.id;
