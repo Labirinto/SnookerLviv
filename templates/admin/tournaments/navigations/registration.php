@@ -2,8 +2,8 @@
 
 <nav class="navigation navigation-down">
     <ul>
-        <li><a href="<?=$header?>&onClick=players">Players</a></li>
-        <li><a href="<?=$header?>&onClick=register">Register</a></li>
+        <li><a href="<?=$header?>&onClick=players">Гравці</a></li>
+        <li><a href="<?=$header?>&onClick=register">Зареєструвати</a></li>
     </ul>
 </nav>
 
@@ -14,7 +14,7 @@
 	
 	<form action="registration/stop.php" method="post">
 		<input type="hidden" name="id" value="<?=$tournamentID?>"/>
-		<button type="submit">Stop Registration</button>
+		<button type="submit">Закінчити реєстрацію</button>
 	</form>
 </div>
 

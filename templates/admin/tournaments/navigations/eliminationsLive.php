@@ -3,11 +3,11 @@
 
 <nav class="navigation navigation-down">
     <ul>
-        <li><a href="<?=$header?>&onClick=live">Live</a></li>
-        <li><a href="<?=$header?>&onClick=matches">Matches</a></li>
-        <li><a href="<?=$header?>&onClick=bracket">Bracket</a></li>
-        <li><a href="<?=$header?>&onClick=players">Players</a></li>
-        <li><a href="<?=$header?>&onClick=breaks">Breaks</a></li>
+        <li><a href="<?=$header?>&onClick=live">Наживо</a></li>
+        <li><a href="<?=$header?>&onClick=matches">Матчі</a></li>
+        <li><a href="<?=$header?>&onClick=bracket">Сітка</a></li>
+        <li><a href="<?=$header?>&onClick=players">Гравці</a></li>
+        <li><a href="<?=$header?>&onClick=breaks">Брейки</a></li>
     </ul>
 </nav>
 

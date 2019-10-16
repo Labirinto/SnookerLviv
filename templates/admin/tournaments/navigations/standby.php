@@ -10,6 +10,6 @@
 			<style>#divisor{width:20px}</style>
 		</div>
         
-		<li><a href="<?=$header?>&onClick=players">Players</a></li>
+		<li><a href="<?=$header?>&onClick=players">Гравці</a></li>
     </ul>
 </nav>
