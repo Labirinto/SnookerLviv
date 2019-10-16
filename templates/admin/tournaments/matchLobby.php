@@ -56,7 +56,6 @@ function printLobby($counter, $roundType, $roundNo, $bestOF,
 			</div>
 		</div>
 	</div>
-	<br>
 
 <?php }
 
@@ -68,28 +67,28 @@ function framesHeader()
 	<table class="match_lobby_table">
 		<thead class="match_lobby_table_thead">
 			<tr>
-				<th><span>breaks</span></th>
-				<th><span>points</span></th>
-				<th><span>frame</span></th>
-				<th><span>points</span></th>
-				<th><span>breaks</span></th>
+				<th><span>брейки</span></th>
+				<th><span>очки</span></th>
+				<th><span>фрейми</span></th>
+				<th><span>очки</span></th>
+				<th><span>брейки</span></th>
 			</tr>
 		</thead>
 		<tbody class="match_lobby_table_tbody">
 <?php }
 
 
-function printFrame($counter, $score1, $score2, $breaks1, $breaks2)
+function printFrame($counter, $score1, $score2, $breaks1, $breaks2, $BL, $BR)
 { 
-	$e_o = ($counter%2) ? "odd" : "even"
+	$e_o = ($counter%2) ? "even" : "odd";
 ?>
 
 	<tr class="match_lobby_table_tbody_<?=$e_o?>">
-		<td class="match_lobby_table_name_left"><?=$breaks1?></td>
+		<td class="match_lobby_table_name_left <?=$BL?>"><?=$breaks1?></td>
 		<td class="match_lobby_table_name_left"><?=$score1?></td>
 		<td class="match_lobby_table_number_<?=$e_o?>"><?=$counter?></td>
 		<td class="match_lobby_table_date_center"><?=$score2?></td>
-		<td class="match_lobby_table_date_left"><?=$breaks2?></td>
+		<td class="match_lobby_table_date_left <?=$BR?>"><?=$breaks2?></td>
 	</tr>
 
 <?php }
@@ -108,10 +107,12 @@ function printFrames($matchID)
 	$query = "SELECT F.counter, F.points1, F.points2 
 		FROM frame F WHERE F.matchID=? ORDER BY F.counter";
 	$data = query($query, $matchID);
-	if( count($data) > 0 )
+	$data_count = count($data);
+
+	if( $data_count > 0 )
 		framesHeader();
 
-	for($i = 0; $i < count($data); $i++)
+	for($i = 0; $i < $data_count; $i++)
 	{
 		$frame = $data[$i][0];
 		$points1 = $data[$i][1]; $points2 = $data[$i][2];
@@ -120,7 +121,9 @@ function printFrames($matchID)
 			WHERE B.frameCounter=? AND B.matchID=? ORDER BY 1, 2 DESC";
 		$breaks = query($query, $frame, $matchID);
 		$breaks1 = ""; $breaks2 = "";
-		for($j = 0; $j < count($breaks); $j++)
+
+		$break_count = count($breaks);
+		for($j = 0; $j < $break_count; $j++)
 		{
 			$xORy = $breaks[$j][0]; $points = $breaks[$j][1];
 			if($xORy) $breaks1 .= ($points.", ");
@@ -129,10 +132,19 @@ function printFrames($matchID)
 		$breaks1 = substr($breaks1, 0, -2);
 		$breaks2 = substr($breaks2, 0, -2);
 
-		printFrame($i+1, $points1, $points2, $breaks1, $breaks2);
+		
+		$BL = ""; $BR = "";
+		if($i === 0){
+			$BL = "border_tl"; $BR = "border_tr";
+		}
+		else if($i+1 >= $data_count){
+			$BL = "border_bl"; $BR = "border_br";
+		}
+
+		printFrame($i+1, $points1, $points2, $breaks1, $breaks2, $BL, $BR);
 	}
 	
-	if( count($data) > 0 )
+	if( $data_count > 0 )
 		framesFooter();
 }
 
