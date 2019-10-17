@@ -27,7 +27,7 @@ BEGIN
 	WHERE PT.tournamentID = tournament AND PT.seed = seed;
 
 	IF matchID != -1 THEN
-		CALL putPlayerIntoNextMatch(matchID, playerID, 0);
+		CALL putPlayerIntoMatch(matchID, playerID, 0);
 	END IF;
 END;
 
