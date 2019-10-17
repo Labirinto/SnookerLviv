@@ -75,7 +75,7 @@ function printLiveMatch($matchNum, $player1, $score1, $points1, $break1, $img1, 
 						</tr>
 						<tr>
 							<td><?=$break1?></td>
-							<th>Брейки</th>
+							<th>Брейк</th>
 							<td><?=$break2?></td>
 						</tr>
 					</tbody>
