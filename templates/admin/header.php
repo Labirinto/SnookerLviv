@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/match_lobby_style.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/tournament_list_style.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/player_profile_style.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/players_list_style.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/participants.css"> 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -41,7 +40,7 @@
                         <li><a href="<?=PATH_H?>admin/players">Гравці</a></li>
                         <li><a href="<?=PATH_H?>admin/clubs">Клуби</a></li>
                         <li><a href="<?=PATH_H?>admin/leagues">Ліги</a></li>
-                        <li><a href="<?=PATH_H?>admin/rankings">Рейтиги</a></li>
+                        <li><a href="<?=PATH_H?>admin/rankings">Рейтинги</a></li>
                         <li><a href="<?=PATH_H?>admin/matches">Матчі</a></li>
                     </ul>
                 </nav>
