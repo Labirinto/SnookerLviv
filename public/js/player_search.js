@@ -1,4 +1,4 @@
-function search()
+function player_search()
 {
     var input, filter, table, tr, td, i, txtValue, ul, li, a;
     input = document.getElementById("myInput");

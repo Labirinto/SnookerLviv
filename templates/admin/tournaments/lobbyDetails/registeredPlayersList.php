@@ -44,7 +44,7 @@ function generalHeader()
 		</div>
 		<div class="players_list_search_field" style="display:flex">
 			<form class="centered_search_div" action="#">
-				<input id="myInput" onkeyup="search()" type="text" placeholder="Пошук.." name="search">
+				<input id="myInput" onkeyup="player_search()" type="text" placeholder="Пошук.." name="search">
 			</form>
 		</div>
 	</div>

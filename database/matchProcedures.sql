@@ -1,6 +1,7 @@
 
 DROP PROCEDURE IF EXISTS getWinnerAndLoser;
-DROP PROCEDURE IF EXISTS putPlayerIntoNextMatch;
+DROP PROCEDURE IF EXISTS checkNextMatch;
+DROP PROCEDURE IF EXISTS putPlayerIntoMatch;
 DROP PROCEDURE IF EXISTS updateStandingsForPlayer;
 DROP TRIGGER IF EXISTS finishMatch;
 DROP TRIGGER IF EXISTS matchDetailsADD;
@@ -95,18 +96,22 @@ END;
 
 
 -- put player into next match procedure
-CREATE PROCEDURE putPlayerIntoNextMatch(IN nextMatchID INT, IN playerID INT)
+-- position: 1-first, 2-second, 0-check for first available
+CREATE PROCEDURE putPlayerIntoMatch(IN nextMatchID INT, IN playerID INT, IN position INT)
 BEGIN
--- put winner into next match (first not empty)
-	IF( EXISTS(SELECT m.player1ID FROM _match m WHERE m.id = nextMatchID AND m.player1ID = -2 LIMIT 1) )
+
+-- put player into match (first OR first not empty)
+	IF (position = 1 OR position = 0) AND 
+		( EXISTS(SELECT m.player1ID FROM _match m WHERE m.id = nextMatchID AND m.player1ID = -2 LIMIT 1) )
 	THEN
-	-- put winner into player1ID
+	-- put player into player1ID
 		UPDATE _match m SET m.player1ID = playerID
 			WHERE m.id = nextMatchID;
+
 -- execute only if above was false
 	ELSEIF( EXISTS(SELECT m.player2ID FROM _match m WHERE m.id = nextMatchID AND m.player2ID = -2 LIMIT 1) )
 	THEN
-	-- put winner into player2ID
+	-- put player into player2ID
 		UPDATE _match m SET m.player2ID = playerID 
 			WHERE m.id = nextMatchID;
 	END IF;
@@ -152,6 +157,43 @@ BEGIN
 END;
 
 
+-- check next match position for player (1 or 2)
+CREATE PROCEDURE checkNextMatch(IN prvRndType VARCHAR(20), IN prvRndNo INT, IN prvCounter INT, IN nxtID INT, IN playerID INT)
+BEGIN
+	DECLARE nxtRndType VARCHAR(20) DEFAULT "";
+	SELECT M.roundType INTO nxtRndType
+	FROM _match M WHERE M.id = nxtID;
+
+	IF prvRndType = "LOW" AND nxtRndType = "LOW" THEN
+		IF prvRndNo%2 THEN
+			CALL putPlayerIntoMatch(nxtID, playerID, 1);
+		ELSE
+			IF prvCounter%2 THEN
+				CALL putPlayerIntoMatch(nxtID, playerID, 1);
+			ELSE
+				CALL putPlayerIntoMatch(nxtID, playerID, 2);
+			END IF;
+		END IF;
+
+	ELSEIF prvRndType = "K/O" AND nxtRndType = "K/O" THEN
+		IF prvCounter%2 THEN
+			CALL putPlayerIntoMatch(nxtID, playerID, 1);
+		ELSE
+			CALL putPlayerIntoMatch(nxtID, playerID, 2);
+		END IF;
+
+	ELSEIF prvRndType = "UP" AND nxtRndType = "UP" THEN
+		IF prvCounter%2 THEN
+			CALL putPlayerIntoMatch(nxtID, playerID, 1);
+		ELSE
+			CALL putPlayerIntoMatch(nxtID, playerID, 2);
+		END IF;
+	
+	ELSEIF prvRndType = "UP" AND nxtRndType = "K/O" THEN
+		CALL putPlayerIntoMatch(nxtID, playerID, 1);
+	
+	END IF;
+END;
 
 -- trigger invoked only if match status is changed
 -- TODO less computation in trigger
@@ -160,7 +202,7 @@ FOR EACH ROW
 BEGIN
 -- matches
 	DECLARE winnerMatchID, loserMatchID, roundNo, finalRound INT DEFAULT -1;
-	DECLARE winnerMatchCounter, loserMatchCounter, tournamentID INT DEFAULT -1;
+	DECLARE myCounter, winnerMatchCounter, loserMatchCounter, tournamentID INT DEFAULT -1;
 	DECLARE roundType VARCHAR(20) DEFAULT "";
 -- players
 	DECLARE player1ID, player2ID INT DEFAULT -2;
@@ -183,8 +225,8 @@ BEGIN
 	
 	-- get all data from _match
 	-- TODO change winnerMatchID and loserMatchID into ID's,not counter
-		SELECT M.roundType, M.roundNo, M.player1ID, M.player2ID, M.tournamentID
-		INTO roundType, roundNo, player1ID, player2ID, tournamentID
+		SELECT M.counter, M.roundType, M.roundNo, M.player1ID, M.player2ID, M.tournamentID
+		INTO myCounter, roundType, roundNo, player1ID, player2ID, tournamentID
 		FROM _match M WHERE M.id = NEW.matchID;
 
 		CALL updateHighestBreak(NEW.matchID, player1ID);
@@ -227,45 +269,49 @@ BEGIN
 			END IF;
 		ELSE
 
-	-- get all match data	
-		SELECT M.winnerMatchID, M.loserMatchID, M.loserPlaces
-		INTO winnerMatchCounter, loserMatchCounter, loserPlaces
-		FROM _match M WHERE M.id = NEW.matchID;
+		-- get all match data	
+			SELECT M.winnerMatchID, M.loserMatchID, M.loserPlaces
+			INTO winnerMatchCounter, loserMatchCounter, loserPlaces
+			FROM _match M WHERE M.id = NEW.matchID;
 
-	-- getMatchIDs for counters
-		SELECT M.id INTO winnerMatchID
-		FROM _match M WHERE M.tournamentID=tournamentID AND M.counter=winnerMatchCounter AND M.roundType != "Group";
-		SELECT M.id INTO loserMatchID
-		FROM _match M WHERE M.tournamentID=tournamentID AND M.counter=loserMatchCounter AND M.roundType != "Group";
-	
-	-- get winnerPlayerID and loserPlayerID depending on walkovers OR score
-		CALL getWinnerAndLoser(winnerPlayerID, loserPlayerID, player1ID, player2ID, NEW.matchID);
-
-	-- put winner into next match
-		CALL putPlayerIntoNextMatch(winnerMatchID, winnerPlayerID);
-
-	-- if we are in LOW or KO update standings for losers
-		IF loserPlayerID != -1 AND (roundtype = "LOW" OR roundType = "K/O")
-		THEN
-		-- update standings for loser
-			CALL updateStandingsForPlayer(tournamentID, loserPlayerID, loserPlaces, roundNo, roundType);
-	
-	-- if we are in UP
-		ELSEIF roundType = "UP" THEN
-		-- put loserIntoNextMatch
-			CALL putPlayerIntoNextMatch(loserMatchID, loserPlayerID);
-		END IF;
+		-- getMatchIDs for counters
+			SELECT M.id INTO winnerMatchID
+			FROM _match M WHERE M.tournamentID=tournamentID AND M.counter=winnerMatchCounter AND M.roundType != "Group";
+			SELECT M.id INTO loserMatchID
+			FROM _match M WHERE M.tournamentID=tournamentID AND M.counter=loserMatchCounter AND M.roundType != "Group";
 		
-	-- if we are in Final
-		SELECT t.KO_Rounds INTO finalRound FROM tournament t WHERE t.id=tournamentID;
-		IF roundType = "K/O" AND roundNo = finalRound
-		THEN
-		-- update standings for winner
-			CALL updateStandingsForPlayer(tournamentID, winnerPlayerID, "Place 1", roundNo+1, "K/O");
+		-- get winnerPlayerID and loserPlayerID depending on walkovers OR score
+			CALL getWinnerAndLoser(winnerPlayerID, loserPlayerID, player1ID, player2ID, NEW.matchID);
 
-		-- finish the tournament (status->"Finished")
-			UPDATE tournament t SET t.status = "Finished" WHERE t.id = tournamentID;
-		END IF;
+		-- put winner into next match
+			CALL checkNextMatch(roundType, roundNo, myCounter, winnerMatchID, winnerPlayerID);
+
+		-- if we are in LOW or KO update standings for losers
+			IF loserPlayerID != -1 AND (roundtype = "LOW" OR roundType = "K/O")
+			THEN
+			-- update standings for loser
+				CALL updateStandingsForPlayer(tournamentID, loserPlayerID, loserPlaces, roundNo, roundType);
+		
+		-- if we are in UP
+			ELSEIF roundType = "UP" THEN
+			-- put loserIntoNextMatch
+				IF roundNo = 1 AND (myCounter%2) THEN
+					CALL putPlayerIntoMatch(loserMatchID,loserPlayerID,1);
+				ELSE
+					CALL putPlayerIntoMatch(loserMatchID,loserPlayerID,2);
+				END IF;
+			END IF;
+			
+		-- if we are in Final
+			SELECT t.KO_Rounds INTO finalRound FROM tournament t WHERE t.id=tournamentID;
+			IF roundType = "K/O" AND roundNo = finalRound
+			THEN
+			-- update standings for winner
+				CALL updateStandingsForPlayer(tournamentID, winnerPlayerID, "Place 1", roundNo+1, "K/O");
+
+			-- finish the tournament (status->"Finished")
+				UPDATE tournament t SET t.status = "Finished" WHERE t.id = tournamentID;
+			END IF;
 		END IF;
 	END IF;
 END;
