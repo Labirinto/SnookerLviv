@@ -87,8 +87,10 @@ function generalHeader()
 { ?>
 	<div class="sub-container">
 		<div class="calendar_header">
-			<img class="header_icon" alt="calendar" src="<?=PATH_H?>img/web/calendar.png"> 
-			<h1 class="calendar_sign">Каледар</h1>
+			<h1 class="calendar_sign">
+				<img class="header_icon" alt="calendar" src="<?=PATH_H?>img/web/calendar.png"> 
+				Каледар
+			</h1>
 		</div>
 <?php
 }

@@ -34,7 +34,8 @@
 function generalHeader()
 { ?>
 	<script type="text/javascript" src="/~levko/js/player_search.js"></script>
-    <div class="header_search">
+    <div class="sub-container">
+	<div class="header_search">
         <div class="participants_header">
             <h3>Список гравців</h3>
             <div class="tab">
@@ -52,6 +53,7 @@ function generalHeader()
 function generalFooter()
 { ?>
     </div>
+	</div>
 <?php
 }
 
