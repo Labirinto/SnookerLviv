@@ -86,14 +86,7 @@
 
 /* RADIUS */
 
-
 .group_border_radius {
     border-top: 3px solid #61892F;
     border-radius: 4px;
-}
-.group_border_radius-br {
-    border-bottom-right-radius: 4px;
-}
-.group_border_radius-bl {
-    border-bottom-left-radius: 4px;
 }

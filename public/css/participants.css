@@ -78,11 +78,6 @@ i {
 	border-radius: 3px;
 	border-top: 3px solid #61892F;	
 }
-table col[class*="col-"] {
-	position: static;
-	float: none;
-	display: table-column;
-}
 .participants_table {
 	width: 1067px;
 	max-width: 1067px;
@@ -132,12 +127,6 @@ table.participants_table .col-6 {
 }
 .participants_table tbody tr>:nth-child(1) {
 	border-right: none;
-}
-.ptable_border_radius_br {
-	border-bottom-right-radius: 3px;
-}
-.ptable_border_radius_bl {
-	border-bottom-left-radius: 3px;
 }
 .participants_table_name {
 	display: flex;

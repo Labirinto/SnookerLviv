@@ -24,6 +24,11 @@ a {
     text-decoration: none;
     color: #fff;
 }
+table col[class*="col-"] {
+	position: static;
+	float: none;
+	display: table-column;
+}
 .float_left {
 	float: left;
 }
@@ -87,9 +92,10 @@ a {
 .login input[type="submit"]:hover {
 	background-color: #2d6b30;
 }
+
 .radius_br {
-	border-bottom-right-radius: 3px;
+	border-bottom-right-radius: 4px;
 }
 .radius_bl {
-	border-bottom-left-radius: 3px;
+	border-bottom-left-radius: 4px;
 }

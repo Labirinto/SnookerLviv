@@ -3,11 +3,6 @@
 	font-size: 22px;
 	text-align: left;
 }
-table col[class*="col-"] {
-	position: static;
-	float: none;
-	display: table-column;
-}
 .matches_list_table{
     margin-bottom: 50px;
     width: 1067px;
@@ -112,10 +107,4 @@ table.matches_list_table .col-6 {
 .matches_list_table_borRad_div {
     border-top: 3px solid #61892F;
     border-radius: 4px;
-}
-.border-bl {
-	border-bottom-left-radius: 3px;
-}
-.border-br {
-	border-bottom-right-radius: 3px;
 }

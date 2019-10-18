@@ -56,8 +56,13 @@ function printGroup($tournID, $groupNo)
         FROM matchesTournamentView TV  
         WHERE TV.tournamentID=? AND TV.roundType=? AND groupNum=?
         ORDER BY TV.counter";
-
-	?><div class="round_num"><h3 class="matches_list_table_round_num">ГРУПА <?=$groupNo?></h3></div><?php
+?>
+		<div class="round_num">
+			<h3 class="matches_list_table_round_num">
+				ГРУПА <?=$groupNo?>
+			</h3>
+		</div>
+<?php
 
 	printHeader();
     
@@ -110,7 +115,7 @@ function printMatch($counter, $last,$matchID, $player1, $score1, $player2, $scor
 { ?>
 	<tr onclick="window.location.href='matchLobby.php?id=<?=$matchID?>';"
 		class="matches_list_table_tbody_<?=($counter%2)?odd:even?> matches_list_table_pointer">
-		<td class="matches_list_table_number <?=($counter%2)?"odd_num":""?> <?=($last)?"border-bl":""?>"><?=$counter?></td>
+		<td class="matches_list_table_number <?=($counter%2)?"odd_num":""?><?=($last)?" radius_bl":""?>"><?=$counter?></td>
 		<td class="matches_list_table_name_right"><?=$player1?></td>
 		<td class="matches_list_table_score">
 			<table class="matches_list_table_score_row">
@@ -122,7 +127,7 @@ function printMatch($counter, $last,$matchID, $player1, $score1, $player2, $scor
 			</table>
 		</td>
 		<td class="matches_list_table_name_left"><?=$player2?></td>
-		<td class="matches_list_table_youtube <?=($counter%2)?"":"even_youtube"?> <?=($last)?"border-br":""?>">
+		<td class="matches_list_table_youtube <?=($counter%2)?"":"even_youtube"?><?=($last)?" radius_br":""?>">
 			<?php if(isset($youtube)){ ?>
 			<a href="<?=(YT_HEADER.$youtube)?>">
 				<img src="/~levko/img/youtube.png">

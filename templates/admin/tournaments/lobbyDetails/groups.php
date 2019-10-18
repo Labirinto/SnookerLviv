@@ -65,7 +65,7 @@ function printMatches($id, $groupNum, $playerNum, $nrOfPlayers, $isBottom)
 			<td><?=$fWon?></td>
 			<td><?=$fLost?></td> 
 			<td><?=($fWon-$fLost)?></td>
-			<td <?=$isBottom?>><?=$res?>%</td>
+			<td class="<?=$isBottom?>"><?=$res?>%</td>
 <?php
 }
 
@@ -89,12 +89,12 @@ function firstRow($nrOfPlrs)
 function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPlayers, $groupNum, $id)
 { 
 	if($last)
-		$isBottom = "class=\"group_border_radius-br\"";
+		$isBottom = "radius_br";
 	else
 		$isBottom = "";
 ?>
 	<tr class="group_row_<?=$e_o?>">
-		<td class="group_<?=$e_o?>_num <?=($last)?"group_border_radius-bl":""?>"><?=$playerNum?></td>
+		<td class="group_<?=$e_o?>_num<?=($last)?" radius_bl":""?>"><?=$playerNum?></td>
 		<td><?=$playerName?>(<?=$seed?>)</td>
 		<?php
 			

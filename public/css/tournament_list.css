@@ -26,11 +26,6 @@
 	border-radius: 3px;
 	border-top: 3px solid #61892F;	
 }
-table col[class*="col-"] {
-	position: static;
-	float: none;
-	display: table-column;
-}
 .calendar_table {
 	width: 1067px;
 	max-width: 1067px;

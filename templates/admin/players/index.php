@@ -8,19 +8,20 @@
 	$data = query("SELECT P.id, P.lastName, P.firstName, P.photo, P.birthday
 				FROM player P 
 				WHERE P.id NOT IN(-1,-2) ORDER BY 2");
+	$data_count = count($data);
 
 	listHeader();
-    for($i = 0; $i<count($data); $i++)
+    for($i = 0; $i < $data_count; $i++)
     {
         $id = $data[$i][0]; $fName = $data[$i][1];
         $lName = $data[$i][2]; $img = $data[$i][3];
 		$birthday = $data[$i][4];
-        printListPlayer($i+1, $id, $fName." ".$lName, $img, $birthday, "");
+        printListPlayer($i+1, $id, $fName." ".$lName, $img, $birthday, ($i+1==$data_count));
     }
     listFooter();
 
     barsHeader();
-    for($i = 0; $i<count($data); $i++)
+    for($i = 0; $i < $data_count; $i++)
     {
         $id = $data[$i][0]; $fName = $data[$i][1];
         $lName = $data[$i][2]; $img = $data[$i][3];
@@ -93,13 +94,15 @@ function listFooter()
 <?php
 }
 
-function printListPlayer($i, $id, $name, $img, $birthday, $seed)
+function printListPlayer($i, $id, $name, $img, $birthday, $isLast)
 {
     $e_o = ($i%2) ? "odd" : "even";
  ?>
             <tr onclick="window.location.href='/~levko/admin/players/lobby.php?id=<?=$id?>';"
                 class="participants_table_tbody_<?=$e_o?> participants_table_pointer">
-                <td class="participants_table_number <?=$e_o?>_num"><?=$i?></td>
+                <td class="participants_table_number <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
+					<?=$i?>
+				</td>
                 <td class="participants_table_name">
                     <img class="circle_img" src="<?=PLAYER_IMG.$img?>" alt="img">
                     <span><?=$name?></span>
@@ -111,7 +114,7 @@ function printListPlayer($i, $id, $name, $img, $birthday, $seed)
                 </td>
                 <td>
                 </td>
-                <td>
+                <td class="<?=($isLast)?"radius_br":""?>">
                     <span><?=$seed?></span>
                 </td>
             </tr>
