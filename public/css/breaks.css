@@ -23,10 +23,10 @@
 	margin: 0;
 	padding: 0;
 }
-table.breaks_table .col-1 {
+table.breaks_table .col-2 {
  	width: 3%;
 }
-table.breaks_table .col-2 {
+table.breaks_table .col-1 {
  	width: 20%;
 }
 table.breaks_table .col-3 {
@@ -60,7 +60,7 @@ table.breaks_table .col-5 {
 	height: 50px;
 	max-height: 50px;
 }
-.breaks_table tbody tr>:nth-child(1) {
+.breaks_table tbody tr>:nth-child(2) {
 	border-right: none;
 }
 .breaks_table_name {

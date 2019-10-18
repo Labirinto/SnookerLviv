@@ -28,13 +28,13 @@ function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$isLast)
  ?>
             <tr onclick="window.location.href='/~levko/admin/tournaments/matchLobby.php?id=<?=$mID?>';"
                 class="breaks_table_tbody_<?=$e_o?> breaks_table_pointer">
-                <td class="breaks_table_points <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
-					<?=$pts?>
-				</td>
-                <td class="breaks_table_name">
+                <td class="breaks_table_name<?=($isLast)?" radius_bl":""?>">
                     <img class="circle_img" src="<?=PLAYER_IMG.$plrPhoto?>" alt="img">
                     <span><?=$plrName?></span>
                 </td>
+                <td class="breaks_table_points <?=$e_o?>_num">
+					<?=$pts?>
+				</td>
                 <td>
                 </td>
                 <td>
@@ -63,8 +63,8 @@ function printHeader()
 		</colgroup>
 		<thead class="breaks_table_thead">
 			<tr>
-				<th>#</th>
 				<th>Ім'я</th>
+				<th>Очки</th>
 				<th>Раунд</th>
 				<th>...</th>
 				<th>Суперник</th>
