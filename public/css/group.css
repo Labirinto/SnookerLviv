@@ -1,12 +1,12 @@
 .group {
 	display: inline-block;
-    width: 1067px;
-    max-width: 1067px;
+    width: 1080px;
+    max-width: 1080px;
     margin-bottom: 100px;
 }
 .round_num_div {
-    width: 1067px;
-    max-width: 1067px;
+    width: 1080px;
+    max-width: 1080px;
 }
 .matches_list_table_round_num {
     text-transform: uppercase;
@@ -27,9 +27,9 @@
 }
 .group-table {
     background-color: #474B4F;
-    width: 1067px;
-    max-width: 1067px;
-    min-width: 1067px;
+    width: 1080px;
+    max-width: 1080px;
+    min-width: 1080px;
     border-radius: 4px;
 }
 .group-table th {

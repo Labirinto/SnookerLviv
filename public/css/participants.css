@@ -5,13 +5,13 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 1067px;
-	max-width: 1067px;
+	width: 1080px;
+	max-width: 1080px;
 	padding-top: 
 }
 .participants_header {
-	width: 1067px;
-	max-width: 1067px;
+	width: 1080px;
+	max-width: 1080px;
 	text-transform: uppercase;
 	font-size: 22px;
 	display: flex;
@@ -79,9 +79,9 @@ i {
 	border-top: 3px solid #61892F;	
 }
 .participants_table {
-	width: 1067px;
-	max-width: 1067px;
-	min-width: 1067px;
+	width: 1080px;
+	max-width: 1080px;
+	min-width: 1080px;
 	margin: 0;
 	padding: 0;
 }
@@ -171,7 +171,7 @@ table.participants_table .col-6 {
   justify-content: space-between;
   margin: 0;
   padding: 0;
-  width: 1067px;
+  width: 1080px;
 }
 .players_u-list_item li {
 	list-style: none;

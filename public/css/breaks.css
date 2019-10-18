@@ -1,6 +1,6 @@
 .breaks_header {
-	width: 1067px;
-	max-width: 1067px;
+	width: 1080px;
+	max-width: 1080px;
 }
 .breaks_sign {
 	text-transform: uppercase;
@@ -17,9 +17,9 @@
 	border-top: 3px solid #61892F;	
 }
 .breaks_table {
-	width: 1067px;
-	max-width: 1067px;
-	min-width: 1067px;
+	width: 1080px;
+	max-width: 1080px;
+	min-width: 1080px;
 	margin: 0;
 	padding: 0;
 }
@@ -47,6 +47,9 @@ table.breaks_table .col-5 {
 	border-right: 1px solid #343A3F;
 }
 .breaks_table tr>:nth-child(5) {
+	border-right: none;
+}
+.breaks_table tbody tr>:nth-child(1) {
 	border-right: none;
 }
 .breaks_table_thead {
