@@ -256,6 +256,7 @@ CREATE VIEW breakView AS
 SELECT 
 	B.points, B.matchID, B.frameCounter, B.tournamentID, B.xORy,
 	B.playerID, CONCAT(P.lastName, ' ', P.firstName) AS playerName,
+	P.photo AS playerPhoto, O.photo AS opponentPhoto,
 	B.opponentID, CONCAT(O.lastName, ' ', O.firstName) AS opponentName
 FROM break B 
 	JOIN player P ON B.playerID = P.id
