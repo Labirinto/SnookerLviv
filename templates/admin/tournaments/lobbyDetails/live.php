@@ -9,12 +9,13 @@ $query = "SELECT TV.counter, TV.player1Name, TV.player2Name,
 	ORDER BY TV.counter";
 
 $data = query($query, $tournamentID, "Live");
+$data_count = count($data);
 
 //live matches exist
-if(count($data) > 0)
+if($data_count > 0)
 {
 	//print all of them
-	for($i = 0; $i < count($data); $i++)
+	for($i = 0; $i < $data_count; $i++)
 	{
 		$counter = $data[$i][0];
 		$player1 = $data[$i][1]; $player2 = $data[$i][2];
@@ -30,7 +31,7 @@ if(count($data) > 0)
 }
 else
 {
-	?><mark>No Live matches available</mark><?php
+	?><h3>Немає жодних матчів</h3><?php
 }
 
 

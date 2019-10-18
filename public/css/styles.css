@@ -1,7 +1,6 @@
 .black_text{
 	color: black;
 }
-
 input, select, button{
 	color: black;
 }
@@ -42,12 +41,6 @@ a {
 	align-items: center;
 	justify-content: center;
 }
-/*table {
-    border-collapse: collapse;
-	color: #fff;
-    display: table;
-    border-spacing: 0;
-}*/
 .clearfix:after {
 	content:'';
 	display: table;
