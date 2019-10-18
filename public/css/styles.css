@@ -40,6 +40,7 @@ a {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 100px;
 }
 .clearfix:after {
 	content:'';
@@ -51,9 +52,7 @@ a {
 	background-color: #232b2b;
 	width: 100%;
 	top: 0;
-	/*position: fixed;*/
 }
-
 .logologin img {
 	width: 55px;
 	height: 36px;
@@ -77,7 +76,6 @@ a {
 	padding: 4px 0px 4px 6px;
 	outline: none;
 }
-
 .login input[type="submit"] {
 	border: 0px;	
 	margin-right: 35px;
@@ -86,8 +84,12 @@ a {
 	color: white;
 	outline: none;
 }
-
 .login input[type="submit"]:hover {
 	background-color: #2d6b30;
 }
-
+.radius_br {
+	border-bottom-right-radius: 3px;
+}
+.radius_bl {
+	border-bottom-left-radius: 3px;
+}
