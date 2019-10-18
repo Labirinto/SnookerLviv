@@ -11,13 +11,26 @@
 
 
 		list($fName, $lName, $img, $birthday, $highestBreak) = getPlayer($playerID); 
-		adminRender("players/lobby.php", ["title"=>"Player lobby", "fName"=>$fName, "lName"=>$lName, "img"=>$img, "playerID"=>$playerID, "birthday"=>$birthday, "highestBreak"=>$highestBreak]);
+		
+		list($tournamentCtr, $breakCtr) = cntTournamentAndBreak($playerID);
+		adminRender("players/lobby.php", ["title"=>"Player lobby", "fName"=>$fName, "lName"=>$lName, "img"=>$img, "playerID"=>$playerID, "birthday"=>$birthday, "highestBreak"=>$highestBreak, "tournamentCtr"=>$tournamentCtr, "breakCtr"=>$breakCtr]);
 	}
 	else
 	{
 		redirect("");
 	}
 
+
+function cntTournamentAndBreak($playerID)
+{
+	$query = "SELECT count(id) FROM break WHERE playerID=?";
+	$breaks_cnt = query($query, $playerID);
+
+	$query = "SELECT count(tournamentID) FROM playerTournamentView
+			WHERE playerID=?";
+	$tournaments_cnt = query($query, $playerID);
+	return array($tournaments_cnt[0][0], $breaks_cnt[0][0]);
+}
 
 function getPlayer($id)
 {

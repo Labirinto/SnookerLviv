@@ -52,28 +52,28 @@
 		<div class="player_profile_section02">
 			<a class="circle_hover" href="tournamentList.php?id=<?=$playerID?>">
 			<div class="player_profile_circle">
-				<div class="little_circle">37</div>
+				<div class="little_circle"><?=$tournamentCtr?></div>
 				<i class="fas fa-trophy"></i><br>
 				<span class="circle_text">турніри</span>
 			</div>
 			</a>
 			<a class="circle_hover" href="tournamentBreaks.php?id=<?=$playerID?>">
 			<div class="player_profile_circle">
-				<div class="little_circle">19</div>
+				<div class="little_circle"><?=$breakCtr?></div>
 				<i class="fas fa-trophy"></i> <br>
 				<span class="circle_text">брейки</span>
 			</div>
 			</a>
 			<a class="circle_hover" href="#" >
 			<div class="player_profile_circle">
-				<div class="little_circle">80</div>
+				<div class="little_circle">x</div>
 				<i class="fas fa-user-friends"></i><br>
 				<span class="circle_text">спаринги</span>
 			</div>
 			</a>
 			<a class="circle_hover" href="#">
 			<div class="player_profile_circle">
-				<div class="little_circle">44</div>
+				<div class="little_circle">x</div>
 				<i class="fas fa-user-friends"></i> <br>
 				<span class="circle_text">брейки</span>
 			</div>
