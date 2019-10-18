@@ -6,20 +6,20 @@
 		FROM playerTournamentView PTV
         WHERE PTV.tournamentID=? ORDER BY 1";
     $data = query($query, $tournamentID);
-   
+  	$data_count = count($data);
 
 	listHeader(); 
-	for($i = 0; $i<count($data); $i++)
+	for($i = 0; $i < $data_count; $i++)
     {
 		$seed = $data[$i][0]; $player = $data[$i][1];
 		$id = $data[$i][2]; $img = $data[$i][3];
 		$birthday = $data[$i][4];
-        printListPlayer($i+1, $id, $player, $img, $birthday, $seed);
+        printListPlayer($i+1,$id,$player,$img,$birthday,$seed,($i+1==$data_count));
     }
 	listFooter();
 
 	barsHeader();
-	for($i = 0; $i<count($data); $i++)
+	for($i = 0; $i < $data_count; $i++)
     {
 		$seed = $data[$i][0]; $player = $data[$i][1];
 		$id = $data[$i][2]; $img = $data[$i][3];
@@ -93,13 +93,15 @@ function listFooter()
 }
 
 
-function printListPlayer($i, $id, $name, $img, $birthday, $seed)
+function printListPlayer($i, $id, $name, $img, $birthday, $seed, $isLast)
 {
 	$e_o = ($i%2) ? "odd" : "even";
  ?>
 			<tr onclick="window.location.href='/~levko/admin/players/lobby.php?id=<?=$id?>';"
 				class="participants_table_tbody_<?=$e_o?> participants_table_pointer">
-				<td class="participants_table_number <?=$e_o?>_num"><?=$i?></td>
+				<td class="participants_table_number <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
+					<?=$i?>
+				</td>
 				<td class="participants_table_name">
 					<img class="circle_img" src="<?=PLAYER_IMG.$img?>" alt="img">
 					<span><?=$name?></span>
@@ -111,7 +113,7 @@ function printListPlayer($i, $id, $name, $img, $birthday, $seed)
 				</td>
 				<td>
 				</td>
-				<td>
+				<td class="<?=($isLast)?"radius_br":""?>">
 					<span><?=$seed?></span>
 				</td>
 			</tr>

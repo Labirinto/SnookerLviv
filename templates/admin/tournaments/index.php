@@ -55,85 +55,91 @@ function printList($status)
 		if( strcmp($age, "") || strcmp($sex, "") )
 			$name = $name . "(" . $age . " " . $sex . ")";
 		$e_o = ($i%2) ? "even" : "odd";
+		$isLast = ($i+1==$data_count);
 
-		printTournament($i+1, $id, $e_o, $name, $clubName);
+		printTournament($i+1, $id, $e_o, $name, $clubName, $isLast);
 	}
 
 	listFooter();
 }
 
-function printTournament($i, $id, $e_o, $name, $clubName)
+function printTournament($i, $id, $e_o, $name, $clubName, $isLast)
 { ?>
-				<tr onclick="window.location.href='lobby.php?id=<?=$id?>';"
-					class="tournament_list_table_tbody_<?=$e_o?> tournament_list_table_pointer">
-					<td class="tournament_list_table_number_<?=$e_o?>">
-						<?=$i?>
-					</td>
-					<td class="tournament_list_table_date_right">
-						<?=$name?>
-					</td>
-					<td class="tournament_list_table_date_center">
-						<?=$clubName?>
-					</td>
-					<td class="tournament_list_table_date_left">
-						DATE TMP
-					</td>
-				</tr>
+			<tr onclick="window.location.href='lobby.php?id=<?=$id?>';"
+			class="calendar_table_tbody_<?=$e_o?> calendar_table_pointer">
+				<td class="calendar_table_points <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
+					<?=$i?>
+				</td>
+				<td>
+					<?=$name?>
+				</td>
+				<td>
+					<?=$clubName?>
+				</td>
+				<td class="<?=($isLast)?"radius_br":""?>">
+					DATE TMP
+				</td>
+			</tr>
 <?php
 }
 
 function generalHeader()
 { ?>
-	<div class="page_header">
-		<img class="header_icon" alt="calendar" src="<?=PATH_H?>img/web/calendar.png"> 
-		<h1 class="tournament_list_table_header">Каледар</h1>
+	<div class="sub-container">
+		<div class="calendar_header">
+			<img class="header_icon" alt="calendar" src="<?=PATH_H?>img/web/calendar.png"> 
+			<h1 class="calendar_sign">Каледар</h1>
+		</div>
+<?php
+}
+
+function generalFooter()
+{ ?>
 	</div>
 <?php
 }
 
-
 function listHeader($status)
 {
 ?>
-	<div class="month_container">
-		<div>
-			<h3 class="tournament_list_table_month"><?=$status?></h3>
-		</div>
-		
-		<table class="tournament_list_table">
-			<colgroup>
-				<col class="col-1">
-				<col class="col-2">
-				<col class="col-3">
-				<col class="col-4">
-			</colgroup>
-			<thead class="tournament_list_table_thead">
-				<tr>
-					<th>#</th>
-					<th>
-						<img class="thead_icon" alt="trophy_image" src="<?=PATH_H?>img/web/trophy.png"> 
-						<span>Турнір</span>
-					</th>
-					<th>
-						<img class="thead_icon" alt="trophy_image" width="9" src="<?=PATH_H?>img/web/location.png"> 
-						<span>Місце</span>
-					</th>
-					<th>
-						<img class="thead_icon" alt="trophy_image" src="<?=PATH_H?>img/web/calendar.png"> 
-						<span>Дата</span>
-					</th>
-				</tr>
-			</thead>
-			
-			<tbody class="tournament_list_table_tbody">
+	<div class="calendar_header">
+		<h3 class="calendar_sign"><?=$status?></h3>
+	</div>
+
+	<div class="calendar_table_container">
+	<table class="calendar_table">
+		<colgroup>
+			<col class="col-1">
+			<col class="col-2">
+			<col class="col-3">
+			<col class="col-4">
+		</colgroup>
+		<thead class="calendar_table_thead">
+			<tr>
+				<th>#</th>
+				<th>
+					<img class="thead_icon" alt="trophy_image" src="<?=PATH_H?>img/web/trophy.png"> 
+					<span>Турнір</span>
+				</th>
+				<th>
+					<img class="thead_icon" alt="trophy_image" width="9" src="<?=PATH_H?>img/web/location.png"> 
+					<span>Місце</span>
+				</th>
+				<th>
+					<img class="thead_icon" alt="trophy_image" src="<?=PATH_H?>img/web/calendar.png"> 
+					<span>Дата</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody class="calendar_table_tbody">
 <?php
 }
 
 function listFooter()
 {
 ?>
-			</tbody>	
-		</table>
+		</tbody>	
+	</table>
 	</div>
 <?php
 }

@@ -1,7 +1,7 @@
 <?php
 
-    $query = "SELECT BV.points, BV.matchID, BV.playerID, BV.playerName, 
-		BV.opponentID, BV.opponentName, BV.playerPhoto, BV.opponentPhoto 
+    $query="SELECT BV.points,BV.matchID,BV.playerID,BV.playerName, 
+		BV.opponentID,BV.opponentName,BV.playerPhoto,BV.opponentPhoto 
 		FROM breakView BV WHERE tournamentID=? ORDER BY 1 DESC, 4";
     $data = query($query, $tournamentID);
 	$data_count = count($data);
@@ -15,20 +15,22 @@
 		$oppID = $data[$i][4]; $oppName = $data[$i][5];
 		$plrPhoto = $data[$i][6]; $oppPhoto = $data[$i][7];
 	
-		printBreak($points, $i+1, $matchID, $plrName, $plrPhoto, $oppName, $oppPhoto);
+		printBreak($points, $i+1, $matchID, $plrName, $plrPhoto, $oppName, $oppPhoto, ($i+1==$data_count));
 	}
 
 	printFooter();
 
 
 
-function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto)
+function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$isLast)
 {
     $e_o = ($i%2) ? "odd" : "even";
  ?>
             <tr onclick="window.location.href='/~levko/admin/tournaments/matchLobby.php?id=<?=$mID?>';"
                 class="breaks_table_tbody_<?=$e_o?> breaks_table_pointer">
-                <td class="breaks_table_points <?=$e_o?>_num"><?=$pts?></td>
+                <td class="breaks_table_points <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
+					<?=$pts?>
+				</td>
                 <td class="breaks_table_name">
                     <img class="circle_img" src="<?=PLAYER_IMG.$plrPhoto?>" alt="img">
                     <span><?=$plrName?></span>
@@ -37,7 +39,7 @@ function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto)
                 </td>
                 <td>
                 </td>
-                <td class="breaks_table_name">
+                <td class="breaks_table_name<?=($isLast)?" radius_br":""?>">
                     <img class="circle_img" src="<?=PLAYER_IMG.$oppPhoto?>" alt="img">
                     <span><?=$oppName?></span>
                 </td>

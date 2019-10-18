@@ -57,22 +57,33 @@ function printMatches($id, $groupNum, $playerNum, $nrOfPlayers, $isBottom)
 	$dFrames = ($fWon+$fLost !== 0) ? $fWon/($fWon+$fLost) : 0;
 	$res = ( (4/3)*$dMatches + (2/3)*$dFrames ) / 2;
 	$res = round($res*100, 2);
-
-	?><td><?=$matches?></td> <td><?=$mWon?></td> <td><?=$mLost?></td>
-	<td><?=($mWon-$mLost)?></td>
-	<td><?=$fWon?></td> <td><?=$fLost?></td> 
-	<td><?=($fWon-$fLost)?></td> <td <?=$isBottom?>><?=$res?>%</td><?php
+?>
+			<td><?=$matches?></td>
+			<td><?=$mWon?></td>
+			<td><?=$mLost?></td>
+			<td><?=($mWon-$mLost)?></td>
+			<td><?=$fWon?></td>
+			<td><?=$fLost?></td> 
+			<td><?=($fWon-$fLost)?></td>
+			<td <?=$isBottom?>><?=$res?>%</td>
+<?php
 }
 
-function firstRow($nrOfPlayers)
+function firstRow($nrOfPlrs)
 { ?>
-	<tr>
-		<th>#</th> <th>Гравець</th>
-    	<?php for($i=1;$i<=$nrOfPlayers;$i++) print("<th>$i</th>"); ?>
-		<th>m</th><th>+m</th><th>-m</th><th>Δm</th>
-		<th>+f</th><th>-f</th><th>Δf</th><th>%</th>
-	</tr>
-
+		<tr>
+			<th>#</th>
+			<th>Гравець</th>
+			<?php for($i=1;$i<=$nrOfPlrs;$i++) print("<th>$i</th>"); ?>
+			<th>m</th>
+			<th>+m</th>
+			<th>-m</th>
+			<th>Δm</th>
+			<th>+f</th>
+			<th>-f</th>
+			<th>Δf</th>
+			<th>%</th>
+		</tr>
 <?php }
 
 function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPlayers, $groupNum, $id)
