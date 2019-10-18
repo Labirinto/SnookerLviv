@@ -2,9 +2,7 @@
 	display: inline-block;
     width: 1067px;
     max-width: 1067px;
-    height: 306px;
-    max-height: 306px;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
 }
 .round_num_div {
     width: 1067px;
@@ -18,10 +16,14 @@
 .group-table thead th {
     padding: 15px;
     border-right: 1px solid #343A3F;
+	height: 48px;
+	max-height: 48px;
 }
 .group-table tr>* {
     padding: 20px;
     font-size: 15px;
+	height: 60px;
+	max-height: 60px;
 }
 .group-table {
     background-color: #474B4F;

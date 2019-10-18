@@ -3,28 +3,96 @@
 
 <h4><mark>TODO: </br>1.Unregister player</br>2.(maybe) delete tournament</mark></h4>
 
-<div class="page_header">
-	<img class="header_icon" alt="calendar" src="<?=PATH_H?>img/web/calendar.png"> 
-	<h1 class="tournament_list_table_header">Каледар</h1>
-</div>
-
 <?php
-$status = "Live";
-require("tournamentList.php");
 
-$status = "Registration";
-require("tournamentList.php");
+generalHeader();
 
-$status = "Announced";
-require("tournamentList.php");
+printList("Live");
 
-$status = "Standby";
-require("tournamentList.php");
+printList("Registration");
 
-$status = "Finished";
-require("tournamentList.php");
+printList("Announced");
 
-function printHeader($status)
+printList("Standby");
+
+printList("Finished");
+
+
+
+function castHeader($header)
+{
+	if($header == "Live")
+		return "Наживо";
+	else if($header == "Registration")
+		return "Триває Реєстрація";
+	else if($header == "Announced")
+		return "Оголошені";
+	else if($header == "Standby")
+		return "Очікують на початок";
+	else if($header == "Finished")
+		return "Завершені";
+}
+
+function printList($status)
+{
+	$data = query("SELECT TV.tournamentID, TV.tournament, TV.billiard, 
+				TV.age, TV.sex, TV.clubName
+				FROM generalTournamentView TV WHERE TV.status=?
+				ORDER BY 2, 3 DESC, 4, 5", $status);
+
+	$data_count = count($data);
+	
+	listHeader( castHeader($status) );
+
+	for($i=0; $i < $data_count; $i++)
+	{
+		$id = $data[$i][0];
+		$billiard = $data[$i][2];
+		$age = $data[$i][3];
+		$sex = $data[$i][4];
+		$clubName = $data[$i][5];
+		$name = $data[$i][1] . "(" . $billiard . ")";
+		if( strcmp($age, "") || strcmp($sex, "") )
+			$name = $name . "(" . $age . " " . $sex . ")";
+		$e_o = ($i%2) ? "even" : "odd";
+
+		printTournament($i+1, $id, $e_o, $name, $clubName);
+	}
+
+	listFooter();
+}
+
+function printTournament($i, $id, $e_o, $name, $clubName)
+{ ?>
+				<tr onclick="window.location.href='lobby.php?id=<?=$id?>';"
+					class="tournament_list_table_tbody_<?=$e_o?> tournament_list_table_pointer">
+					<td class="tournament_list_table_number_<?=$e_o?>">
+						<?=$i?>
+					</td>
+					<td class="tournament_list_table_date_right">
+						<?=$name?>
+					</td>
+					<td class="tournament_list_table_date_center">
+						<?=$clubName?>
+					</td>
+					<td class="tournament_list_table_date_left">
+						DATE TMP
+					</td>
+				</tr>
+<?php
+}
+
+function generalHeader()
+{ ?>
+	<div class="page_header">
+		<img class="header_icon" alt="calendar" src="<?=PATH_H?>img/web/calendar.png"> 
+		<h1 class="tournament_list_table_header">Каледар</h1>
+	</div>
+<?php
+}
+
+
+function listHeader($status)
 {
 ?>
 	<div class="month_container">
@@ -61,7 +129,7 @@ function printHeader($status)
 <?php
 }
 
-function printFooter()
+function listFooter()
 {
 ?>
 			</tbody>	
