@@ -121,8 +121,8 @@ function printBracketMatch($i, $matchID, $matchNum, $player1, $score1, $seed1, $
 		<div class="points_01"><?=$score1?></div>
 		<div class="points_02"><?=$score2?></div>
 		<div class="looser">
-<?php if($upFlag){ ?> переможений на <?=$loserID?> <?php } ?>
-<?php if($lowFlag){ ?> переможець на <?=$winnerID?> <?php } ?>
+<?php if($upFlag){ ?> переможений на <b><?=$loserID?></b> <?php } ?>
+<?php if($lowFlag){ ?> переможець на <b><?=$winnerID?></b> <?php } ?>
 		</div>
 	</div>
 <?php } ?>
