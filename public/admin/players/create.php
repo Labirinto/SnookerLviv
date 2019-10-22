@@ -30,7 +30,7 @@ else if($_SERVER["REQUEST METHOD"] = "POST")
 	else
 	{
 		//$filename = basename($_FILES["photo"]["name"]);
-		$photo = $fName . "_" . $lName . ".png";
+		$photo = $fName . "_" . $lName . ".jpg";
 		$filepath = HOME_DIR . "public/img/player/" . $photo;
    
 		if( !getimagesize($_FILES["photo"]["tmp_name"]) ) 
@@ -40,7 +40,7 @@ else if($_SERVER["REQUEST METHOD"] = "POST")
 		}
 		if( !move_uploaded_file($_FILES["photo"]["tmp_name"], $filepath) )
 		{
-			adminApology(INPUT_ERROR, "Photo error"." ".$filepath);
+			adminApology(INPUT_ERROR, "Photo error"." ".$filepath." ".$_FILES["photo"]["name"]);
 			exit;
 		}
 	}
