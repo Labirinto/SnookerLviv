@@ -141,19 +141,9 @@ table.participants_table .col-6 {
 	object-fit: cover;
 	margin-right: 10px;
 }
-.participants_table_tbody_odd {
-	background-color: #54595E;
-}
-.participants_table_tbody_even {
-	background-color: #474B4F;
-}
 .participants_table_number {
-	background-color: #61892F;
 	font-weight: bold;
 	text-align: center;
-}
-.odd_num {
-	background-color: #567A2B; 
 }
 
 
@@ -163,12 +153,12 @@ table.participants_table .col-6 {
 }
 .players_u-list_item {
 	display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-  width: 1080px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	width: 1080px;
 }
 .players_u-list_item li {
 	list-style: none;

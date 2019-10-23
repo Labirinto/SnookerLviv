@@ -79,18 +79,7 @@ table.breaks_table .col-5 {
 	object-fit: cover;
 	margin-right: 10px;
 }
-.breaks_table_tbody_odd {
-	background-color: #54595E;
-}
-.breaks_table_tbody_even {
-	background-color: #474B4F;
-}
 .breaks_table_points {
-	background-color: #61892F;
 	font-weight: bold;
 	text-align: center;
 }
-.odd_num {
-	background-color: #567A2B; 
-}
-

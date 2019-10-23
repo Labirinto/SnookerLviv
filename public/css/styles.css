@@ -38,6 +38,18 @@ table col[class*="col-"] {
 .float_right {
 	float: right;
 }
+.tbody_odd {
+	background-color: #54595E;
+}
+.tbody_even {
+	background-color: #474B4F;
+}
+.odd_num {
+	background-color: #567A2B;
+}
+.even_num {
+	background-color: #61892F;
+}
 .container {
     color: #fff;
     text-align: center;
@@ -101,4 +113,10 @@ table col[class*="col-"] {
 }
 .radius_bl {
 	border-bottom-left-radius: 4px;
+}
+.radius_tr {
+	border-top-right-radius: 4px;
+}
+.radius_tl {
+	border-top-left-radius: 4px;
 }

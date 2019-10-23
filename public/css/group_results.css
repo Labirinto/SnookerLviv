@@ -76,18 +76,8 @@ table.group_results_table .col-5 {
 	object-fit: cover;
 	margin-right: 10px;
 }
-.group_results_table_tbody_odd {
-	background-color: #54595E;
-}
-.group_results_table_tbody_even {
-	background-color: #474B4F;
-}
 .group_results_table_points {
-	background-color: #61892F;
 	font-weight: bold;
 	text-align: center;
-}
-.odd_num {
-	background-color: #567A2B; 
 }
 

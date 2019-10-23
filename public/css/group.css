@@ -68,22 +68,6 @@
     border-right: none;
 }
 
-
-/* COLOR */
-
-.group_even_num {
-    background-color: #61892F;
-}
-.group_odd_num {
-    background-color: #567A2B; 
-}
-.group_row_odd {
-    background-color: #54595E;
-}
-.group_row_even {
-    background-color: #474B4F;
-}
-
 /* RADIUS */
 
 .group_border_radius {
