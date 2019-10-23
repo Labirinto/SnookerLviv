@@ -54,6 +54,18 @@
 .lastname-uppercase {
  	text-transform: uppercase;
  }
+.groups_table_name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.circle_img {
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-right: 10px;
+}
 
 
 /* BORDERS */
