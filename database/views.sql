@@ -207,7 +207,8 @@ FROM playerTournament PT
 -- STANDINGS TOURNAMENT VIEW ------------------------------------------
 CREATE VIEW standingsTournamentView AS
 SELECT
-    PT.playerID AS playerID, CONCAT(P.lastName, ' ', P.firstName) AS player,
+    PT.playerID AS playerID, P.photo AS photo,
+	CONCAT(P.lastName, ' ', P.firstName) AS player,
     PT.seed, TS.place, TS.points, PT.tournamentID
 FROM playerTournament PT 
     JOIN player P ON PT.playerID=P.id
