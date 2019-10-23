@@ -86,9 +86,6 @@ table.matches_list_table .col-6 {
 .odd_num {
     background-color: #567A2B;
 }
-.matches_list_table_pointer {
-	cursor: pointer;
-}
 .fa-youtube {
     color: #FF1F1C;
 }

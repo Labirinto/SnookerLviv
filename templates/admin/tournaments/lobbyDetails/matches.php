@@ -110,7 +110,7 @@ function roundFooter()
 function displayMatch($counter, $last,$matchID, $player1, $score1, $player2, $score2, $bestOf, $youtube)
 { ?>
 	<tr onclick='matchClick(<?=$matchID?>);'
-		class="matches_list_table_tbody_<?=($counter%2)?odd:even?> matches_list_table_pointer">
+		class="matches_list_table_tbody_<?=($counter%2)?odd:even?> pointer">
 		<td class="matches_list_table_number <?=($counter%2)?"odd_num":""?><?=($last)?" radius_bl":""?>">
 			<?=$counter?>
 		</td>

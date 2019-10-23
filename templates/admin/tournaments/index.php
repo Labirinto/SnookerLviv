@@ -66,7 +66,7 @@ function printList($status)
 function printTournament($i, $id, $e_o, $name, $clubName, $isLast)
 { ?>
 			<tr onclick="window.location.href='lobby.php?id=<?=$id?>';"
-			class="calendar_table_tbody_<?=$e_o?> calendar_table_pointer">
+			class="calendar_table_tbody_<?=$e_o?> pointer">
 				<td class="calendar_table_points <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
 					<?=$i?>
 				</td>

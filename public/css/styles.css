@@ -29,6 +29,9 @@ table col[class*="col-"] {
 	float: none;
 	display: table-column;
 }
+.pointer {
+	cursor: pointer;
+}
 .float_left {
 	float: left;
 }

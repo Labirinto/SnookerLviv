@@ -155,9 +155,6 @@ table.participants_table .col-6 {
 .odd_num {
 	background-color: #567A2B; 
 }
-.participants_table_pointer {
-	cursor: pointer;
-}
 
 
 /*******  BARS  *********/
