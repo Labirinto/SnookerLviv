@@ -26,7 +26,7 @@ function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$isLast)
 {
     $e_o = ($i%2) ? "odd" : "even";
  ?>
-            <tr onclick="window.location.href='/~levko/admin/tournaments/matchLobby.php?id=<?=$mID?>';"
+            <tr onclick="openMatchLobby(<?=$mID?>);"
                 class="tbody_<?=$e_o?> pointer">
                 <td class="breaks_table_name<?=($isLast)?" radius_bl":""?>">
                     <img class="circle_img" src="<?=PLAYER_IMG.$plrPhoto?>" alt="img">
