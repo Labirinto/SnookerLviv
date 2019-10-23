@@ -104,7 +104,8 @@ FROM _match M
 -- GROUP STANDINGS VIEW -----------------------------------------------
 CREATE VIEW groupStandingsView AS
 SELECT
-    GS.playerID AS playerID, CONCAT(P.lastName, ' ', P.firstName) AS player,
+    GS.playerID AS playerID, P.photo AS photo,
+	CONCAT(P.lastName, ' ', P.firstName) AS player,
     GS.points, GS.groupPlace, GS.groupNum, GS.tournamentID, gs.seed
 FROM groupStandings GS 
     JOIN player P ON GS.playerID = P.id
