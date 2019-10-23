@@ -1,9 +1,9 @@
 <?php
 
-
-    $query = "SELECT ST.player, ST.seed, ST.place, ST.points, ST.photo 
+    $query = "SELECT ST.playerID, ST.player, ST.seed, ST.place,
+		ST.points, ST.photo 
 		FROM standingsTournamentView ST
-        WHERE tournamentID=? ORDER BY 4 DESC, 1";
+        WHERE tournamentID=? ORDER BY 5 DESC, 2";
     $data = query($query, $tournamentID);
 	$data_count = count($data);   
  
@@ -11,20 +11,22 @@
 	
 	for($i = 0; $i < $data_count; $i++)
     {
-		$player = $data[$i][0]; $seed = $data[$i][1];
-		$place = $data[$i][2]; $pts = $data[$i][3];
-		$img = $data[$i][4];
+		$playerID = $data[$i][0]; $player = $data[$i][1];
+		$seed = $data[$i][2]; $place = $data[$i][3];
+		$pts = $data[$i][4]; $img = $data[$i][5];
 		$isLast = ($i+1==$data_count) ? true : false;
-    	displayPlayer($i+1, $player, $seed, $img, $place, $pts, $isLast);
+    	
+		displayPlayer($i+1, $player, $playerID, $seed, $img, $place, $pts, $isLast);
 	}
 
 	displayFooter();
 
-function displayPlayer($i, $name, $seed, $plrPhoto, $place, $pts, $isLast)
+function displayPlayer($i, $name, $playerID, $seed, $plrPhoto, $place, $pts, $isLast)
 {
 	$e_o = ($i%2) ? "odd" : "even";
 ?>
-            <tr class="tbody_<?=$e_o?> pointer">
+            <tr class="tbody_<?=$e_o?> pointer"
+			onclick="openPlayerLobby(<?=$playerID?>);">
                 <td class="results_table_points <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
                 	<?=$seed?>
 				</td>

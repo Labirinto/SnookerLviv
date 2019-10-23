@@ -30,8 +30,6 @@ else if( !strcmp($bracket, "GroupKO") )
 	prepareRound("K/O", $KO_R, $tournamentID);
 }
 
-printScript();
-
 
 //  TODO print for GROUP only
 
@@ -111,7 +109,7 @@ function displayMatch($counter, $last,$matchID, $player1, $score1, $player2, $sc
 {
 	$e_o = ($counter%2) ? "odd" : "even"; 
 ?>
-	<tr onclick='matchClick(<?=$matchID?>);'
+	<tr onclick='openMatchLobby(<?=$matchID?>);'
 		class="tbody_<?=$e_o?> pointer">
 		<td class="matches_list_table_number <?=$e_o?>_num<?=($last)?" radius_bl":""?>">
 			<?=$counter?>
@@ -147,7 +145,7 @@ function displayMatch($counter, $last,$matchID, $player1, $score1, $player2, $sc
 		<?=$e_o?>_youtube 
 		 <?=($last)?" radius_br":""?>"
 		<?php if(isset($youtube)){ ?>
-			onclick="ytClick(event,<?=("'".YT_HEADER.$youtube."'")?>);"
+			onclick="openYoutube(event,<?=("'".YT_HEADER.$youtube."'")?>);"
 		<?php } ?>>
 			<?php if(isset($youtube)){ ?>
 				<img src="/~levko/img/youtube.png">
@@ -187,20 +185,3 @@ function displayRound($tournID, $rType, $rNo)
 	}
 }
 
-
-
-function printScript()
-{ ?>
-		<script>
-function matchClick(matchID) {
-	window.location.href=('matchLobby.php?id=' + matchID);
-
-}
-function ytClick(event, youtube) {
-	event.stopPropagation();
-
-	window.location.href=(youtube);
-
-}
-		</script>
-<?php } ?>
