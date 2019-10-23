@@ -49,7 +49,11 @@ function printMatches($id, $groupNum, $playerNum, $nrOfPlayers, $isBottom)
 		else{
 			$mID = $data[$k][0]; $mStatus = $data[$k][1];
 			$score1 = $data[$k][3]; $score2 = $data[$k][4];
-			?><td><a href="matchLobby.php?id=<?=$mID?>"><?=$score1?>:<?=$score2?></a></td><?php 
+?>
+			<td class="pointer" onclick="openMatchLobby(<?=$mID?>);">
+				<?=$score1?>:<?=$score2?>
+			</td>
+<?php 
 			$k++;
 		}
 	}
@@ -94,8 +98,13 @@ function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPl
 		$isBottom = "";
 ?>
 	<tr class="tbody_<?=$e_o?>">
-		<td class="<?=$e_o?>_num<?=($last)?" radius_bl":""?>"><?=$playerNum?></td>
-		<td><?=$playerName?>(<?=$seed?>)</td>
+		<td class="<?=$e_o?>_num<?=($last)?" radius_bl":""?>">
+			<?=$playerNum?>
+		</td>
+		<td class="pointer"
+		onclick="openPlayerLobby(<?=$playerID?>);">
+			<?=$playerName?>(<?=$seed?>)
+		</td>
 		<?php
 			
 			printMatches($id, $groupNum, $playerNum, $nrOfPlayers, $isBottom);
