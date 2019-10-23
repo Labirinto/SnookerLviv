@@ -5,7 +5,7 @@
 
 	generalHeader();
 
-	$data = query("SELECT P.id, P.lastName, P.firstName, P.photo, P.birthday
+	$data = query("SELECT P.id, P.firstName, P.lastName, P.photo, P.birthday
 				FROM player P 
 				WHERE P.id NOT IN(-1,-2) ORDER BY 2");
 	$data_count = count($data);
@@ -147,7 +147,7 @@ function printBarsPlayer($id, $fName, $lName, $img)
                     <div class="players_list_item_details">
                         <div class="players_list_item_name">
                             <h4 class="players_list_item_name">
-                                <?=$fName?><span class="surname"><?=$lName?></span>
+                                <?=$fName?> <span class="surname"><?=$lName?></span>
                             </h4>
                         </div>
                         <p class="players_list_item_location">

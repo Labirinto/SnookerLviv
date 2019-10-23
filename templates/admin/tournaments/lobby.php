@@ -162,7 +162,7 @@ function finishedLobby($bracket, $tournamentID, $onClick)
 			require("lobbyDetails/groups.php");
 		else if( !strcmp($onClick, "groupStanding") ) 
 			require("lobbyDetails/groupStanding.php");
-		else if( !strcmp($onClick, "brakes") ) 
+		else if( !strcmp($onClick, "breaks") ) 
 			require("lobbyDetails/breaks.php");
 		else
 			redirect("");
