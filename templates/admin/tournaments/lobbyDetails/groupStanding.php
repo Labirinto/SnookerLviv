@@ -15,7 +15,7 @@
 
 
     $query = "SELECT GS.player, GS.points, GS.seed, GS.photo,
-		GS.groupPlace, GS.groupNum
+		GS.groupPlace, GS.groupNum, GS.playerID
 		FROM groupStandingsView GS
         WHERE GS.tournamentID=? ORDER BY 2 DESC, 5, 1";
     $data = query($query, $tournamentID);
@@ -28,23 +28,25 @@
 		$player = $data[$i][0]; $pts = $data[$i][1];
 		$seed = $data[$i][2]; $photo = $data[$i][3];
 		$grpPlace = $data[$i][4]; $grpNum = $data[$i][5];
+		$playerID = $data[$i][6];
      	$isLast = ($i+1 == $data_count) ? true : false;
-		
-		displayPlayer($i+1, $player, $seed, $photo, $grpPlace, $grpNum, $pts, $isLast); 
+	
+		displayPlayer($i+1, $playerID, $player, $seed, $photo, $grpPlace, $grpNum, $pts, $isLast); 
     }
 
 	displayFooter();
 
 
-function displayPlayer($i, $name, $seed, $plrPhoto, $grpPlace, $grpNum, $pts, $isLast)
+function displayPlayer($i, $plrID, $name, $seed, $plrPhoto, $grpPlace, $grpNum, $pts, $isLast)
 {
     $e_o = ($i%2) ? "odd" : "even";
 ?>
-            <tr class="tbody_<?=$e_o?> pointer">
+            <tr class="tbody_<?=$e_o?>">
                 <td class="group_results_table_points <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
                     <?=$seed?>
                 </td>
-                <td class="group_results_table_name">
+                <td class="group_results_table_name pointer"
+				onclick="openPlayerLobby(<?=$plrID?>);">
                     <img class="circle_img" src="<?=PLAYER_IMG.$plrPhoto?>" alt="img">
                     <span><?=$name?></span>
                 </td>
