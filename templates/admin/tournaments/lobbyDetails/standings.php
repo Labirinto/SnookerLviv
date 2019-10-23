@@ -25,12 +25,12 @@ function displayPlayer($i, $name, $playerID, $seed, $plrPhoto, $place, $pts, $is
 {
 	$e_o = ($i%2) ? "odd" : "even";
 ?>
-            <tr class="tbody_<?=$e_o?> pointer"
-			onclick="openPlayerLobby(<?=$playerID?>);">
+            <tr class="tbody_<?=$e_o?>">
                 <td class="results_table_points <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
                 	<?=$seed?>
 				</td>
-                <td class="results_table_name">
+                <td class="results_table_name pointer"
+				onclick="openPlayerLobby(<?=$playerID?>);">
                     <img class="circle_img" src="<?=PLAYER_IMG.$plrPhoto?>" alt="img">
                     <span><?=$name?></span>
                 </td>
