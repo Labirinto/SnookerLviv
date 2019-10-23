@@ -75,6 +75,7 @@ function printMatches($id, $groupNum, $playerNum, $nrOfPlayers, $isBottom)
 
 function firstRow($nrOfPlrs)
 { ?>
+	<thead>
 		<tr>
 			<th>#</th>
 			<th>Гравець</th>
@@ -88,9 +89,11 @@ function firstRow($nrOfPlrs)
 			<th>Δf</th>
 			<th>%</th>
 		</tr>
+	</thead>
+	<tbody>
 <?php }
 
-function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPlayers, $groupNum, $id)
+function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $plrPhoto, $nrOfPlayers, $groupNum, $id)
 { 
 	if($last)
 		$isBottom = "radius_br";
@@ -101,9 +104,10 @@ function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPl
 		<td class="<?=$e_o?>_num<?=($last)?" radius_bl":""?>">
 			<?=$playerNum?>
 		</td>
-		<td class="pointer"
+		<td class="groups_table_name pointer"
 		onclick="openPlayerLobby(<?=$playerID?>);">
-			<?=$playerName?>(<?=$seed?>)
+			<img class="circle_img" src="<?=PLAYER_IMG.$plrPhoto?>" alt="img">
+			<span><?=$playerName?>(<?=$seed?>)</span>
 		</td>
 		<?php
 			
@@ -115,7 +119,7 @@ function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPl
 
 function printGroup($tournID, $groupNo)
 {
-    $query = "SELECT PG.playerNum, PG.playerName, PG.playerID, PG.playerSeed
+    $query = "SELECT PG.playerNum, PG.playerName, PG.playerID, PG.playerSeed, PG.playerPhoto
         FROM playerGroupView PG
         WHERE PG.tournamentID=? AND PG.groupNum=?
         ORDER BY PG.playerNum";
@@ -123,20 +127,18 @@ function printGroup($tournID, $groupNo)
     $data = query($query, $tournID, $groupNo);
 	$nrOfPlayers = count($data);
 	
-	?><thead><?php
 	firstRow($nrOfPlayers);
-	?></thead>
-	<tbody><?php
 
 	for($i = 0; $i < $nrOfPlayers; $i++)
     {
         $playerNum = $data[$i][0];
         $playerName = $data[$i][1]; $playerID = $data[$i][2];
         $seed = $data[$i][3];
+		$img = $data[$i][4];
 		$e_o = ($i%2) ? "even" : "odd";
 		$last = ($i+1 < $nrOfPlayers) ? false : true;
 
-		playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPlayers, $groupNo, $tournID);
+		playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed,$img, $nrOfPlayers, $groupNo, $tournID);
     }
 	?></tbody><?php
 }
