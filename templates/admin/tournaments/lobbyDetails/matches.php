@@ -145,9 +145,8 @@ function displayMatch($counter, $last,$matchID, $player1, $score1, $player2, $sc
 		 <?=($counter%2)?"":"even_youtube"?>
 		 <?=($last)?" radius_br":""?>"
 		<?php if(isset($youtube)){ ?>
-			onclick="window.location.href='<?=(YT_HEADER.$youtube)?>';"
-		<?php } ?>
-		>
+			onclick="ytClick(event,<?=("'".YT_HEADER.$youtube."'")?>);"
+		<?php } ?>>
 			<?php if(isset($youtube)){ ?>
 				<img src="/~levko/img/youtube.png">
 			<?php } ?>
@@ -195,7 +194,10 @@ function matchClick(matchID) {
 	window.location.href=('matchLobby.php?id=' + matchID);
 
 }
-function ytClick() {
+function ytClick(event, youtube) {
+	event.stopPropagation();
+
+	window.location.href=(youtube);
 
 }
 		</script>
