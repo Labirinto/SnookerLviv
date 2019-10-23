@@ -89,7 +89,7 @@ function generalHeader()
 		<div class="calendar_header">
 			<h1 class="calendar_sign">
 				<img class="header_icon" alt="calendar" src="<?=PATH_H?>img/web/calendar.png"> 
-				Каледар
+				Календар
 			</h1>
 		</div>
 <?php
