@@ -1,7 +1,11 @@
 <?php list($tournamentName, $tournamentID, $status) = getMainData($matchID);?>
 
 <div class="sub-container">
-	<a href="lobby.php?id=<?=$tournamentID?>"><h1><?=$tournamentName?></h1></a>
+	<a href="lobby.php?id=<?=$tournamentID?>">
+		<h1>
+			<?=$tournamentName?>
+		</h1>
+	</a>
 
 <?php
 

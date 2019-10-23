@@ -97,29 +97,38 @@ function printRound($tournID, $Rno, $Rtype, $lowFlag)
 }
 
 function printBracketMatch($i, $matchID, $matchNum, $player1, $score1, $seed1, $player2, $score2, $seed2, $lowFlag, $upFlag, $loserID, $winnerID, $youtube)
-{
-	if($i==0)
-		print("<div class=\"bracket_item first-match\">");
-	else
-		print("<div class=\"bracket_item\">"); ?>
-		
+{ ?>
+		<div class="bracket_item<?=($i==0)?" first-match":""?>">
 		<div class="null"></div>
-		<div class="match_number"> 
-			<a href="matchLobby.php?id=<?=$matchID?>"><?=$matchNum?> </a>
+		<div class="match_number pointer"
+		onclick="openMatchLobby(<?=$matchID?>);"> 
+			<?=$matchNum?>
 		</div>
-		<div class="youtube_logo">
+		<div class="youtube_logo<?=(isset($youtube)?" pointer":"")?>">
 			<?php if(isset($youtube)) { ?>
             <a href="<?=YT_HEADER.$youtube?>">
                 <img src="../../img/youtube.png" alt="Youtube">
             </a>
             <?php } ?>
 		</div>
-		<div class="front_01"><?=$seed1?></div>
-		<div class="front_02"><?=$seed2?></div>
-		<div class="name_01"><?=$player1?></div>
-		<div class="name_02"><?=$player2?></div>
-		<div class="points_01"><?=$score1?></div>
-		<div class="points_02"><?=$score2?></div>
+		<div class="front_01">
+			<?=$seed1?>
+		</div>
+		<div class="front_02">
+			<?=$seed2?>
+		</div>
+		<div class="name_01">
+			<?=$player1?>
+		</div>
+		<div class="name_02">
+			<?=$player2?>
+		</div>
+		<div class="points_01">
+			<?=$score1?>
+		</div>
+		<div class="points_02">
+			<?=$score2?>
+		</div>
 		<div class="looser">
 <?php if($upFlag){ ?> переможений на <b><?=$loserID?></b> <?php } ?>
 <?php if($lowFlag){ ?> переможець на <b><?=$winnerID?></b> <?php } ?>

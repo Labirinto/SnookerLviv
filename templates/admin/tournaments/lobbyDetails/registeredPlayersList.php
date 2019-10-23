@@ -97,7 +97,7 @@ function printListPlayer($i, $id, $name, $img, $birthday, $seed, $isLast)
 {
 	$e_o = ($i%2) ? "odd" : "even";
  ?>
-			<tr onclick="window.location.href='/~levko/admin/players/lobby.php?id=<?=$id?>';"
+			<tr onclick="openPlayerLobby(<?=$id?>);"
 				class="tbody_<?=$e_o?> pointer">
 				<td class="participants_table_number <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
 					<?=$i?>
@@ -138,8 +138,7 @@ function barsFooter()
 
 function printBarsPlayer($id, $name, $img)
 { ?>
-			<li>
-				<a href="/~levko/admin/players/lobby.php?id=<?=$id?>">
+			<li onclick="openPlayerLobby(<?=$id?>);" class="pointer">
 				<div class="players_list_item_box">
 					<figure>
 						<img class="players_list_item_photo" src="<?=PLAYER_IMG.$img?>" alt="img">
