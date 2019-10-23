@@ -28,7 +28,8 @@ function printLobby($counter, $roundType, $roundNo, $bestOF,
 	<div class="match_lobby">
 		<h3 class="match_lobby_info">Зустріч #<?=$counter?> | Раунд <?=$roundNo?>(<?=$roundType?>) </h3>
 		<div class="match_lobby_player-table">
-			<div class="match_lobby_player01">
+			<div class="match_lobby_player01 pointer"
+			onclick="openPlayerLobby(<?=$id1?>);">
 				<span class="match_lobby_player01-name"><?=$name1?></span>
 				<p>
 					<img class="match_lobby_player01-img" alt="player01" src="<?=PLAYER_IMG.$img1?>"></img>
@@ -48,7 +49,8 @@ function printLobby($counter, $roundType, $roundNo, $bestOF,
 					</tbody>
 				</table>
 			</div>
-			<div class="match_lobby_player02">
+			<div class="match_lobby_player02 pointer"
+			onclick="openPlayerLobby(<?=$id2?>);">
 				<span class="match_lobby_player02-name"><?=$name2?></span>
 				<p>
 					<img class="match_lobby_player02-img" alt="player02" src="<?=PLAYER_IMG.$img2?>"></img>
