@@ -66,6 +66,7 @@ SELECT
     GT.nrOfPlayers AS nrOfPlayers,
     PG.playerNum AS playerNum, PG.playerID AS playerID,
     CONCAT(P.firstName, ' ', P.lastName) AS playerName,
+	P.photo AS playerPhoto,
     GS.seed AS playerSeed, PG.mWon, PG.mLost, PG.fWon, PG.fLost,
     T.id AS tournamentID, T.name AS tournamentName
 FROM groupTournament AS GT
