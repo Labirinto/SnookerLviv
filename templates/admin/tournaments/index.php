@@ -46,27 +46,27 @@ function printList($status)
 
 	for($i=0; $i < $data_count; $i++)
 	{
-		$id = $data[$i][0];
-		$billiard = $data[$i][2];
-		$age = $data[$i][3];
-		$sex = $data[$i][4];
+		$id = $data[$i][0]; $billiard = $data[$i][2];
+		$age = $data[$i][3]; $sex = $data[$i][4];
 		$clubName = $data[$i][5];
+		
 		$name = $data[$i][1] . "(" . $billiard . ")";
 		if( strcmp($age, "") || strcmp($sex, "") )
 			$name = $name . "(" . $age . " " . $sex . ")";
-		$e_o = ($i%2) ? "even" : "odd";
 		$isLast = ($i+1==$data_count);
 
-		printTournament($i+1, $id, $e_o, $name, $clubName, $isLast);
+		printTournament($i+1, $id, $name, $clubName, $isLast);
 	}
 
 	listFooter();
 }
 
-function printTournament($i, $id, $e_o, $name, $clubName, $isLast)
-{ ?>
+function printTournament($i, $id, $name, $clubName, $isLast)
+{
+	$e_o = ($i%2) ? "odd" : "even";
+?>
 			<tr onclick="window.location.href='lobby.php?id=<?=$id?>';"
-			class="calendar_table_tbody_<?=$e_o?> pointer">
+			class="tbody_<?=$e_o?> pointer">
 				<td class="calendar_table_points <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
 					<?=$i?>
 				</td>

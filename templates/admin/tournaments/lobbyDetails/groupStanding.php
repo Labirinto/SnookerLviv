@@ -40,7 +40,7 @@ function displayPlayer($i, $name, $seed, $plrPhoto, $grpPlace, $grpNum, $pts, $i
 {
     $e_o = ($i%2) ? "odd" : "even";
 ?>
-            <tr class="group_results_table_tbody_<?=$e_o?> pointer">
+            <tr class="tbody_<?=$e_o?> pointer">
                 <td class="group_results_table_points <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
                     <?=$seed?>
                 </td>

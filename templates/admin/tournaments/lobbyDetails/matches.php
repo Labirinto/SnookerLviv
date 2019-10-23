@@ -108,10 +108,12 @@ function roundFooter()
 
 
 function displayMatch($counter, $last,$matchID, $player1, $score1, $player2, $score2, $bestOf, $youtube)
-{ ?>
+{
+	$e_o = ($counter%2) ? "odd" : "even"; 
+?>
 	<tr onclick='matchClick(<?=$matchID?>);'
-		class="matches_list_table_tbody_<?=($counter%2)?odd:even?> pointer">
-		<td class="matches_list_table_number <?=($counter%2)?"odd_num":""?><?=($last)?" radius_bl":""?>">
+		class="tbody_<?=$e_o?> pointer">
+		<td class="matches_list_table_number <?=$e_o?>_num<?=($last)?" radius_bl":""?>">
 			<?=$counter?>
 		</td>
 		<td class="matches_list_table_name_right">
@@ -141,8 +143,8 @@ function displayMatch($counter, $last,$matchID, $player1, $score1, $player2, $sc
 		<td class="matches_list_table_name_left">
 			<?=$player2?>
 		</td>
-		<td class="matches_list_table_youtube 
-		 <?=($counter%2)?"":"even_youtube"?>
+		<td class="matches_list_table_youtube
+		<?=$e_o?>_youtube 
 		 <?=($last)?" radius_br":""?>"
 		<?php if(isset($youtube)){ ?>
 			onclick="ytClick(event,<?=("'".YT_HEADER.$youtube."'")?>);"

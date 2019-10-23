@@ -80,13 +80,13 @@ function framesHeader()
 
 function printFrame($counter, $score1, $score2, $breaks1, $breaks2, $BL, $BR)
 { 
-	$e_o = ($counter%2) ? "even" : "odd";
+	$e_o = ($counter%2) ? "odd" : "even";
 ?>
 
-	<tr class="match_lobby_table_tbody_<?=$e_o?>">
+	<tr class="tbody_<?=$e_o?>">
 		<td class="match_lobby_table_name_left <?=$BL?>"><?=$breaks1?></td>
 		<td class="match_lobby_table_name_left"><?=$score1?></td>
-		<td class="match_lobby_table_number_<?=$e_o?>"><?=$counter?></td>
+		<td class="match_lobby_table_number <?=$e_o?>_num"><?=$counter?></td>
 		<td class="match_lobby_table_date_center"><?=$score2?></td>
 		<td class="match_lobby_table_date_left <?=$BR?>"><?=$breaks2?></td>
 	</tr>
@@ -135,10 +135,10 @@ function printFrames($matchID)
 		
 		$BL = ""; $BR = "";
 		if($i === 0){
-			$BL = "border_tl"; $BR = "border_tr";
+			$BL = "radius_tl"; $BR = "radius_tr";
 		}
 		else if($i+1 >= $data_count){
-			$BL = "border_bl"; $BR = "border_br";
+			$BL = "radius_bl"; $BR = "radius_br";
 		}
 
 		printFrame($i+1, $points1, $points2, $breaks1, $breaks2, $BL, $BR);

@@ -99,7 +99,7 @@ function printListPlayer($i, $id, $name, $img, $birthday, $isLast)
     $e_o = ($i%2) ? "odd" : "even";
  ?>
             <tr onclick="window.location.href='/~levko/admin/players/lobby.php?id=<?=$id?>';"
-                class="participants_table_tbody_<?=$e_o?> pointer">
+                class="tbody_<?=$e_o?> pointer">
                 <td class="participants_table_number <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
 					<?=$i?>
 				</td>

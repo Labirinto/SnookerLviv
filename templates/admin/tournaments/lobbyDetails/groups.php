@@ -93,8 +93,8 @@ function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $nrOfPl
 	else
 		$isBottom = "";
 ?>
-	<tr class="group_row_<?=$e_o?>">
-		<td class="group_<?=$e_o?>_num<?=($last)?" radius_bl":""?>"><?=$playerNum?></td>
+	<tr class="tbody_<?=$e_o?>">
+		<td class="<?=$e_o?>_num<?=($last)?" radius_bl":""?>"><?=$playerNum?></td>
 		<td><?=$playerName?>(<?=$seed?>)</td>
 		<?php
 			
