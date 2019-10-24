@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/results.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/group_results.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/club_list.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/available_tables.css"> 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="<?=PATH_H?>img/balls01.png">
