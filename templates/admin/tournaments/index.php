@@ -17,6 +17,7 @@ printList("Standby");
 
 printList("Finished");
 
+generalFooter();
 
 
 function castHeader($header)
