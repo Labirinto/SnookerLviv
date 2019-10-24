@@ -1,0 +1,78 @@
+.player_tournaments_header {
+	width: 1080px;
+	max-width: 1080px;
+}
+.player_tournaments_sign {
+	text-transform: uppercase;
+	font-size: 22px;
+	text-align: left;	
+}
+.header_icon {
+	float: left;
+	margin: 3px 3px 0 0;
+	width: 20px;
+	height: 20px;
+}
+.thead_icon {
+	margin-right: 3px;
+	width: 12px;
+	height: 12px;
+}
+/*******  LIST  *********/
+
+.player_tournaments_table_container {
+	margin-bottom: 50px;
+	padding: 0;
+	border-radius: 8px;
+	border-top: 3px solid #61892F;	
+}
+.player_tournaments_table {
+	width: 1080px;
+	max-width: 1080px;
+	min-width: 1080px;
+	margin: 0;
+	padding: 0;
+}
+table.player_tournaments_table .col-1 {
+ 	width: 1%;
+}
+table.player_tournaments_table .col-2 {
+ 	width: 25%;
+}
+table.player_tournaments_table .col-3 {
+ 	width: 24%;
+}
+table.player_tournaments_table .col-4 {
+ 	width: 20%;
+}
+table.player_tournaments_table .col-5 {
+ 	width: 15%;
+}
+table.player_tournaments_table .col-6 {
+ 	width: 15%;
+}
+.player_tournaments_table thead th {
+	text-transform: uppercase;
+	padding: 15px;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	border-right: 1px solid #343A3F;
+}
+.player_tournaments_table tr>:last-child {
+	border-right: none;
+}
+.player_tournaments_table_thead {
+	color: #fff;
+}
+.player_tournaments_table tbody tr td {
+	padding: 10px;
+	text-align: center;
+	border-right: 1px solid #71787F;
+	font-size: 15px;
+	height: 50px;
+	max-height: 50px;
+}
+.player_tournaments_table tbody tr>:nth-child(1) {
+	border-right: none;
+}
