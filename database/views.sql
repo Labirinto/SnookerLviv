@@ -144,7 +144,7 @@ FROM _table tbl
 -- RANKING VIEW -------------------------------------------------------
 CREATE VIEW ranking AS
     SELECT CONCAT(P.firstName, ' ', P.lastName) AS player,
-        R.playerID, R.points, leagueID
+    P.photo, R.playerID, R.points, leagueID
     FROM player P
     INNER JOIN rating R ON P.id = R.playerID;
 -- --------------------------------------------------------------------
