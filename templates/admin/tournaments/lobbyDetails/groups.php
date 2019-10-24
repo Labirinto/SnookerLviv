@@ -7,13 +7,13 @@ $G_R = $data[0][0];
 
 for($i = 1; $i <= $G_R; $i++)
 {?>
-	<div class="group">
-		<div class="round_num_div"><h3 class="matches_list_table_round_num">група <?=$i?></h3></div>
-		<div class="group_border_radius">
-		<table class="group-table">	
+	<div class="group_header">
+		<h3 class="group_sign">група <?=$i?></h3>
+	</div>
+	<div class="group_table_container">
+		<table class="group_table">	
 			<?php printGroup($tournamentID, $i); ?>
 		</table>
-		</div>
 	</div>
 <?php }
 
@@ -76,19 +76,17 @@ function printMatches($id, $groupNum, $playerNum, $nrOfPlayers, $isBottom)
 function firstRow($nrOfPlrs)
 { ?>
 	<thead>
-		<tr>
-			<th>#</th>
-			<th>Гравець</th>
-			<?php for($i=1;$i<=$nrOfPlrs;$i++) print("<th>$i</th>"); ?>
-			<th>m</th>
-			<th>+m</th>
-			<th>-m</th>
-			<th>Δm</th>
-			<th>+f</th>
-			<th>-f</th>
-			<th>Δf</th>
-			<th>%</th>
-		</tr>
+		<th>#</th>
+		<th>Гравець</th>
+		<?php for($i=1;$i<=$nrOfPlrs;$i++) print("<th>$i</th>"); ?>
+		<th>m</th>
+		<th>+m</th>
+		<th>-m</th>
+		<th>Δm</th>
+		<th>+f</th>
+		<th>-f</th>
+		<th>Δf</th>
+		<th>%</th>
 	</thead>
 	<tbody>
 <?php }
