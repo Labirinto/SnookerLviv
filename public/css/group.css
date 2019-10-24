@@ -1,59 +1,51 @@
-.group {
-	display: inline-block;
+.group_header {
+	width: 1080px;
+	max-width: 1080px;
+}
+.group_sign {
+	text-transform: uppercase;
+	font-size: 22px;
+	text-align: left;
+}
+
+/******* LIST ********/
+.group_table_container {
+	margin: 0 0 50px 0;
+	padding: 0;
+	border-radius: 4px;
+	border-top: 3px solid #61892F;
+}
+.group_table {
     width: 1080px;
     max-width: 1080px;
-    margin-bottom: 100px;
+	min-width: 1080px;
+	margin: 0;
+	padding: 0;
 }
-.round_num_div {
-    width: 1080px;
-    max-width: 1080px;
-}
-.matches_list_table_round_num {
-    text-transform: uppercase;
-    font-size: 25px;
-    text-align: left;
-}
-.group-table thead th {
+.group_table thead th {
     padding: 15px;
-    border-right: 1px solid #343A3F;
+    font-size: 13px;
+    text-align: center;
+	vertical-align: middle;
 	height: 48px;
 	max-height: 48px;
+	border-right: 1px solid #343A3F;
 }
-.group-table tr>* {
+.group_table tr>:nth-child(2) {
+    width: 250px;
+}
+.group_table tr>* {
     padding: 20px;
     font-size: 15px;
 	height: 60px;
 	max-height: 60px;
 }
-.group-table {
-    background-color: #474B4F;
-    width: 1080px;
-    max-width: 1080px;
-    min-width: 1080px;
-    border-radius: 4px;
-}
-.group-table th {
-    background-color: #222629;
-    color: white;
-    text-align: center;
-}
-.group-table tbody tr {
+.group_table tbody tr {
     font-size: 15px;
 }
-.group-table tbody tr>:nth-child(1) {
-    color: #fff;
-    font-size: 17px;
-    border-bottom: none;
- }
- .group-table tbody tr>:last-child {
-    border-right: none;
- }
-.group-table tr>:nth-child(2) {
-    width: 250px;
- }
 .lastname-uppercase {
  	text-transform: uppercase;
- }
+}
 .groups_table_name {
     display: flex;
     flex-direction: row;
@@ -70,19 +62,16 @@
 
 /* BORDERS */
 
-.group-table tbody tr td {
+.group_table tbody tr td {
     border-right: 1px solid #71787F;
 }
-.group-table tbody tr>:nth-child(1) {
-    border-right: none;
-}
-.group-table tr>:nth-child(14) {
+.group_table tbody tr>:nth-child(1) {
     border-right: none;
 }
 
-/* RADIUS */
-
-.group_border_radius {
-    border-top: 3px solid #61892F;
-    border-radius: 4px;
+.group_table thead tr th:last-child {
+    border-right: none;
+}
+.group_table tbody tr>:last-child {
+    border-right: none;
 }

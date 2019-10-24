@@ -13,7 +13,7 @@
 .group_results_table_container {
 	margin: 0;
 	padding: 0;
-	border-radius: 3px;
+	border-radius: 4px;
 	border-top: 3px solid #61892F;	
 }
 .group_results_table {
@@ -46,7 +46,7 @@ table.group_results_table .col-5 {
 	vertical-align: middle;
 	border-right: 1px solid #343A3F;
 }
-.group_results_table tr>:nth-child(5) {
+.group_results_table tr>:last-child {
 	border-right: none;
 }
 .group_results_table tbody tr>:nth-child(1) {
