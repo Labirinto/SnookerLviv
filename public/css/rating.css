@@ -1,0 +1,86 @@
+.rating_header {
+	width: 750px;
+	max-width: 750px;
+}
+.rating_sign {
+	text-transform: uppercase;
+	font-size: 22px;
+	text-align: left;	
+}
+.header_icon {
+	float: left;
+	margin: 3px 3px 0 0;
+	width: 20px;
+	height: 20px;
+}
+.thead_icon {
+	margin-right: 3px;
+	width: 12px;
+	height: 12px;
+}
+/*******  LIST  *********/
+
+.rating_table_container {
+	margin-bottom: 50px;
+	padding: 0;
+	border-radius: 8px;
+	border-top: 3px solid #61892F;	
+}
+.rating_table {
+	width: 750px;
+	max-width: 750px;
+	min-width: 750px;
+	margin: 0;
+	padding: 0;
+}
+table.rating_table .col-1 {
+ 	width: 1%;
+}
+table.rating_table .col-2 {
+ 	width: 25%;
+}
+table.rating_table .col-3 {
+ 	width: 25%;
+}
+.rating_table thead th {
+	text-transform: uppercase;
+	padding: 15px;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	border-right: 1px solid #343A3F;
+}
+.rating_table tr>:last-child {
+	border-right: none;
+}
+.rating_table_thead {
+	color: #fff;
+}
+.rating_table tbody tr td {
+	padding: 10px;
+	text-align: center;
+	border-right: 1px solid #71787F;
+	font-size: 15px;
+	height: 50px;
+	max-height: 50px;
+}
+.rating_table tbody tr>:nth-child(1) {
+	border-right: none;
+}
+.rating_table_name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}
+.circle_img {
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.rating_table_number {
+    font-weight: bold;
+    text-align: center;
+}
