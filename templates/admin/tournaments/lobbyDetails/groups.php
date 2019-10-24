@@ -99,7 +99,7 @@ function playerRow($e_o,$last,$playerName, $playerNum, $playerID, $seed, $plrPho
 		$isBottom = "";
 ?>
 	<tr class="tbody_<?=$e_o?>">
-		<td class="<?=$e_o?>_num<?=($last)?" radius_bl":""?>">
+		<td class="<?=$e_o?>_num<?=($last)?" radius_bl":""?> groups_table_number">
 			<?=$playerNum?>
 		</td>
 		<td class="groups_table_name pointer"

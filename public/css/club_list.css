@@ -56,4 +56,8 @@ table.club_list_table .col-4 {
 .club_list_table tbody tr>:nth-child(1) {
 	border-right: none;
 }
+.club_list_number {
+    font-weight: bold;
+    text-align: center;
+}
 

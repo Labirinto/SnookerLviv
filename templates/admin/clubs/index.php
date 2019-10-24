@@ -34,7 +34,7 @@ function displayClub($i, $id, $name, $city, $country, $tables,$BR,$BL)
 			<tr class="tbody_<?=$e_o?> pointer"
 			onclick="window.location.href=
 			'/~levko/admin/clubs/lobby.php?id=<?=$id?>';">
-				<td class="<?=$e_o?>_num<?=$BL?>"><?=$i?></td>
+				<td class="<?=$e_o?>_num<?=$BL?> club_list_number"><?=$i?></td>
 				<td><?=$name?></td>
 				<td><?=$city?>, <?=$country?></td>
 				<td class="<?=$BR?>"><?=$tables?></td>
