@@ -198,10 +198,13 @@ CREATE VIEW playerTournamentView AS
 SELECT
     PT.playerID AS playerID, CONCAT(P.lastName, ' ', P.firstName) AS playerName,
     P.photo AS photo, PT.seed, PT.tournamentID, P.birthday AS birthday,
-	T.name AS tournamentName
+	T.name AS tournamentName, C.name AS clubName, TS.place, TS.points
 FROM playerTournament PT 
     JOIN player P ON PT.playerID=P.id
-	JOIN tournament T ON PT.tournamentID=T.id;
+	JOIN tournament T ON PT.tournamentID=T.id
+	JOIN club C ON T.clubID=C.id
+	LEFT JOIN tournamentStandings TS ON P.id = TS.playerID
+							AND T.id = TS.tournamentID;
 -- --------------------------------------------------------------------
 
 
