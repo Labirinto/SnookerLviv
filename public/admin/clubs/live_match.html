@@ -1,6 +1,8 @@
 <html>
 <head>
-    <title><?=$clubName?> TABLE <?=$tableNum?></title>
+    <title>
+		<?=$clubName?> TABLE <?=$tableNum?>
+	</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../../css/live_match_lobby.css">
@@ -10,14 +12,22 @@
     <body>
 		<div class="live-match-lobby">
 			<img alt="logo" height="100px" width="100px" src="<?=CLUB_IMG.$club_img?>">
-			<h2 class="live-match-lobby-club-name"><?=$clubName?></h2>
-			<h3 class="live-match-lobby-table-num">Стіл #<span id="tableID"><?=$tableNum?></span></h3>
+			<h2 class="live-match-lobby-club-name">
+				<?=$clubName?>
+			</h2>
+			<h3 class="live-match-lobby-table-num">
+				Стіл #<span id="tableID"><?=$tableNum?></span>
+			</h3>
 		</div>
 		<div class="live-match-lobby-table">
-			<h3 class="live-match-lobby-info"><?=$matchInfo?> - Зустріч <?=$matchNum?></h3>
+			<h3 class="live-match-lobby-info">
+				<?=$matchInfo?> - Зустріч <?=$matchNum?>
+			</h3>
 			<div class="live-match-lobby-player-table">
 				<div id="leftPlayer" class="<?=$player1class?>">
-					<span class="live-match-lobby-player-name"><?=$player1?></span>
+					<span class="live-match-lobby-player-name">
+						<?=$player1?>
+					</span>
 					<p>
 						<img class="live-match-lobby-player-img" alt="img" src="<?=PLAYER_IMG.$img1?>">
 					</p>
@@ -26,31 +36,47 @@
 					<table class="live-match-lobby-frame-table">
 						<tbody>
 							<tr>
-								<td id="leftFrames"><?=$score1?></td>
-								<th>Frames</th>
-								<td id="rightFrames"><?=$score2?></td>
+								<td id="leftFrames">
+									<?=$score1?>
+								</td>
+								<th>Фрейми</th>
+								<td id="rightFrames">
+									<?=$score2?>
+								</td>
 							</tr>
 							<tr class="live-match-lobby-frame-details">
-								<td colspan="3">Best of <?=$bestOf?></td>
+								<td colspan="3">
+									Best of <?=$bestOf?>
+								</td>
 							</tr>
 							<tr>
-								<td id="leftPoints"><?=$points1?></td>
-								<th>Points</th>
-								<td id="rightPoints"><?=$points2?></td>
+								<td id="leftPoints">
+									<?=$points1?>
+								</td>
+								<th>Очки</th>
+								<td id="rightPoints">
+									<?=$points2?>
+								</td>
 							</tr>
 							<tr class="live-match-lobby-frame-details">
 								<td colspan="3">147</td>
 							</tr>
 							<tr>
-								<td id="leftBreak"><?=$break1?></td>
-								<th>Break</th>
-								<td id="rightBreak"><?=$break2?></td>
+								<td id="leftBreak">
+									<?=$break1?>
+								</td>
+								<th>Брейк</th>
+								<td id="rightBreak">
+									<?=$break2?>
+								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				<div id="rightPlayer" class="<?=$player2class?>">
-					<span class="live-match-lobby-player-name"><?=$player2?></span>
+					<span class="live-match-lobby-player-name">
+						<?=$player2?>
+					</span>
 					<p>
 						<img class="live-match-lobby-player-img" alt="img" src="<?=PLAYER_IMG.$img2?>">
 					</p>
