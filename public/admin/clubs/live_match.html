@@ -3,12 +3,13 @@
     <title><?=$clubName?> TABLE <?=$tableNum?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../css/live_match_lobby.css"> 
+    <link rel="stylesheet" type="text/css" href="../../css/live_match_lobby.css">
+	<link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
     <body>
 		<div class="live-match-lobby">
-			<img alt="logo" height="100px" width="100px" src="../../img/brain.png">
+			<img alt="logo" height="100px" width="100px" src="<?=CLUB_IMG.$club_img?>">
 			<h2 class="live-match-lobby-club-name"><?=$clubName?></h2>
 			<h3 class="live-match-lobby-table-num">Стіл #<span id="tableID"><?=$tableNum?></span></h3>
 		</div>

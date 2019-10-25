@@ -9,11 +9,12 @@ if( !exists("_table", $tableID) ) {
 
 $query = "SELECT TV._number, TV.clubName, TV.tableStatus, TV.matchStatus, TV.matchCounter,
 		TV.Player1, TV.Player2, TV.player1Score, TV.player2Score, TV.bestOf, TV.tournamentName,
-		TV.points1, TV.points2, TV.break1, TV.break2,
-		TV.roundType, TV.roundNo, TV.groupID, TV.photo1, TV.photo2
+		TV.points1, TV.points2, TV.break1, TV.break2, TV.roundType,
+		TV.roundNo, TV.groupID, TV.photo1, TV.photo2, TV.clubPhoto
 		FROM tableView TV WHERE TV.tableID = ?";
 $data = query($query, $tableID);
 $tableNum = $data[0][0]; $clubName = $data[0][1];
+$club_img = $data[0][20];
 
 $tableStatus = $data[0][2]; $matchStatus = $data[0][3]; $matchNum = $data[0][4];
 $player1 = $data[0][5]; $player2 = $data[0][6]; $bestOf = $data[0][9];
