@@ -31,8 +31,6 @@ else if( !strcmp($bracket, "GroupKO") )
 }
 
 
-//  TODO print for GROUP only
-
 
 function prepareRound($roundType, $R, $tournamentID)
 {
@@ -54,13 +52,13 @@ function castHeader($hdr)
 		return "Група";
 
 	if($hdr == "K/O")
-		return "Knockout, раунд";
+		return "Knockout - раунд";
 
 	if($hdr == "UP")
-		return "Верхня сітка, раунд";
+		return "Верхня сітка - раунд";
 
 	if($hdr == "LOW")
-		return "Нижня сітка, раунд";
+		return "Нижня сітка - раунд";
 }
 
 function roundDetails($type, $n)

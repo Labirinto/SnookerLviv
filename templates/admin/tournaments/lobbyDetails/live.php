@@ -3,7 +3,9 @@
 
 $query = "SELECT TV.counter, TV.player1Name, TV.player2Name,  
 	TV.bestOF, TV.player1Score, TV.player2Score,
-	TV.points1, TV.points2, TV.break1, TV.break2, TV.photo1, TV.photo2 
+	TV.points1, TV.points2, TV.break1, TV.break2, 
+	TV.photo1, TV.photo2, TV.matchID,
+	TV.roundType, TV.roundNo
 	FROM matchesTournamentView TV  
 	WHERE TV.tournamentID=? AND TV.status=?
 	ORDER BY TV.counter";
@@ -25,8 +27,15 @@ if($data_count > 0)
 		$points1 = $data[$i][6]; $points2 = $data[$i][7];
 		$break1 = $data[$i][8]; $break2 = $data[$i][9];
 		$img1 = $data[$i][10]; $img2 = $data[$i][11];
+		$matchID = $data[$i][12];
+		$rndType = $data[$i][13]; $rndNo = $data[$i][14];
+		$rndType = castHeader($rndType);
 
-		printLiveMatch($counter, $player1, $score1, $points1, $break1, $img1, $player2, $score2, $points2, $break2, $img2, $bestOf);
+		displayHeader($matchID, $counter, $rndType, $rndNo);
+
+		printLiveMatch($player1, $score1, $points1, $break1, $img1, $player2, $score2, $points2, $break2, $img2, $bestOf);
+
+		displayFooter();
 	}
 }
 else
@@ -35,24 +44,48 @@ else
 }
 
 
+function castHeader($hdr)
+{
+    if($hdr == "Group")
+        return "Група ";
+
+    if($hdr == "K/O")
+        return "Knockout - раунд ";
+
+    if($hdr == "UP")
+        return "Верхня сітка - раунд ";
+
+    if($hdr == "LOW")
+        return "Нижня сітка - раунд ";
+}
+
+
 function printPlayer($name, $img)
 { ?>
-
-<div class="list-match-lobby-player">
-	<span class="list-match-lobby-player-name"><?=$name?></span>
-	<p>
-		<img class="list-match-lobby-player-img" alt="img" src="<?=PLAYER_IMG.$img?>">
-	</p>
-</div>
-
+			<div class="list-match-lobby-player">
+				<span class="list-match-lobby-player-name">
+					<?=$name?>
+				</span>
+				<p>
+					<img class="list-match-lobby-player-img" alt="img"
+					src="<?=PLAYER_IMG.$img?>">
+				</p>
+			</div>
 <?php }
 
 
-function printLiveMatch($matchNum, $player1, $score1, $points1, $break1, $img1, $player2, $score2, $points2, $break2, $img2, $bestOf)
-{ ?>
 
-   <div class="list-match-lobby">
-		<h3 class="list-match-lobby-info">Раунд 1 - Зустріч <?=$matchNum?></h3>
+function displayHeader($matchID, $matchNo, $rndType, $rndNo)
+{ ?>
+   <div class="list-match-lobby pointer"
+	onclick="openMatchLobby(<?=$matchID?>);">
+		<h3 class="list-match-lobby-info">
+			Зустріч #<?=$matchNo?>&emsp; | &emsp;<?=$rndType?><?=$rndNo?>
+		</h3>
+<?php }
+
+function printLiveMatch($player1, $score1, $points1, $break1, $img1, $player2, $score2, $points2, $break2, $img2, $bestOf)
+{ ?>
 		<div class="list-match-lobby-player-table">
 			<?php printPlayer($player1, $img1); ?>
 			<div class="list-match-lobby-frame-section">
@@ -84,7 +117,10 @@ function printLiveMatch($matchNum, $player1, $score1, $points1, $break1, $img1, 
 			</div>
 			<?php printPlayer($player2, $img2); ?>
 		</div>
-	</div>
-	</br>
+<?php }
 
-<?php } ?>
+function displayFooter()
+{ ?>
+	</div>
+<?php }
+?>

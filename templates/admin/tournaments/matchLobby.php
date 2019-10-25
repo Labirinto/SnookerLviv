@@ -14,11 +14,28 @@ function lobby($tournID, $tournName, $matchID)
 		$id2, $name2, $score2, $img2) = getMatchData($matchID);
 
 	displayHeader($tournID, $tournName);
-	
+
+	$roundType = castHeader($roundType);	
 	printLobby($counter, $roundType, $roundNo, $bestOF,
 		$id1, $name1, $score1, $img1, $id2, $name2, $score2, $img2);
 	
 	printFrames($matchID);
+}
+
+
+function castHeader($hdr)
+{
+    if($hdr == "Group")
+        return "Група ";
+
+    if($hdr == "K/O")
+        return "Knockout - раунд ";
+
+    if($hdr == "UP")
+        return "Верхня сітка - раунд ";
+
+    if($hdr == "LOW")
+        return "Нижня сітка - раунд ";
 }
 
 
@@ -38,7 +55,7 @@ function printLobby($counter, $roundType, $roundNo, $bestOF,
 	$id1, $name1, $score1, $img1, $id2, $name2, $score2, $img2)
 { ?>
 	<div class="match_lobby">
-		<h3 class="match_lobby_info">Зустріч #<?=$counter?> | Раунд <?=$roundNo?>(<?=$roundType?>) </h3>
+		<h3 class="match_lobby_info">Зустріч #<?=$counter?>&emsp; | &emsp;<?=$roundType?><?=$roundNo?> </h3>
 		<div class="match_lobby_player-table">
 			<div class="match_lobby_player pointer"
 			onclick="openPlayerLobby(<?=$id1?>);">
