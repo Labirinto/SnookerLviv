@@ -70,13 +70,13 @@ table.breaks_table .col-5 {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin-left: 10px;
 }
 .circle_img {
 	border-radius: 100px;
 	width: 30px;
 	height: 30px;
 	object-fit: cover;
+	margin-left: 10px;
 	margin-right: 10px;
 }
 .breaks_table_points {

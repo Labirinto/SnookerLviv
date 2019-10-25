@@ -14,23 +14,28 @@
 		$plrID = $data[$i][2]; $plrName = $data[$i][3];
 		$oppID = $data[$i][4]; $oppName = $data[$i][5];
 		$plrPhoto = $data[$i][6]; $oppPhoto = $data[$i][7];
+
+		$BL = ($i+1 == $data_count) ? "radius_bl" : "";
+        $BR = ($i+1 == $data_count) ? "radius_br" : "";
 	
-		printBreak($points, $i+1, $matchID, $plrName, $plrPhoto, $oppName, $oppPhoto, ($i+1==$data_count));
+		printBreak($points, $i+1, $matchID, $plrName, $plrPhoto, $oppName, $oppPhoto, $BL, $BR);
 	}
 
 	printFooter();
 
 
 
-function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$isLast)
+function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR)
 {
     $e_o = ($i%2) ? "odd" : "even";
  ?>
             <tr onclick="openMatchLobby(<?=$mID?>);"
-                class="tbody_<?=$e_o?> pointer">
-                <td class="breaks_table_name<?=($isLast)?" radius_bl":""?>">
-                    <img class="circle_img" src="<?=PLAYER_IMG.$plrPhoto?>" alt="img">
-                    <span><?=$plrName?></span>
+            class="tbody_<?=$e_o?> pointer">
+                <td class="<?=$BL?>">
+                    <div class="breaks_table_name">
+                        <img class="circle_img" src="<?=PLAYER_IMG.$plrPhoto?>" alt="img">
+                        <span><?=$plrName?></span>
+                    </div>
                 </td>
                 <td class="breaks_table_points <?=$e_o?>_num">
 					<?=$pts?>
@@ -39,9 +44,11 @@ function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$isLast)
                 </td>
                 <td>
                 </td>
-                <td class="breaks_table_name<?=($isLast)?" radius_br":""?>">
-                    <img class="circle_img" src="<?=PLAYER_IMG.$oppPhoto?>" alt="img">
-                    <span><?=$oppName?></span>
+                <td class="<?=$BR?>">
+                    <div class="breaks_table_name">
+                        <img class="circle_img" src="<?=PLAYER_IMG.$oppPhoto?>" alt="img">
+                        <span><?=$oppName?></span>
+                    </div>
                 </td>
             </tr>
 <?php
