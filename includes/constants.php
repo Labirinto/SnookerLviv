@@ -12,5 +12,6 @@ define("PATH_H", "/~levko/");
 
 define("YT_HEADER", "https://www.youtube.com/watch?v=");
 define("PLAYER_IMG", PATH_H."img/player/");
+define("CLUB_IMG", PATH_H."img/club/");
 
 ?>
