@@ -6,8 +6,9 @@
 
 <?php
 
-	$query =  "SELECT C.id,C.name,C.country,C.city,C.nrOfTables
-				FROM club C ORDER BY 2";
+	$query =  "SELECT C.id, C.name, C.country, C.city, 
+			C.nrOfTables, C.photo
+			FROM club C ORDER BY 2";
 	$data = query($query);
 	$data_count = count($data);
 
@@ -17,27 +18,36 @@
 	{
 		$id = $data[$i][0]; $name = $data[$i][1];
 		$country = $data[$i][2]; $city = $data[$i][3];
-		$tables = $data[$i][4];
+		$tables = $data[$i][4]; $img = $data[$i][5];
 		$BR = ($i+1 == $data_count) ? " radius_br" : "";
 		$BL = ($i+1 == $data_count) ? " radius_bl" : "";
 
-		displayClub($i+1, $id, $name, $city, $country,$tables,$BR,$BL);
+		displayClub($i+1,$id,$name,$city,$country,$tables,$img,$BR,$BL);
 	}
 
 	displayFooter();
 
 
-function displayClub($i, $id, $name, $city, $country, $tables,$BR,$BL)
+function displayClub($i,$id,$name,$city,$country,$tables,$img,$BR,$BL)
 {
 	$e_o = ($i%2) ? "odd" : "even";
 ?>
 			<tr class="tbody_<?=$e_o?> pointer"
 			onclick="window.location.href=
 			'/~levko/admin/clubs/lobby.php?id=<?=$id?>';">
-				<td class="<?=$e_o?>_num<?=$BL?> club_list_number"><?=$i?></td>
-				<td><?=$name?></td>
-				<td><?=$city?>, <?=$country?></td>
-				<td class="<?=$BR?>"><?=$tables?></td>
+				<td class="<?=$e_o?>_num<?=$BL?> club_list_number">
+					<?=$i?>
+				</td>
+				<td class="club_list_name">
+					<img src="<?=CLUB_IMG.$img?>" alt="club img" class="circle_img">
+					<span><?=$name?></span>
+				</td>
+				<td>
+					<?=$city?>, <?=$country?>
+				</td>
+				<td class="<?=$BR?>">
+					<?=$tables?>
+				</td>
 			</tr>
 <?php }
 
