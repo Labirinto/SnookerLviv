@@ -27,7 +27,7 @@ function cntTournamentAndBreak($playerID)
 	$breaks_cnt = query($query, $playerID);
 
 	$query = "SELECT count(tournamentID) FROM playerTournamentView
-			WHERE playerID=?";
+			WHERE playerID=? AND points IS NOT NULL";
 	$tournaments_cnt = query($query, $playerID);
 	return array($tournaments_cnt[0][0], $breaks_cnt[0][0]);
 }
