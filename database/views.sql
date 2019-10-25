@@ -120,6 +120,7 @@ FROM groupStandings GS
 CREATE VIEW tableView AS
 SELECT
     tbl.id AS tableID, tbl._number, tbl.clubID, C.name AS clubName,
+	C.photo AS clubPhoto,
     tbl.status AS tableStatus, MD.status AS matchStatus,
     M.counter AS matchCounter, tbl.matchID,
 	M.player1ID, M.player2ID, X.photo AS photo1, Y.photo AS photo2,
