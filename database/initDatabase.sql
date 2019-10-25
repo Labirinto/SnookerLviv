@@ -111,6 +111,7 @@ CREATE TABLE club(
 	city VARCHAR(30) NOT NULL,
 	country VARCHAR(30) NOT NULL,
 	nrOfTables int NOT NULL DEFAULT 0,
+	photo VARCHAR(50) NOT NULL DEFAULT "default.png",
 
 	PRIMARY KEY(id)
 );
