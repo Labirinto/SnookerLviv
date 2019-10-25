@@ -60,4 +60,17 @@ table.club_list_table .col-4 {
     font-weight: bold;
     text-align: center;
 }
+.club_list_name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.circle_img {
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
