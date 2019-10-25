@@ -18,8 +18,15 @@ function lobby($tournID, $tournName, $matchID)
 	$roundType = castHeader($roundType);	
 	printLobby($counter, $roundType, $roundNo, $bestOF,
 		$id1, $name1, $score1, $img1, $id2, $name2, $score2, $img2);
-	
-	printFrames($matchID);
+
+	if( isset($score1) )
+	{
+		framesHeader();
+
+		printFrames($matchID);
+
+		framesFooter();
+	}
 }
 
 
@@ -100,49 +107,59 @@ function printLobby($counter, $roundType, $roundNo, $bestOF,
 function framesHeader()
 { ?>
 
-<div class="match_lobby_table_container">
-	<table class="match_lobby_table">
-		<colgroup>
-			<col class="col-1">
-			<col class="col-2">
-			<col class="col-3">
-			<col class="col-4">
-			<col class="col-5">
-		</colgroup>
-		<thead class="match_lobby_table_thead">
-			<tr>
-				<th>
-					<span>брейки</span>
-				</th>
-				<th>
-					<span>очки</span>
-				</th>
-				<th>
-					<span>фрейм</span>
-				</th>
-				<th>
-					<span>очки</span>
-				</th>
-				<th>
-					<span>брейки</span>
-				</th>
-			</tr>
-		</thead>
-		<tbody class="match_lobby_table_tbody">
+	<div class="match_lobby_table_container">
+		<table class="match_lobby_table">
+			<colgroup>
+				<col class="col-1">
+				<col class="col-2">
+				<col class="col-3">
+				<col class="col-4">
+				<col class="col-5">
+			</colgroup>
+			<thead class="match_lobby_table_thead">
+				<tr>
+					<th>
+						<span>брейки</span>
+					</th>
+					<th>
+						<span>очки</span>
+					</th>
+					<th>
+						<span>фрейм</span>
+					</th>
+					<th>
+						<span>очки</span>
+					</th>
+					<th>
+						<span>брейки</span>
+					</th>
+				</tr>
+			</thead>
+			<tbody class="match_lobby_table_tbody">
 <?php }
 
 
-function printFrame($counter, $score1, $score2, $breaks1, $breaks2, $BL, $BR)
+function printFrame($counter, $score1, $score2, $breaks1, $breaks2, $BL, $BR, $TL, $TR)
 { 
 	$e_o = ($counter%2) ? "odd" : "even";
 ?>
 
 	<tr class="tbody_<?=$e_o?>">
-		<td class="match_lobby_table_name_left <?=$BL?>"><?=$breaks1?></td>
-		<td class="match_lobby_table_name_left"><?=$score1?></td>
-		<td class="match_lobby_table_number <?=$e_o?>_num"><?=$counter?></td>
-		<td class="match_lobby_table_date_center"><?=$score2?></td>
-		<td class="match_lobby_table_date_left <?=$BR?>"><?=$breaks2?></td>
+		<td class="match_lobby_table_name_left <?=$BL?> <?=$TL?>">
+			<?=$breaks1?>
+		</td>
+		<td class="match_lobby_table_name_left">
+			<?=$score1?>
+		</td>
+		<td class="match_lobby_table_number <?=$e_o?>_num">
+			<?=$counter?>
+		</td>
+		<td class="match_lobby_table_date_center">
+			<?=$score2?>
+		</td>
+		<td class="match_lobby_table_date_left <?=$BR?> <?=$TR?>">
+			<?=$breaks2?>
+		</td>
 	</tr>
 
 <?php }
@@ -162,9 +179,6 @@ function printFrames($matchID)
 		FROM frame F WHERE F.matchID=? ORDER BY F.counter";
 	$data = query($query, $matchID);
 	$data_count = count($data);
-
-	if( $data_count > 0 )
-		framesHeader();
 
 	for($i = 0; $i < $data_count; $i++)
 	{
@@ -187,15 +201,16 @@ function printFrames($matchID)
 		$breaks2 = substr($breaks2, 0, -2);
 
 		
+		$TL = ""; $TR = "";
 		$BL = ""; $BR = "";
 		if($i === 0){
-			$BL = "radius_tl"; $BR = "radius_tr";
+			$TL = "radius_tl"; $TR = "radius_tr";
 		}
-		else if($i+1 >= $data_count){
+		if($i+1 >= $data_count){
 			$BL = "radius_bl"; $BR = "radius_br";
 		}
 
-		printFrame($i+1, $points1, $points2, $breaks1, $breaks2, $BL, $BR);
+		printFrame($i+1, $points1, $points2, $breaks1, $breaks2, $BL, $BR, $TL, $TR);
 	}
 	
 	if( $data_count > 0 )
