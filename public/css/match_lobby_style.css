@@ -11,9 +11,8 @@
 .match_lobby {
 	display: inline-block;
 	max-width: 700px;
-	min-width: 700px;
+	width: 700px;
 	background-color: #474B4F;
-	border-top: 3px solid #61892F;
 	border-radius: 8px;
 }
 .match_lobby_info {
@@ -24,6 +23,9 @@
 	text-transform: uppercase;
 	font-weight: normal;
 	font-size: 15px;
+	border-top: 3px solid #61892F;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
 .match_lobby_frame-section tbody {
 	display: table-row-group;
