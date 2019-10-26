@@ -6,13 +6,13 @@
 		<form action="create.php" method="post" enctype="multipart/form-data">
 			<div class="avatar-upload">
 				<div class="avatar-preview">
-				<!-- Тут має бути дефолтне зображення -->
-					<div id="imagePreview" style="background-image: url(http://localhost/~levko/img/player/default.png);">
+					<div id="imgPreview"
+					style="background-image: url(http://localhost/~levko/img/player/default.png);">
 					</div>
 				</div>
 				<div class="avatar-edit">
-					<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" name="photo"/>
-					<label for="imageUpload">
+					<input type='file' id="imgUpload" accept=".png, .jpg, .jpeg" name="photo"/>
+					<label for="imgUpload">
 						<i class="fas fa-upload"></i>
 						Завантажити
 					</label>
