@@ -30,7 +30,7 @@
 	$data = query($query, $clubID);
 	$data_count = count($data);
 
-	generalHeader($clubName);
+	generalHeader($clubName, $clubPhoto);
 	
 	for($i=0; $i < $data_count; $i++)
 	{
@@ -80,11 +80,15 @@ function buttonFooter()
 
 
 
-function generalHeader($clubName)
+function generalHeader($clubName, $clubPhoto)
 { ?>
 	<div class="sub-container">
 		<div class="club_tables_header">
-			<h1 class="club_tables_sign"><?=$clubName?></span>
+			<h1 class="club_tables_sign">
+				<?=$clubName?>
+				<img class="circle_img_clb float_right" alt="logo"
+				src="<?=CLUB_IMG.$clubPhoto?>">
+			</h1>
 		</div>
 		<div class="club_tables_container">
 <?php }
