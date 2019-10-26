@@ -33,3 +33,10 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
+#playerImg_preview {
+	background-image: url(http://localhost/~levko/img/player/default.png);
+}
+#clubImg_preview {
+	background-image: url(http://localhost/~levko/img/player/default.png);
+}
+
