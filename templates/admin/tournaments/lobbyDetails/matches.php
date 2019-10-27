@@ -63,8 +63,8 @@ function castHeader($hdr)
 
 function roundDetails($type, $n)
 { ?>
-		<div class="round_num">
-			<h3 class="matches_list_table_round_num">
+		<div class="matches_list_header">
+			<h3 class="matches_list_sign">
 				<?=$type?> <?=$n?>
 			</h3>
 		</div>
@@ -72,7 +72,7 @@ function roundDetails($type, $n)
 
 function roundHeader()
 { ?>
-	<div class="matches_list_table_borRad_div">
+	<div class="matches_list_table_container">
 	<table class="matches_list_table">
 		<colgroup>
 			<col class="col-1">
@@ -81,13 +81,20 @@ function roundHeader()
 			<col class="col-4">
 			<col class="col-5">
 			<col class="col-6">
+			<col class="col-7">
+			<col class="col-8">
+			<col class="col-9">
 		</colgroup>
 		<thead class="matches_list_table_thead">
 			<tr>
 				<th>#</th>
-				<th>Гравець 1</th>
+				<th class="float_right">Гравець 1</th>
+				<th></th>
+				<th></th>
 				<th>v</th>
-				<th>Гравець 2</th>
+				<th></th>
+				<th></th>
+				<th class="float_left">Гравець 2</th>
 				<th>TV</th>
 			</tr>
 		</thead>
@@ -109,35 +116,37 @@ function displayMatch($counter, $last,$matchID, $player1, $score1, $player2, $sc
 ?>
 	<tr onclick='openMatchLobby(<?=$matchID?>);'
 		class="tbody_<?=$e_o?> pointer">
-		<td class="matches_list_table_number <?=$e_o?>_num<?=($last)?" radius_bl":""?>">
+		<td class="bold <?=$e_o?>_num<?=($last)?" radius_bl":""?>">
 			<?=$counter?>
 		</td>
-		<td class="matches_list_table_name_right">
-			<?=$player1?>
+		<td>
+			<span class="float_right">
+				<?=$player1?>
+			</span>
 		</td>
-		<td class="matches_list_table_score">
-			<table class="matches_list_table_score_row">
-			<tr>
-				<td>
-					<span class="matches_list_table_score01">
-						<?=$score1?>
-					</span>
-				</td>
-				<td>
-					<span class="matches_list_table_best_of">
-						(<?=$bestOf?>)
-					</span>
-				</td>
-				<td>
-					<span class="matches_list_table_score02">
-						<?=$score2?>
-					</span>
-				</td>
-			</tr>
-			</table>
+		<td>
 		</td>
-		<td class="matches_list_table_name_left">
-			<?=$player2?>
+		<td>
+			<span class="matches_list_table_score bold float_right">
+				<?=$score1?>
+			</span>
+		</td>
+		<td>
+			<span>
+				(<?=$bestOf?>)
+			</span>
+		</td>
+		<td>
+			<span class="matches_list_table_score bold float_left">
+				<?=$score2?>
+			</span>
+		</td>
+		<td>
+		</td>
+		<td>
+			<span class="float_left">
+				<?=$player2?>
+			</span>
 		</td>
 		<td class="matches_list_table_youtube
 		<?=$e_o?>_youtube 
