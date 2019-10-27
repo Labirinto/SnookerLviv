@@ -120,3 +120,6 @@ table col[class*="col-"] {
 .radius_tl {
 	border-top-left-radius: 8px;
 }
+.bold {
+	font-weight: bold;
+}

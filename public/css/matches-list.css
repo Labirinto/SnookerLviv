@@ -1,7 +1,18 @@
-.matches_list_table_round_num {
+
+.matches_list_header {
+ 	width: 1080px;
+ 	max-width: 1080px;
+}
+.matches_list_sign {
 	text-transform: uppercase;
 	font-size: 22px;
 	text-align: left;
+}
+.matches_list_table_container {
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    border-top: 3px solid #61892F;
 }
 .matches_list_table{
     margin-bottom: 50px;
@@ -9,89 +20,61 @@
     max-width: 1080px;
     min-width: 1080px;
 }
-.round_num {
- 	width: 1080px;
- 	max-width: 1080px;
-}
 table.matches_list_table .col-1 {
- 	width: 5%;
+ 	width: 1%;
 }
 table.matches_list_table .col-2 {
- 	width: 30%;
+ 	width: 39%;
 }
 table.matches_list_table .col-3 {
- 	width: 30%;
+ 	width: 8%;
 }
 table.matches_list_table .col-4 {
- 	width: 30%;
+ 	width: 1%;
 }
 table.matches_list_table .col-5 {
- 	width: 5%;
+ 	width: 1%;
 }
 table.matches_list_table .col-6 {
- 	width: 5%;
+ 	width: 1%;
 }
-.matches_list_table_score {
-	text-align: center;
+table.matches_list_table .col-7 {
+ 	width: 8%;
 }
-.matches_list_table_score_row {
-	display: inline-block;
+table.matches_list_table .col-8 {
+ 	width: 40%;
+}
+table.matches_list_table .col-9 {
+ 	width: 1%;
 }
 .matches_list_table thead th {
 	text-transform: uppercase;
 	padding: 15px;
 	font-size: 13px;
 	text-align: center;
+	vertical-align: middle;
 }
 .matches_list_table_thead{
 	color: #fff;
 }
 .matches_list_table tbody tr td {
-	padding: 7px;
+	padding: 10px;
+	text-align: center;
+    font-size: 15px;
+    height: 50px;
+    max-height: 50px;
+	vertical-align: middle;
 }
 .matches_list_table_youtube img {
 	height: 20px;
 	width: auto;
 }
-.matches_list_table_name_right {
-	text-align: right;
-	font-size: 15px;
-	vertical-align: middle;
-}
-.matches_list_table_score01,
-.matches_list_table_score02 {
+.matches_list_table_score {
 	font-size: 20px;
-	font-weight: 700;
-}
-.matches_list_table_best_of {
-	padding: 2px 10px;
-	font-weight: normal;
-	font-size: 14px;
-}
-.matches_list_table_name_left {
-	text-align: left;
-	font-size: 15px;
-	vertical-align: middle;
-}
-.matches_list_table_number {
-	font-weight: bold;
-}
-.fa-youtube {
-    color: #FF1F1C;
 }
 .odd_youtube {
     background-color: #4B5055;
 }
 .even_youtube {
     background-color: #43464A;
-}
-.matches_list_table thead tr>:nth-child(2) {
-    text-align: right;
-}
-.matches_list_table thead tr>:nth-child(4) {
-    text-align: left;
-}
-.matches_list_table_borRad_div {
-    border-top: 3px solid #61892F;
-    border-radius: 8px;
 }
