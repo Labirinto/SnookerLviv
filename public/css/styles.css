@@ -29,6 +29,8 @@ table col[class*="col-"] {
 	float: none;
 	display: table-column;
 }
+
+
 .pointer {
 	cursor: pointer;
 }
@@ -62,52 +64,6 @@ table col[class*="col-"] {
 	justify-content: center;
 	margin-bottom: 100px;
 }
-.clearfix:after {
-	content:'';
-	display: table;
-	width: 100%;
-	clear: both;
-}
-.logologin {
-	background-color: #232b2b;
-	width: 100%;
-	top: 0;
-}
-.logologin img {
-	width: 55px;
-	height: 36px;
-	display: block;
-	background-color: #4caf50;
-	float: left;
-	padding: 10px;
-	padding-top: 10px;
-}
-
-.login {
-	padding: 10px 0px;
-	margin-top: 2px;
-	float: right;
-}
-.login input[type="text"],
-.login input[type="password"] {
-	background-color: #3b444b;
-	border: 0px;
-	margin: 2px 2px;
-	padding: 4px 0px 4px 6px;
-	outline: none;
-}
-.login input[type="submit"] {
-	border: 0px;	
-	margin-right: 35px;
-	padding: 4px 10px;
-	background-color: #4caf50;
-	color: white;
-	outline: none;
-}
-.login input[type="submit"]:hover {
-	background-color: #2d6b30;
-}
-
 .radius_br {
 	border-bottom-right-radius: 8px;
 }
