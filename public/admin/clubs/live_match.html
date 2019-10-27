@@ -6,18 +6,25 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../../css/live_match_lobby.css">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
     <body>
+		<div class="container">
 		<div class="live-match-lobby">
-			<img alt="logo" height="100px" width="100px" src="<?=CLUB_IMG.$club_img?>">
-			<h2 class="live-match-lobby-club-name">
-				<?=$clubName?>
-			</h2>
-			<h3 class="live-match-lobby-table-num">
-				Стіл #<span id="tableID"><?=$tableNum?></span>
-			</h3>
+			<div class="live_match_info">
+				<img class="live_logo_img" src="<?=CLUB_IMG.$club_img?>" alt="club logo">
+				<span class="live_logo_text">
+					<?=$clubName?>
+				</span>
+			</div>
+			<span class="live-match-lobby-table-num">
+				Стіл #<?=$tableNum?>
+			</span>
 		</div>
 		<div class="live-match-lobby-table">
 			<h3 class="live-match-lobby-info">
@@ -25,12 +32,14 @@
 			</h3>
 			<div class="live-match-lobby-player-table">
 				<div id="leftPlayer" class="<?=$player1class?>">
-					<span class="live-match-lobby-player-name">
-						<?=$player1?>
-					</span>
-					<p>
+					<div class="live_img_box pl_img">
 						<img class="live-match-lobby-player-img" alt="img" src="<?=PLAYER_IMG.$img1?>">
-					</p>
+					</div>
+					<div class="live-player-name">
+						<span class="live-match-lobby-player-name">
+							<?=$player1?>
+						</span>
+					</div>
 				</div>
 				<div class="live-match-lobby-frame-section">
 					<table class="live-match-lobby-frame-table">
@@ -39,27 +48,29 @@
 								<td id="leftFrames">
 									<?=$score1?>
 								</td>
-								<th>Фрейми</th>
+								<th>ФРЕЙМИ</th>
 								<td id="rightFrames">
 									<?=$score2?>
 								</td>
 							</tr>
 							<tr class="live-match-lobby-frame-details">
-								<td colspan="3">
-									Best of <?=$bestOf?>
+								<td class="live_borders" colspan="3">
+									Best of <b><?=$bestOf?></b>
 								</td>
 							</tr>
 							<tr>
 								<td id="leftPoints">
 									<?=$points1?>
 								</td>
-								<th>Очки</th>
+								<th>ОЧКИ</th>
 								<td id="rightPoints">
 									<?=$points2?>
 								</td>
 							</tr>
 							<tr class="live-match-lobby-frame-details">
-								<td colspan="3">147</td>
+								<td class="live_borders" colspan="3">
+									147
+								</td>
 							</tr>
 							<tr>
 								<td id="leftBreak">
@@ -74,16 +85,28 @@
 					</table>
 				</div>
 				<div id="rightPlayer" class="<?=$player2class?>">
-					<span class="live-match-lobby-player-name">
-						<?=$player2?>
-					</span>
-					<p>
+					<div class="live_img_box pl_img">
 						<img class="live-match-lobby-player-img" alt="img" src="<?=PLAYER_IMG.$img2?>">
-					</p>
+					</div>
+					<div class="live-player-name">
+						<span class="live-match-lobby-player-name">
+							<?=$player2?>
+						</span>
+					</div>
 				</div>
-			<script type="text/javascript" src="/~levko/js/liveLobby.js"> </script>
+			</div>
+			<div class="button_push">
+				<span>
+					Натисніть <i class="fas fa-power-off"></i> щоб піти на хуй
+				</span>
+				<span>
+					Натисніть <i class="fas fa-swimmer"></i> щоб піти поплавати
+				</span>
 			</div>
 		</div>
+		</div>
     </body>
+<script type="text/javascript" src="/~levko/js/liveLobby.js">
+</script>
 </html>
 
