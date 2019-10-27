@@ -1,69 +1,171 @@
 /* GENERAL NAVIGATION */
 
-.navigation-down {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 50px;
+header {
+    background-color: #2E3337;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    box-shadow: 0px -10px 30px #000;
+    width: 100%;
+    overflow: hidden;
 }
+header * {
+    display: inline;
+}
+.logo_box {
+    top: 0;
+    left: 0;
+    background-color: #2E3337;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 0px;
+    border-bottom-right-radius: 4px;
+}
+.logo_img {
+    padding: 10px;
+    height: 60px;
+    background-color: #2E3337;
+}
+.logo_text {
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #DEC27A;
+    font-family: 'Merriweather', serif;
+}
+
 .navigation a {
-    box-sizing: border-box;
-    font-size: 90%;
-    display: block;
-    padding: 20px 45px 20px 45px;
+    border-bottom: 2px solid #2E3337;
+    font-size: 15px;
+    padding: 30px 20px;
     color: white;
-    background-color: #232b2b;
+    background-color: #2E3337;
     text-transform: uppercase;
     text-align: center;
 }
-.navigation ul {
-    margin: 0px;
-}
-.navigation ul li {
+.navigation  {
+    display: flex;
+    flex-direction: row;
     float: left;
     list-style: none;
+    box-sizing: border-box;
+    overflow: hidden;
 }
-.navigation li a:hover {
-    background-color: #3d4747;
+.navigation a:hover {
+    background-color: #444857;
+    border-bottom: 2px solid #86C232 /*#61892F*/;
+    border-radius: 4px;
+}
+.navigation a.active {
+    border-bottom: 2px solid #86C232;
+    border-radius: 4px;
+    color: #86C232;
+}
+.header_buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    align-content: center;
+}
+.login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px 7px;
+    justify-content: center;
+    margin-right: 20px;
+}
+.login input {
+    border: none;
+    color: #ffffff !important;
+    font-size: 15px;
+    display: block;
+    background-color: transparent; /*#61892F*/;
+}
+.login:hover {
+    background-color: #54772A;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.header_buttons #childOne {
+    border-bottom-left-radius: 4px;
+}
+
+/***** TOURNAMENT NAVIGATION *****/
+
+.tour_menu_box {
+    width: 1080px;
+    margin: 0 auto;
+}
+.tour_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    background-color: #34393E;
+    box-shadow: 0px -10px 17px #000;
+    border-radius: 4px;
+}
+.tour_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.tour_menu a {
+    color: white;
+    font-size: 15px;
+    padding: 0px 20px;
+    flex: 1;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tour_menu a:hover {
+    background-color: #3F454C;
+    border-radius: 4px;
+}
+.tour_menu a.active {
+    color: #86C232;
+    background-color: #3F454C;
+}
+.navigation .icon,
+.tour_menu .icon {
+  display: none;
 }
 
 
 /* NAVIGATION IN TOURNAMENT*/
 
 .tournamentNavigation {
-    margin: 20px 20px;
-    box-sizing: border-box;
-    display: block;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
+    margin: 20px auto;
 }
 .tournamentNavigation form {
-    display: block;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
+	display: flex;
     flex-direction: row;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
 }
-.tournamentNavigation form button[type="submit"]{
+.tournamentNavigation button{
     font-size: 90%;
-    box-sizing: border-box;
-    display: block;
-    padding: 10px 25px 10px 25px;
+    border-radius: 4px;
+    padding: 10px 25px;
     color: white;
-    background-color: #232b2b;
     text-transform: uppercase;
-    text-align: center;
     border:0px;
+    background-color: #34393E;
 }
-.tournamentNavigation form button[type="submit"]:hover {
-    background-color: #3d4747;
+.tournamentNavigation button:hover {
+    background-color: #3F454C;
 }
 
