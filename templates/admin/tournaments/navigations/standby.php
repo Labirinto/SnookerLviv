@@ -1,15 +1,11 @@
 <?php $header = "lobby.php?id=$tournamentID"; ?>
 
-<nav class="navigation navigation-down">
-    <ul>
-        <li><a href="<?=$header?>&onClick=KO">Knockout</a></li>
-        <li><a href="<?=$header?>&onClick=DE">Double Elimination</a></li>
-        <li><a href="<?=$header?>&onClick=GR-KO">Groups-Knockout</a></li>
+<div class="tour_menu_box">
+	<nav class="tour_menu">
+		<a href="<?=$header?>&onClick=KO">KNOCKOUT</a>
+		<a href="<?=$header?>&onClick=DE">DOUBLE ELIMINATION</a>
+		<a href="<?=$header?>&onClick=GR-KO">GROUPS - KNOCKOUT</a>
 		
-		<div id="divisor">
-			<style>#divisor{width:20px}</style>
-		</div>
-        
-		<li><a href="<?=$header?>&onClick=players">Гравці</a></li>
-    </ul>
-</nav>
+		<a href="<?=$header?>&onClick=players">Гравці</a>
+	</nav>
+</div>
