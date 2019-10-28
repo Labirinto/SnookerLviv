@@ -87,11 +87,11 @@ function printTournament($i, $id, $name, $clubName, $isLast)
 function generalHeader()
 { ?>
 	<div class="sub-container">
-		<div class="calendar_header">
-			<h1 class="calendar_sign">
+		<div class="section_header">
+			<div class="header_sign">
 				<img class="header_icon" alt="calendar" src="<?=PATH_H?>img/web/calendar.png"> 
 				Календар
-			</h1>
+			</div>
 		</div>
 <?php
 }
@@ -105,8 +105,10 @@ function generalFooter()
 function listHeader($status)
 {
 ?>
-	<div class="calendar_header">
-		<h3 class="calendar_sign"><?=$status?></h3>
+	<div class="section_header">
+		<div class="header_sign">
+			<?=$status?>
+		</div>
 	</div>
 
 	<div class="calendar_table_container">
