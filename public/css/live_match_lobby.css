@@ -145,7 +145,10 @@ table {
     padding: 5px 0;
     vertical-align: middle;
 }
-
+.live-match-lobby-frame-table tr td {
+	min-width: 120px;
+	max-width: 120px;
+}
 .button_push {
     display: flex;
     flex-direction: column;
@@ -166,6 +169,3 @@ table {
     color: #55CAFF;
 }
 
-#rightFrames, #leftFrames {
-	width: 79px;
-}
