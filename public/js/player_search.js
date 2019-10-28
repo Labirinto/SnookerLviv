@@ -23,7 +23,7 @@ function player_search()
     }
 
     for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
+        a = li[i].getElementsByTagName("h4")[0];
         txtValue = a.textContent || a.innerText;
         
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
