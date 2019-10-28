@@ -127,11 +127,11 @@ function listHeader($status)
 					<span>Турнір</span>
 				</th>
 				<th>
-					<img class="thead_icon" alt="trophy_image" width="9" src="<?=PATH_H?>img/web/location.png"> 
+					<img class="thead_icon" alt="location_image" src="<?=PATH_H?>img/web/location.png"> 
 					<span>Місце</span>
 				</th>
 				<th>
-					<img class="thead_icon" alt="trophy_image" src="<?=PATH_H?>img/web/calendar.png"> 
+					<img class="thead_icon" alt="calendar_image" src="<?=PATH_H?>img/web/calendar.png"> 
 					<span>Дата</span>
 				</th>
 			</tr>
