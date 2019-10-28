@@ -5,33 +5,27 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 1080px;
-	max-width: 1080px;
-	padding-top: 
 }
 .participants_header {
-	width: 1080px;
-	max-width: 1080px;
-	text-transform: uppercase;
-	font-size: 22px;
 	display: flex;
 	flex-direction: column;
-	/*align-content: flex-start;*/
 	align-items: flex-start;
 }
 .players_list_search_field input {
 	padding: 10px;
 	margin-top: 25px;
-	width: 300px;
-	border: none;
-	background-color: #474B4F;
-	color: white;
-	font-size: 15px;
-	outline-style: none;
-	vertical-align: middle;
 	margin-right: 0px;
+	
+	font-size: 15px;
+	border: none;
 	border-radius: 4px;
 	border-left: 3px solid #61892F;
+	
+	width: 300px;
+	background-color: #474B4F;
+	color: white;
+	outline-style: none;
+	vertical-align: middle;
 	float: right;
 }
 
