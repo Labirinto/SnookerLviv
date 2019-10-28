@@ -1,7 +1,7 @@
 
 /******* SEARCH FIELD *******/
 
-.header_search {
+.player_search {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;

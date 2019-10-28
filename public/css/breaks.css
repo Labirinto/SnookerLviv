@@ -1,6 +1,7 @@
 .breaks_header {
 	width: 1080px;
 	max-width: 1080px;
+	margin: 0 auto;
 }
 .breaks_sign {
 	text-transform: uppercase;
