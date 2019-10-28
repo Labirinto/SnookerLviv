@@ -57,8 +57,10 @@ function displayTournament($i, $id, $name, $clubName, $isLast, $place,$pts)
 function listHeader()
 { ?>
     <div class="sub-container">
-        <div class="player_tournaments_header">
-            <h1 class="player_tournaments_sign">Турніри</h1>
+        <div class="section_header">
+            <div class="header_sign">
+				Турніри
+			</div>
         </div>
 		<div class="player_tournaments_table_container">
 		<table class="player_tournaments_table">
