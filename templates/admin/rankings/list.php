@@ -45,8 +45,10 @@ function displayPlayer($i, $id, $name, $img, $isLast, $pts)
 function rankingHeader($hdr)
 { ?>
     <div class="sub-container">
-        <div class="rating_header">
-            <h1 class="rating_sign"><?=$hdr?></h1>
+        <div class="section_header_700">
+            <div class="header_sign">
+				<?=$hdr?>
+			</div>
         </div>
         <div class="rating_table_container">
         <table class="rating_table">
