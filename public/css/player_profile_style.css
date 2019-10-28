@@ -17,7 +17,7 @@
 	background-color: #33373B;
 	float: left;
 	margin-bottom: 30px;
-	border-radius: 4px;
+	border-radius: 8px;
 	overflow: hidden;
 }
 .player_profile_img {
@@ -33,7 +33,7 @@
 	background-color: #33373B;
 	display: inline-block;
 	margin-bottom: 30px;
-	border-radius: 4px;
+	border-radius: 8px;
 	border-top: 3px solid #61892F;
 }
 .player_profile_personalInfo table {
@@ -44,12 +44,10 @@
 .player_profile_header {
 	display: inline-block;
 	font-size: 20px;
-	font-family: 'Exo 2', sans-serif;
 	color: #86C232;
 }
 .player_profile_surname {
 	text-transform: uppercase;
-	font-family: 'Exo 2', sans-serif;
 	font-size: 23px;
 	color: #86C232;
 }
@@ -101,13 +99,13 @@
 }
 .fa-trophy,
 .fa-user-friends {
-	font-size: 40px;
+	font-size: 33px;
 	margin-top: 32px;
 	margin-bottom: 10px;
 	text-align: center;
+	color: white;
 }
 .circle_text {
-	font-family: 'Exo 2', sans-serif;
 	text-transform: uppercase;
 }
 .little_circle {
@@ -119,6 +117,13 @@
 	padding-top: 5px;
 	box-shadow: 2px 2px 10px 0px #33373B;
 }
-.circle_hover div:hover {
+.player_profile_circle:hover {
 	background-color: #61892F;
+	cursor: pointer;
+}
+.pl_pr_active {
+	background-color: #61892F;
+}
+.details_anchor {
+	display: none;
 }
