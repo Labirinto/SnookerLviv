@@ -55,8 +55,8 @@ function displayClub($i,$id,$name,$city,$country,$tables,$img,$BR,$BL)
 function displayHeader()
 { ?>
 	<div class="sub-container">
-		<div class="club_list_header">
-			<h1 class="club_list_sign">клуби</h1>
+		<div class="section_header_700">
+			<div class="header_sign">клуби</div>
 		</div>
 		<div class="club_list_table_container">
 		<table class="club_list_table">
