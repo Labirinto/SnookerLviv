@@ -36,20 +36,29 @@ function generalHeader()
 { ?>
 	<script type="text/javascript" src="/~levko/js/player_search.js"></script>
     <div class="sub-container">
-	<div class="player_search">
-        <div class="participants_header">
-            <h3>Список гравців</h3>
-            <div class="tab">
-                <button class="tablinks active" onclick="openTab(event, 'list')"> <i class="fas fa-bars"></i></button>
-                <button class="tablinks" onclick="openTab(event, 'bars')"><i class="fas fa-th-large"></i></button>
-            </div>
-        </div>
-        <div class="players_list_search_field">
-            <form class="centered_search_div" action="#">
-                <input id="myInput" onkeyup="player_search()" type="text" placeholder="Пошук.." name="search">
-            </form>
-        </div>
-    </div>
+		<div class="section_header player_search">
+			<div class="participants_header">
+				<div class="header_sign">
+					Список гравців
+				</div>
+				<div class="tab">
+					<button class="tablinks active"
+					onclick="openTab(event, 'list')">
+						<i class="fas fa-bars"></i>
+					</button>
+					<button class="tablinks"
+					onclick="openTab(event, 'bars')">
+						<i class="fas fa-th-large"></i>
+					</button>
+				</div>
+			</div>
+			<div class="players_list_search_field">
+				<form class="centered_search_div" action="#">
+					<input id="myInput" onkeyup="player_search()"
+					type="text" placeholder="Пошук.." name="search">
+				</form>
+			</div>
+		</div>
 <?php }
 function generalFooter()
 { ?>
