@@ -75,7 +75,7 @@ table {
     width: 1080px;
     background-color: #54782A;
     box-shadow: 0px -5px 40px #151719;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 .live-match-lobby-player {
     padding: 20px;
@@ -86,17 +86,16 @@ table {
 
 /* PLAYER HIGHLIGHT */
 .highlight {
-    box-shadow: -10px 0px 20px #3B531E;
-    border-radius: 4px;
+    box-shadow: 0px 0px 20px #3B531E;
+    border-radius: 8px;
     /*border: 1px solid #fff;*/
     background-color: #6C9C29;
-
 }
 .live-player-name {
     margin-top: 20px;
     border-left: 3px solid #3B531E;
     border-right: 3px solid #3B531E;
-    border-radius: 4px;
+    border-radius: 6px;
     overflow: hidden;
 }
 .live-match-lobby-player-name {
@@ -109,9 +108,8 @@ table {
     height: 303px;
     max-height: 303px;
     object-fit: cover;
-    border-radius: 4px;
     border: 8px solid #3B531E;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 .live-match-lobby-frame-section tr th {
     font-size: 15px;
@@ -148,6 +146,9 @@ table {
 .live-match-lobby-frame-table tr td {
 	min-width: 120px;
 	max-width: 120px;
+}
+.live-match-lobby-frame-table tr th {
+	border-radius: 2px;
 }
 .button_push {
     display: flex;
