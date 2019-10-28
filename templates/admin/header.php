@@ -8,10 +8,10 @@
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/bracket.css">
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/group.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/matches-list.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/lobby_list_styles.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/match_lobby_style.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/player_profile_style.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/match_list.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/lobby_list.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/match_lobby.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/player_profile.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/participants.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/breaks.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/tournament_list.css"> 
