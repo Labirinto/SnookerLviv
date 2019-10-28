@@ -84,14 +84,11 @@ table col[class*="col-"] {
 	width: 1080px;
 	max-width: 1080px;
 	margin: 0 auto;
-	/*display: flex;
-	*/height: 70px;
 }
 .section_header_700 {
 	width: 700px;
 	max-width: 700px;
 	margin: 0 auto;
-	height: 70px;
 }
 .header_sign {
 	text-transform: uppercase;
