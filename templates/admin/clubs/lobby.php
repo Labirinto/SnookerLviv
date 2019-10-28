@@ -83,12 +83,12 @@ function buttonFooter()
 function generalHeader($clubName, $clubPhoto)
 { ?>
 	<div class="sub-container">
-		<div class="club_tables_header">
-			<h1 class="club_tables_sign">
-				<?=$clubName?>
+		<div class="section_header">
 				<img class="circle_img_clb float_right" alt="logo"
 				src="<?=CLUB_IMG.$clubPhoto?>">
-			</h1>
+			<div class="header_sign">
+				<?=$clubName?>
+			</div>
 		</div>
 		<div class="club_tables_container">
 <?php }
