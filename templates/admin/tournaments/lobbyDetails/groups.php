@@ -19,8 +19,10 @@
 
 function groupHeader($i)
 { ?>
-		<div class="group_header">
-			<h3 class="group_sign">ГРУПА <?=$i?></h3>
+		<div class="section_header">
+			<div class="header_sign">
+				ГРУПА <?=$i?>
+			</div>
 		</div>
 		<div class="group_table_container">
 <?php }
