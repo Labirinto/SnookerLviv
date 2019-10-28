@@ -1,12 +1,3 @@
-.calendar_header {
-	width: 1080px;
-	max-width: 1080px;
-}
-.calendar_sign {
-	text-transform: uppercase;
-	font-size: 22px;
-	text-align: left;	
-}
 .header_icon {
 	float: left;
 	margin: 3px 3px 0 0;
@@ -21,7 +12,7 @@
 /*******  LIST  *********/
 
 .calendar_table_container {
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	padding: 0;
 	border-radius: 8px;
 	border-top: 3px solid #61892F;	
