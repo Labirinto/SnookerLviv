@@ -47,8 +47,10 @@ function displayPlayer($i, $name, $playerID, $seed, $plrPhoto, $place, $pts, $is
 
 function displayHeader()
 { ?>
-    <div class="results_header">
-        <h3 class="results_sign">Результати</h3>
+    <div class="section_header">
+        <div class="header_sign">
+			Результати
+		</div>
     </div>
     <div class="results_table_container">
     <table class="results_table">
