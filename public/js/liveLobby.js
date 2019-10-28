@@ -8,19 +8,20 @@ var item = {
 	"tableID" : -1
 }
 
+
 $(document).ready(function() {
-	var leftBreak = $("#leftBreak").html();
-	var rightBreak = $("#rightBreak").html();
+	var firstHighlight = document.getElementById("leftPlayer").className;
 	tableID = $("#tableID").html();
 	item.tableID = tableID;
-
-	if( leftBreak !== null && leftBreak !== "" ) {
+	
+	if( firstHighlight.includes("highlight") ) {
 		isLeft = true;
+		item.currPlayer = true;
 	}
 	else {
 		isLeft = false;
+		item.currPlayer = false;
 	}
-
 });
 
 function highlight(left) {
