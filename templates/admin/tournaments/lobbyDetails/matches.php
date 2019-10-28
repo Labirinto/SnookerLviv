@@ -63,10 +63,10 @@ function castHeader($hdr)
 
 function roundDetails($type, $n)
 { ?>
-		<div class="matches_list_header">
-			<h3 class="matches_list_sign">
+		<div class="section_header">
+			<div class="header_sign">
 				<?=$type?> <?=$n?>
-			</h3>
+			</div>
 		</div>
 <?php }
 
