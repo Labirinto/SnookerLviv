@@ -60,8 +60,8 @@ function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR)
 function printHeader()
 { ?>
 	<div class="sub-container">
-	<div class="breaks_header">
-		<h3 class="breaks_sign">Брейки</h3>
+	<div class="section_header">
+		<h3 class="header_sign">Брейки</h3>
 	</div>
 	<div class="breaks_table_container">
 	<table class="breaks_table">
