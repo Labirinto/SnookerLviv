@@ -48,12 +48,11 @@ function castHeader($hdr)
 
 function displayHeader($tournID, $tournName)
 { ?>
-	<div class="match_lobby_header">
-		<a href="lobby.php?id=<?=$tournID?>">
-			<h1 class="match_lobby_sign">
-				<?=$tournName?>
-			</h1>
-		</a>
+	<div class="section_header_700">
+		<div class="header_sign pointer"
+		onclick="openTournamentLobby(<?=$tournID?>)">
+			<?=$tournName?>
+		</div>
 	</div>
 <?php }
 
@@ -62,7 +61,9 @@ function printLobby($counter, $roundType, $roundNo, $bestOF,
 	$id1, $name1, $score1, $img1, $id2, $name2, $score2, $img2)
 { ?>
 	<div class="match_lobby">
-		<h3 class="match_lobby_info">Зустріч #<?=$counter?>&emsp; | &emsp;<?=$roundType?><?=$roundNo?> </h3>
+		<h3 class="match_lobby_info">
+			Зустріч #<?=$counter?>&emsp; | &emsp;<?=$roundType?><?=$roundNo?>
+		</h3>
 		<div class="match_lobby_player-table">
 			<div class="match_lobby_player pointer"
 			onclick="openPlayerLobby(<?=$id1?>);">
