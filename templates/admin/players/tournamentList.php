@@ -1,5 +1,7 @@
 <?php
 
+function tournamentList($playerID)
+{
 	$query = "SELECT tournamentName,tournamentID,clubName,place,points
 			FROM playerTournamentView
 			WHERE playerID=? AND place IS NOT NULL
@@ -20,6 +22,7 @@
 	}
 
 	listFooter();
+}
 
 
 function displayTournament($i, $id, $name, $clubName, $isLast, $place,$pts)

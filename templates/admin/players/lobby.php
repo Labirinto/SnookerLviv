@@ -1,3 +1,9 @@
+
+<?php
+	require("/home/levko/snookerLviv/templates/admin/players/tournamentList.php");
+	require("/home/levko/snookerLviv/templates/admin/players/tournamentBreaksList.php");
+?>
+
 	<section>
 		<div class="player_profile_section01">
 			<div class="player_profile_photo">
@@ -10,7 +16,8 @@
 					<th colspan="2">
 						<div class="player_profile_playerName">
 							<i class="fas fa-user"></i>
-							<div class="player_profile_header"><?=$fName?> <span class="player_profile_surname"> <?=$lName?></span>
+							<div class="player_profile_header">
+								<?=$fName?> <span class="player_profile_surname"> <?=$lName?></span>
 							</div>
 						</div>
 						
@@ -50,33 +57,62 @@
 			<!-- SECTION 02 (CIRCLES) -->
 
 		<div class="player_profile_section02">
-			<a class="circle_hover" href="tournamentList.php?id=<?=$playerID?>">
-			<div class="player_profile_circle">
-				<div class="little_circle"><?=$tournamentCtr?></div>
+			<div class="player_profile_circle highlight_anchor"
+			onclick="player_profile(event, 'tournaments')">
+				<div class="little_circle">
+					<?=$tournamentCtr?>
+				</div>
 				<i class="fas fa-trophy"></i><br>
 				<span class="circle_text">турніри</span>
 			</div>
-			</a>
-			<a class="circle_hover" href="tournamentBreaks.php?id=<?=$playerID?>">
-			<div class="player_profile_circle">
-				<div class="little_circle"><?=$breakCtr?></div>
+			<div class="player_profile_circle highlight_anchor"
+			onclick="player_profile(event, 'tournaments_b')">
+				<div class="little_circle">
+					<?=$breakCtr?>
+				</div>
 				<i class="fas fa-trophy"></i> <br>
 				<span class="circle_text">брейки</span>
 			</div>
-			</a>
-			<a class="circle_hover" href="#" >
-			<div class="player_profile_circle">
-				<div class="little_circle">x</div>
+			<div class="player_profile_circle highlight_anchor">
+				<div class="little_circle">
+					x
+				</div>
 				<i class="fas fa-user-friends"></i><br>
 				<span class="circle_text">спаринги</span>
 			</div>
-			</a>
-			<a class="circle_hover" href="#">
-			<div class="player_profile_circle">
-				<div class="little_circle">x</div>
+			<div class="player_profile_circle highlight_anchor">
+				<div class="little_circle">
+					x
+				</div>
 				<i class="fas fa-user-friends"></i> <br>
 				<span class="circle_text">брейки</span>
 			</div>
-			</a>
 		</div>
 	</section>
+	<div class="player_profile_details">
+        <div id="tournaments" class="details_anchor">
+        	<?php tournamentList($playerID); ?>
+		</div>
+
+        <div id="tournaments_b" class="details_anchor">
+			<?php tournamentBreaksList($playerID); ?>
+        </div>
+    </div>
+
+
+    <script>
+        function player_profile(evt, tabName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("details_anchor");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("highlight_anchor");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" pl_pr_active", "");
+          }
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " pl_pr_active";
+        }
+    </script>
+
