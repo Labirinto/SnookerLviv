@@ -30,7 +30,7 @@ header * {
     border-bottom-right-radius: 4px;
 }
 .logo_img {
-    padding: 10px;
+    margin: 10px;
     height: 60px;
     background-color: #2E3337;
 }
