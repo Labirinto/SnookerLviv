@@ -2,18 +2,28 @@
 <head>
     <title><?=$clubName?> TABLE <?=$tableNum?></title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../css/live_match_lobby.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/live_match_lobby.css"> 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
     <body>
+		<div class="container">
+		
 		<div class="live-match-lobby">
-			<img alt="logo" height="100px" width="100px" src="../../img/brain.png">
-			<h2 class="live-match-lobby-club-name"><?=$clubName?></h2>
-			<h3 class="live-match-lobby-table-num">Стіл #<span id="tableID"><?=$tableNum?></span></h3>
-		</div>
+            <div class="live_match_info">
+                <img class="live_logo_img" src="<?=CLUB_IMG.$club_img?>" alt="club logo">
+                <span class="live_logo_text">
+                    <?=$clubName?>
+                </span>
+            </div>
+            <span class="live-match-lobby-table-num">
+                Стіл #<span id="tableID"><?=$tableNum?></span>
+            </span>
+        </div>
 		<div class="live-match-lobby-table">
-			<h3 class="live-match-lobby-info"><?=$matchInfo?> - Зустріч <?=$matchNum?></h3>
+			<h3 class="live-match-lobby-info">
+				<?=$matchInfo?> - Зустріч <?=$matchNum?>
+			</h3>
 			<div class="live-match-lobby-player-table">
 				<div class="live-match-lobby-player">
 					<span class="live-match-lobby-player-name"><?=$player1?></span>

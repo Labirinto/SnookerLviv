@@ -4,10 +4,9 @@
 		<?=$clubName?> TABLE <?=$tableNum?>
 	</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../css/live_match_lobby.css">
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/live_match_lobby.css">
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,7 +22,7 @@
 				</span>
 			</div>
 			<span class="live-match-lobby-table-num">
-				Стіл #<?=$tableNum?>
+				Стіл #<span id="tableID"><?=$tableNum?></span>
 			</span>
 		</div>
 		<div class="live-match-lobby-table">
@@ -45,11 +44,11 @@
 					<table class="live-match-lobby-frame-table">
 						<tbody>
 							<tr>
-								<td id="leftFrames">
+								<td id="leftScore">
 									<?=$score1?>
 								</td>
 								<th>ФРЕЙМИ</th>
-								<td id="rightFrames">
+								<td id="rightScore">
 									<?=$score2?>
 								</td>
 							</tr>
@@ -95,6 +94,8 @@
 					</div>
 				</div>
 			</div>
+<script type="text/javascript" src="<?=PATH_H?>js/liveLobby.js">
+</script>
 			<div class="button_push">
 				<span>
 					Натисніть <i class="fas fa-power-off"></i> щоб піти на хуй
@@ -106,7 +107,5 @@
 		</div>
 		</div>
     </body>
-<script type="text/javascript" src="/~levko/js/liveLobby.js">
-</script>
 </html>
 
