@@ -77,8 +77,10 @@ function displayProceedButton($id)
 
 function displayHeader()
 { ?>
-    <div class="group_results_header">
-        <h3 class="group_results_sign">Результати груп</h3>
+    <div class="section_header">
+        <div class="header_sign">
+			Результати груп
+		</div>
     </div>
     <div class="group_results_table_container">
     <table class="group_results_table">
