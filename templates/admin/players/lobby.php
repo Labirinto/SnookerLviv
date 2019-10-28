@@ -4,7 +4,7 @@
 	require("/home/levko/snookerLviv/templates/admin/players/tournamentBreaksList.php");
 ?>
 
-	<section>
+	<div class="player_profile_container">
 		<div class="player_profile_section01">
 			<div class="player_profile_photo">
 				<figure>
@@ -26,13 +26,13 @@
 						<td>
 							<div class="player_profile_country">
 								<div class="player_profile_tableHeader">країна</div>
-								<div class="player_profile_tabelMean">Україна</div>
+								<div class="player_profile_tableMean">Україна</div>
 							</div>
 						</td>
 						<td>
 							<div class="player_profile_city">
 								<div class="player_profile_tableHeader">місто</div>
-								<div class="player_profile_tabelMean">Львів</div>
+								<div class="player_profile_tableMean">Львів</div>
 							</div>
 						</td>
 					</tr>
@@ -40,13 +40,13 @@
 						<td>
 							<div class="player_profile_age">
 								<div class="player_profile_tableHeader">дата народження</div>
-								<div class="player_profile_tabelMean"><?=$birthday?></div>
+								<div class="player_profile_tableMean"><?=$birthday?></div>
 							</div>
 						</td>
 						<td>
 							<div class="player_profile_maxBreak">
 								<div class="player_profile_tableHeader">найвищий турнірний<br>брейк</div>
-								<div class="player_profile_tabelMean max_break"><?=$highestBreak?></div>
+								<div class="player_profile_tableMean max_break"><?=$highestBreak?></div>
 							</div>
 						</td>
 					</tr>
@@ -88,7 +88,7 @@
 				<span class="circle_text">брейки</span>
 			</div>
 		</div>
-	</section>
+	</div>
 	<div class="player_profile_details">
         <div id="tournaments" class="details_anchor">
         	<?php tournamentList($playerID); ?>
