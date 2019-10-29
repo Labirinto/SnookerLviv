@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/lobby_list.css"> 
+
+
 <?php
 //bracket, tournamentID
 

@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/club_list.css"> 
 <a href="create.php">Create Club</a>
 
 </br></br>

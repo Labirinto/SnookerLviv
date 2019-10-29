@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/group_results.css"> 
+
 
 <?php
 	$query1 = "SELECT T.groupDone FROM tournament T WHERE T.id=?";

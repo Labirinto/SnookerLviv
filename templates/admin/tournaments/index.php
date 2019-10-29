@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/tournament_list.css"> 
+
 <a href="create.php">Create Tournament</a>
 </br>
 

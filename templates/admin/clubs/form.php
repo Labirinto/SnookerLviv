@@ -1,5 +1,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
     </script>
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/img_upload.css"> 
 
 
 	<div class="sub-container">
@@ -7,8 +8,7 @@
 		<form action="create.php" method="post" enctype="multipart/form-data">
             <div class="avatar-upload">
                 <div class="avatar-preview">
-                    <div id="imgPreview"
-					style="background-image: url(http://localhost/~levko/img/club/default.png);">
+                    <div id="clubImg_preview">
 					</div>
                 </div>
                 <div class="avatar-edit">

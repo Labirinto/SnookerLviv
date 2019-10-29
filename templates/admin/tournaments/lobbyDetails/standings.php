@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/results.css">
+
+
 <?php
 
     $query = "SELECT ST.playerID, ST.player, ST.seed, ST.place,

@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/bracket.css">
+
 
 <?php
 //bracket, tournamentID

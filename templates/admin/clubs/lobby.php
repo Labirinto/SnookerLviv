@@ -1,6 +1,7 @@
-
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/available_tables.css">
 <h4><mark>1.add table=>increments nrOfTables and adds entry into _table</br>2.remove table=>decrements nrOfTables(if>0) and removes entry from _table</mark></h4>
 </br>
+
 
 <?php
 	$query = "SELECT TV.tournamentID, TV.tournament

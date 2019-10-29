@@ -1,5 +1,6 @@
 <?php list($tournamentName, $tournamentID, $status) = getMainData($matchID);?>
 
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/match_lobby.css"> 
 <div class="sub-container">
 
 <?php

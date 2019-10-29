@@ -1,4 +1,6 @@
 <a href="">Select other league</a>
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/rating.css"> 
+
 
 <?php
 	$query = "SELECT R.player, R.points, R.playerID, R.photo

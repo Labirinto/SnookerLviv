@@ -1,5 +1,8 @@
+
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/participants.css">
 </br>
 <a href="create.php">Create Player</a>
+
 
 <?php 
 

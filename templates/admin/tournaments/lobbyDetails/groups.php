@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/group.css"> 
+
 <?php
 //tournamentID
 
