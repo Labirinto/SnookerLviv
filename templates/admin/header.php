@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/normalize.css">
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/bracket.css">
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/styles.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/group.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/match_list.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/lobby_list.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/containers.css"> 
+    
+
+	<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/tournament_list.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/match_lobby.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/player_profile.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/participants.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/breaks.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/tournament_list.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/img_upload.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/results.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/group_results.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/club_list.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/available_tables.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/img_upload.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/player_tournaments_list.css"> 
     <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/rating.css"> 
-    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/containers.css"> 
+   
+ 
+	<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/bracket.css">
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/group.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/match_list.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/participants.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/breaks.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/group_results.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/results.css"> 
+    
+	<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/lobby_list.css"> 
+    <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/available_tables.css"> 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="<?=PATH_H?>img/balls01.png">
