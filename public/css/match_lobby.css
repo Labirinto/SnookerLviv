@@ -13,6 +13,7 @@
     border-top-left-radius: 8px;
 }
 .match_lobby_player-table {
+	box-shadow: 0px 5px 10px #131617;
 	display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -88,6 +89,9 @@
 .match_lobby_table {
 	width: 700px;
 	max-width: 700px;
+}
+.match_lobby_table tbody {
+	box-shadow: 0px 5px 10px #131617;
 }
 table.match_lobby_table .col-1 {
 	width: 21%;
