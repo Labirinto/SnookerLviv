@@ -29,13 +29,14 @@ function groupHeader($i)
 function groupFooter()
 {?>
 		</div>
+		<div class="margin-b_30"></div>
 <?php }
 
 
 
 function tableHeader($N)
 { ?>
-			<table class="list_table group_table margin-b_30">	
+			<table class="list_table group_table">	
 				<thead>
 					<th>#</th>
 					<th>Гравець</th>
