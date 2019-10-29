@@ -1,8 +1,3 @@
-.player_profile_container { /*change to table_container*/
-	width: 1080px;
-	max-width: 1080px;
-	margin: 0 auto;
-}
 .player_profile_section01 {
 	display: flex;
 	justify-content: space-around;

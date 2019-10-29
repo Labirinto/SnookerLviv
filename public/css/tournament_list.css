@@ -4,19 +4,8 @@
 	width: 20px;
 	height: 20px;
 }
-.thead_icon {
-	margin-right: 3px;
-	width: 12px;
-	height: 12px;
-}
 /*******  LIST  *********/
 
-.calendar_table {
-	width: 1080px;
-	max-width: 1080px;
-	min-width: 1080px;
-	margin: 0 auto;
-}
 table.calendar_table .col-1 {
  	width: 1%;
 }
@@ -29,37 +18,7 @@ table.calendar_table .col-3 {
 table.calendar_table .col-4 {
  	width: 15%;
 }
-.calendar_table thead th {
-	text-transform: uppercase;
-	padding: 15px;
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	border-right: 1px solid #343A3F;
-}
-.calendar_table tr>:nth-child(4) {
-	border-right: none;
-}
-.calendar_table tbody tr td {
-	padding: 10px;
-	text-align: center;
-	border-right: 1px solid #71787F;
-	font-size: 15px;
-	height: 50px;
-	max-height: 50px;
-}
+
 .calendar_table tbody tr>:nth-child(1) {
 	border-right: none;
 }
-.circle_img {
-	border-radius: 100px;
-	width: 30px;
-	height: 30px;
-	object-fit: cover;
-	margin-right: 10px;
-}
-.calendar_table_points {
-	font-weight: bold;
-	text-align: center;
-}
-
