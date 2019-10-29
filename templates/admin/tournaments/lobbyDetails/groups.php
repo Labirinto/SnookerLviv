@@ -35,7 +35,7 @@ function groupFooter()
 
 function tableHeader($N)
 { ?>
-			<table class="group_table margin-b_30">	
+			<table class="list_table group_table margin-b_30">	
 				<thead>
 					<th>#</th>
 					<th>Гравець</th>
@@ -99,10 +99,10 @@ function printGroup($tournID, $groupNo)
 function playerHeader($e_o, $BL, $id, $name, $number, $seed, $img)
 { ?>
 		<tr class="tbody_<?=$e_o?>">
-			<td class="<?=$e_o?>_num<?=$BL?> groups_table_number">
+			<td class="<?=$e_o?>_num<?=$BL?> bold">
 				<?=$number?>
 			</td>
-			<td class="groups_table_name pointer"
+			<td class="photo_name pointer"
 			onclick="openPlayerLobby(<?=$id?>);">
 				<img class="circle_img" src="<?=PLAYER_IMG.$img?>"
 				alt="img">

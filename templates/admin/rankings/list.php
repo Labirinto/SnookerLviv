@@ -27,10 +27,10 @@ function displayPlayer($i, $id, $name, $img, $isLast, $pts)
 ?>
             <tr onclick="openPlayerLobby(<?=$id?>);"
             class="tbody_<?=$e_o?> pointer">
-                <td class="<?=$e_o?>_num<?=($isLast)?" radius_bl":""?> rating_table_number">
+                <td class="<?=$e_o?>_num<?=($isLast)?" radius_bl":""?> bold">
                     <?=$i?>
                 </td>
-                <td class="rating_table_name">
+                <td class="photo_name">
 					<img class="circle_img" src="<?=PLAYER_IMG.$img?>" alt="img">
                     <span><?=$name?></span>
                 </td>
@@ -51,7 +51,7 @@ function rankingHeader($hdr)
 			</div>
         </div>
         <div class="list_container">
-        <table class="rating_table">
+        <table class="list_table_700 rating_table">
             <colgroup>
                 <col class="col-1">
                 <col class="col-2">

@@ -68,7 +68,7 @@ function printTournament($i, $id, $name, $clubName, $isLast)
 ?>
 			<tr onclick="openTournamentLobby(<?=$id?>);"
 			class="tbody_<?=$e_o?> pointer">
-				<td class="calendar_table_points <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
+				<td class="bold <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
 					<?=$i?>
 				</td>
 				<td>
@@ -112,7 +112,7 @@ function listHeader($status)
 	</div>
 
 	<div class="list_container margin-b_30">
-	<table class="calendar_table">
+	<table class="list_table calendar_table">
 		<colgroup>
 			<col class="col-1">
 			<col class="col-2">

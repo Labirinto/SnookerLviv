@@ -5,8 +5,8 @@
 
 	generalHeader();
 
-	$data = query("SELECT P.id, P.firstName, P.lastName, P.photo, P.birthday
-				FROM player P 
+	$data = query("SELECT P.id, P.firstName, P.lastName, P.photo,
+				P.birthday FROM player P 
 				WHERE P.id NOT IN(-1,-2) ORDER BY 2");
 	$data_count = count($data);
 
@@ -71,7 +71,7 @@ function listHeader()
 { ?>
     <div id="list" class="sub-container tabcontent">
         <div class="list_container">
-        <table id="myTable" class="participants_table">
+        <table id="myTable" class="list_table participants_table">
             <colgroup>
                 <col class="col-1">
                 <col class="col-2">
@@ -109,10 +109,10 @@ function printListPlayer($i, $id, $name, $img, $birthday, $isLast)
  ?>
             <tr onclick="openPlayerLobby(<?=$id?>);"
                 class="tbody_<?=$e_o?> pointer">
-                <td class="participants_table_number <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
+                <td class="bold <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
 					<?=$i?>
 				</td>
-                <td class="participants_table_name">
+                <td class="photo_name">
                     <img class="circle_img" src="<?=PLAYER_IMG.$img?>" alt="img">
                     <span><?=$name?></span>
                 </td>

@@ -73,7 +73,7 @@ function roundDetails($type, $n)
 function roundHeader()
 { ?>
 	<div class="list_container margin-b_30">
-	<table class="matches_list_table">
+	<table class="list_table matches_list_table">
 		<colgroup>
 			<col class="col-1">
 			<col class="col-2">
@@ -127,7 +127,7 @@ function displayMatch($counter, $last,$matchID, $player1, $score1, $player2, $sc
 		<td>
 		</td>
 		<td>
-			<span class="matches_list_table_score bold float_right">
+			<span class="font_20 bold float_right">
 				<?=$score1?>
 			</span>
 		</td>
@@ -137,7 +137,7 @@ function displayMatch($counter, $last,$matchID, $player1, $score1, $player2, $sc
 			</span>
 		</td>
 		<td>
-			<span class="matches_list_table_score bold float_left">
+			<span class="font_20 bold float_left">
 				<?=$score2?>
 			</span>
 		</td>

@@ -35,10 +35,10 @@ function displayClub($i,$id,$name,$city,$country,$tables,$img,$BR,$BL)
 			<tr class="tbody_<?=$e_o?> pointer"
 			onclick="window.location.href=
 			'/~levko/admin/clubs/lobby.php?id=<?=$id?>';">
-				<td class="<?=$e_o?>_num<?=$BL?> club_list_number">
+				<td class="<?=$e_o?>_num<?=$BL?> bold">
 					<?=$i?>
 				</td>
-				<td class="club_list_name">
+				<td class="photo_name">
 					<img src="<?=CLUB_IMG.$img?>" alt="club img" class="circle_img">
 					<span><?=$name?></span>
 				</td>
@@ -59,7 +59,7 @@ function displayHeader()
 			<div class="header_sign">клуби</div>
 		</div>
 		<div class="list_container">
-		<table class="club_list_table">
+		<table class="list_table_700 club_list_table">
 			<colgroup>
 				<col class="col-1">
 				<col class="col-2">

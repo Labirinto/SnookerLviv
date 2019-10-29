@@ -35,12 +35,12 @@ function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR)
             <tr onclick="openMatchLobby(<?=$mID?>);"
             class="tbody_<?=$e_o?> pointer">
                 <td class="<?=$BL?>">
-                    <div class="breaks_table_name">
+                    <div class="photo_name">
                         <img class="circle_img" src="<?=PLAYER_IMG.$plrPhoto?>" alt="img">
                         <span><?=$plrName?></span>
                     </div>
                 </td>
-                <td class="breaks_table_points <?=$e_o?>_num">
+                <td class="bold <?=$e_o?>_num">
 					<?=$pts?>
 				</td>
                 <td>
@@ -48,7 +48,7 @@ function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR)
                 <td>
                 </td>
                 <td class="<?=$BR?>">
-                    <div class="breaks_table_name">
+                    <div class="photo_name">
                         <img class="circle_img" src="<?=PLAYER_IMG.$oppPhoto?>" alt="img">
                         <span><?=$oppName?></span>
                     </div>
@@ -64,7 +64,7 @@ function printHeader()
 		<h3 class="header_sign">Брейки</h3>
 	</div>
 	<div class="list_container">
-	<table class="breaks_table">
+	<table class="list_table breaks_table">
 		<colgroup>
 			<col class="col-1">
 			<col class="col-2">

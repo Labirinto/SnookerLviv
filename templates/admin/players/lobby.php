@@ -4,7 +4,7 @@
 	require("/home/levko/snookerLviv/templates/admin/players/tournamentBreaksList.php");
 ?>
 
-	<div class="player_profile_container">
+	<div class="table_list">
 		<div class="player_profile_section01">
 			<div class="player_profile_photo">
 				<figure>
