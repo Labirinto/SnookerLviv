@@ -5,18 +5,11 @@
 }
 /*******  LIST  *********/
 
-.player_tournaments_table_container {
-	margin-bottom: 50px;
-	padding: 0;
-	border-radius: 8px;
-	border-top: 3px solid #61892F;	
-}
 .player_tournaments_table {
 	width: 1080px;
 	max-width: 1080px;
 	min-width: 1080px;
-	margin: 0;
-	padding: 0;
+	margin: 0 auto;
 }
 table.player_tournaments_table .col-1 {
  	width: 1%;
@@ -44,11 +37,9 @@ table.player_tournaments_table .col-6 {
 	vertical-align: middle;
 	border-right: 1px solid #343A3F;
 }
-.player_tournaments_table tr>:last-child {
+.player_tournaments_table tr>:last-child,
+.player_tournaments_table tbody tr>:nth-child(1) {
 	border-right: none;
-}
-.player_tournaments_table_thead {
-	color: #fff;
 }
 .player_tournaments_table tbody tr td {
 	padding: 10px;
@@ -57,7 +48,4 @@ table.player_tournaments_table .col-6 {
 	font-size: 15px;
 	height: 50px;
 	max-height: 50px;
-}
-.player_tournaments_table tbody tr>:nth-child(1) {
-	border-right: none;
 }

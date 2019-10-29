@@ -61,9 +61,9 @@ function printLobby($counter, $roundType, $roundNo, $bestOF,
 	$id1, $name1, $score1, $img1, $id2, $name2, $score2, $img2)
 { ?>
 	<div class="match_lobby">
-		<h3 class="match_lobby_info">
+		<div class="match_lobby_info">
 			Зустріч #<?=$counter?>&emsp; | &emsp;<?=$roundType?><?=$roundNo?>
-		</h3>
+		</div>
 		<div class="match_lobby_player-table">
 			<div class="match_lobby_player pointer"
 			onclick="openPlayerLobby(<?=$id1?>);">
@@ -108,7 +108,7 @@ function printLobby($counter, $roundType, $roundNo, $bestOF,
 function framesHeader()
 { ?>
 
-	<div class="match_lobby_table_container">
+	<div class="">
 		<table class="match_lobby_table">
 			<colgroup>
 				<col class="col-1">
@@ -117,7 +117,7 @@ function framesHeader()
 				<col class="col-4">
 				<col class="col-5">
 			</colgroup>
-			<thead class="match_lobby_table_thead">
+			<thead>
 				<tr>
 					<th>
 						<span>брейки</span>
@@ -136,7 +136,7 @@ function framesHeader()
 					</th>
 				</tr>
 			</thead>
-			<tbody class="match_lobby_table_tbody">
+			<tbody>
 <?php }
 
 

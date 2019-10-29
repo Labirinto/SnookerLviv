@@ -1,24 +1,16 @@
 .match_lobby {
-	display: inline-block;
 	max-width: 700px;
 	width: 700px;
-	background-color: #474B4F;
+	border-top: 3px solid #61892F;
 	border-radius: 8px;
 }
 .match_lobby_info {
 	padding: 12px;
 	margin: 0;
-	background-color: #222629;
-	color: white;
 	text-transform: uppercase;
-	font-weight: normal;
 	font-size: 15px;
-	border-top: 3px solid #61892F;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
-}
-.match_lobby_frame-section tbody {
-	display: table-row-group;
 }
 .match_lobby_player-table {
 	display: flex;
@@ -28,6 +20,9 @@
     max-height: 254px;
     min-height: 254px;
     padding-top: 20px;
+	background-color: #474B4F;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 .match_lobby_player {
 	display: block;
@@ -40,6 +35,9 @@
 	box-sizing: border-box;
 	padding: 0px 20px;
 	margin-top: 60px;
+}
+.match_lobby_frame-section tbody {
+	display: table-row-group;
 }
 .match_lobby_player-name {
 	color: white;
@@ -87,18 +85,9 @@
 
 /*********** TABLE ***********/
 
-.match_lobby_table_container {
-	display: inline-block;
-	color: #fff;
-
-	width: 700px;
-	max-width: 700px;
-	border-radius: 4px;
-}
 .match_lobby_table {
 	width: 700px;
 	max-width: 700px;
-	margin-bottom: 30px;
 }
 table.match_lobby_table .col-1 {
 	width: 21%;
@@ -117,30 +106,26 @@ table.match_lobby_table .col-5 {
 }
 .match_lobby_table thead th {
 	text-transform: uppercase;
-	padding: 15px 0 15px 0;
+	padding: 15px 0;
 	font-size: 13px;
 	text-align: center;
 	vertical-align: middle;
 	border-right: 1px solid #343A3F;
 }
-.match_lobby_table thead tr>:last-child {
+.match_lobby_table thead tr>:last-child,
+.match_lobby_table tbody tr>:nth-child(2),
+.match_lobby_table tbody tr>:nth-child(3),
+.match_lobby_table tbody tr>:nth-child(5){
     border-right: none;
 }
-.match_lobby_table .match_lobby_table_tbody tr td {
+.match_lobby_table tbody tr td {
+    font-size: 17px;
 	padding: 20px;
 	border-right: 1px solid #71787F;
 }
 .match_lobby_table tbody tr>:nth-child(2),
 .match_lobby_table tbody tr>:nth-child(3),
-.match_lobby_table tbody tr>:nth-child(5) {
-    border-right: none;
-}
-.match_lobby_table_tbody{
-    font-size: 17px;
-}
-.match_lobby_table_tbody tr>:nth-child(2),
-.match_lobby_table_tbody tr>:nth-child(3),
-.match_lobby_table_tbody tr>:nth-child(4) {
+.match_lobby_table tbody tr>:nth-child(4) {
     font-weight: bold;
     font-size: 19px;
 }

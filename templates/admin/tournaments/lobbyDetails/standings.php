@@ -52,7 +52,7 @@ function displayHeader()
 			Результати
 		</div>
     </div>
-    <div class="results_table_container">
+    <div class="list_container">
     <table class="results_table">
         <colgroup>
             <col class="col-1">
@@ -61,7 +61,7 @@ function displayHeader()
             <col class="col-4">
             <col class="col-5">
         </colgroup>
-        <thead class="results_table_thead">
+        <thead>
             <tr>
 				<th>Жереб</th>
                 <th>Ім'я</th>
@@ -70,7 +70,7 @@ function displayHeader()
                 <th>Очки</th>
             </tr>
         </thead>
-        <tbody class="results_table_tbody">
+        <tbody>
 <?php
 }
 

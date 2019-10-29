@@ -1,17 +1,10 @@
 /*******  LIST  *********/
 
-.rating_table_container {
-	margin-bottom: 50px;
-	padding: 0;
-	border-radius: 8px;
-	border-top: 3px solid #61892F;	
-}
 .rating_table {
-	width: 750px;
-	max-width: 750px;
-	min-width: 750px;
-	margin: 0;
-	padding: 0;
+	width: 700px;
+	max-width: 700px;
+	min-width: 700px;
+	margin: 0 auto;
 }
 table.rating_table .col-1 {
  	width: 1%;
@@ -30,11 +23,9 @@ table.rating_table .col-3 {
 	vertical-align: middle;
 	border-right: 1px solid #343A3F;
 }
-.rating_table tr>:last-child {
+.rating_table tr>:last-child,
+.rating_table tbody tr>:nth-child(1) {
 	border-right: none;
-}
-.rating_table_thead {
-	color: #fff;
 }
 .rating_table tbody tr td {
 	padding: 10px;
@@ -43,9 +34,6 @@ table.rating_table .col-3 {
 	font-size: 15px;
 	height: 50px;
 	max-height: 50px;
-}
-.rating_table tbody tr>:nth-child(1) {
-	border-right: none;
 }
 .rating_table_name {
     display: flex;

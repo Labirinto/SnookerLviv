@@ -72,7 +72,7 @@ function roundDetails($type, $n)
 
 function roundHeader()
 { ?>
-	<div class="matches_list_table_container">
+	<div class="list_container margin-b_30">
 	<table class="matches_list_table">
 		<colgroup>
 			<col class="col-1">
@@ -85,7 +85,7 @@ function roundHeader()
 			<col class="col-8">
 			<col class="col-9">
 		</colgroup>
-		<thead class="matches_list_table_thead">
+		<thead>
 			<tr>
 				<th>#</th>
 				<th class="float_right">Гравець 1</th>
@@ -98,7 +98,7 @@ function roundHeader()
 				<th>TV</th>
 			</tr>
 		</thead>
-		<tbody class="matches_list_table_tbody">
+		<tbody>
 <?php }
 
 function roundFooter()

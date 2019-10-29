@@ -50,7 +50,7 @@ function rankingHeader($hdr)
 				<?=$hdr?>
 			</div>
         </div>
-        <div class="rating_table_container">
+        <div class="list_container">
         <table class="rating_table">
             <colgroup>
                 <col class="col-1">
@@ -58,7 +58,7 @@ function rankingHeader($hdr)
                 <col class="col-3">
                 <col class="col-4">
             </colgroup>
-            <thead class="rating_table_thead">
+            <thead>
                 <tr>
                     <th>#</th>
                     <th>
@@ -69,7 +69,7 @@ function rankingHeader($hdr)
                     </th>
                 </tr>
 			</thead>
-            <tbody class="rating_table_tbody">
+            <tbody>
 <?php
 }
 function rankingFooter()

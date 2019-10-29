@@ -58,7 +58,7 @@ function displayHeader()
 		<div class="section_header_700">
 			<div class="header_sign">клуби</div>
 		</div>
-		<div class="club_list_table_container">
+		<div class="list_container">
 		<table class="club_list_table">
 			<colgroup>
 				<col class="col-1">

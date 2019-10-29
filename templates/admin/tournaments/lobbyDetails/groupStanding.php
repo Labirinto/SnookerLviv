@@ -82,7 +82,7 @@ function displayHeader()
 			Результати груп
 		</div>
     </div>
-    <div class="group_results_table_container">
+    <div class="list_container">
     <table class="group_results_table">
         <colgroup>
             <col class="col-1">
@@ -91,7 +91,7 @@ function displayHeader()
             <col class="col-4">
             <col class="col-5">
         </colgroup>
-        <thead class="group_results_table_thead">
+        <thead>
             <tr>
                 <th>Жереб</th>
                 <th>Ім'я</th>
@@ -100,7 +100,7 @@ function displayHeader()
                 <th>%</th>
             </tr>
         </thead>
-        <tbody class="group_results_table_tbody">
+        <tbody>
 <?php
 }
 

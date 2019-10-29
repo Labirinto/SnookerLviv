@@ -1,17 +1,10 @@
 /*******  LIST  *********/
 
-.group_results_table_container {
-	margin: 0;
-	padding: 0;
-	border-radius: 8px;
-	border-top: 3px solid #61892F;	
-}
 .group_results_table {
 	width: 1080px;
 	max-width: 1080px;
 	min-width: 1080px;
-	margin: 0;
-	padding: 0;
+	margin: 0 auto;
 }
 table.group_results_table .col-1 {
  	width: 1%;
@@ -41,9 +34,6 @@ table.group_results_table .col-5 {
 }
 .group_results_table tbody tr>:nth-child(1) {
 	border-right: none;
-}
-.group_results_table_thead {
-	color: #fff;
 }
 .group_results_table tbody tr td {
 	padding: 10px;

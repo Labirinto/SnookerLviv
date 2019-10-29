@@ -70,7 +70,7 @@ function generalFooter()
 function listHeader()
 { ?>
     <div id="list" class="sub-container tabcontent">
-        <div class="participants_table_container">
+        <div class="list_container">
         <table id="myTable" class="participants_table">
             <colgroup>
                 <col class="col-1">
@@ -80,7 +80,7 @@ function listHeader()
                 <col class="col-5">
                 <col class="col-6">
             </colgroup>
-            <thead class="participants_table_thead">
+            <thead>
                 <tr>
                     <th>#</th>
                     <th>Ім'я</th>
@@ -90,7 +90,7 @@ function listHeader()
                     <th>Жереб</th>
                 </tr>
             </thead>
-            <tbody class="participants_table_tbody">
+            <tbody>
 <?php
 }
 

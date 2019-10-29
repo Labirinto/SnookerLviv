@@ -24,7 +24,7 @@ function groupHeader($i)
 				ГРУПА <?=$i?>
 			</div>
 		</div>
-		<div class="group_table_container">
+		<div class="list_container">
 <?php }
 function groupFooter()
 {?>
@@ -35,7 +35,7 @@ function groupFooter()
 
 function tableHeader($N)
 { ?>
-			<table class="group_table">	
+			<table class="group_table margin-b_30">	
 				<thead>
 					<th>#</th>
 					<th>Гравець</th>

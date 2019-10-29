@@ -1,16 +1,9 @@
 /******* LIST ********/
-.group_table_container {
-	margin: 0 0 50px 0;
-	padding: 0;
-	border-radius: 8px;
-	border-top: 3px solid #61892F;
-}
 .group_table {
     width: 1080px;
     max-width: 1080px;
 	min-width: 1080px;
-	margin: 0;
-	padding: 0;
+	margin: 0 auto;
 }
 .group_table thead th {
     padding: 15px;
@@ -58,13 +51,8 @@
 .group_table tbody tr td {
     border-right: 1px solid #71787F;
 }
-.group_table tbody tr>:nth-child(1) {
-    border-right: none;
-}
-
-.group_table thead tr th:last-child {
-    border-right: none;
-}
+.group_table tbody tr>:nth-child(1),
+.group_table thead tr th:last-child,
 .group_table tbody tr>:last-child {
     border-right: none;
 }

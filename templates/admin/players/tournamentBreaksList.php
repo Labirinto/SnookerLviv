@@ -63,7 +63,7 @@ function printHeader()
 	<div class="section_header">
 		<h3 class="header_sign">Брейки</h3>
 	</div>
-	<div class="breaks_table_container">
+	<div class="list_container">
 	<table class="breaks_table">
 		<colgroup>
 			<col class="col-1">
@@ -72,7 +72,7 @@ function printHeader()
 			<col class="col-4">
 			<col class="col-5">
 		</colgroup>
-		<thead class="breaks_table_thead">
+		<thead>
 			<tr>
 				<th>Ім'я</th>
 				<th>Очки</th>
@@ -81,7 +81,7 @@ function printHeader()
 				<th>Суперник</th>
 			</tr>
 		</thead>
-		<tbody class="breaks_table_tbody">
+		<tbody>
 <?php
 }
 

@@ -1,4 +1,4 @@
-.player_profile_container {
+.player_profile_container { /*change to table_container*/
 	width: 1080px;
 	max-width: 1080px;
 	margin: 0 auto;

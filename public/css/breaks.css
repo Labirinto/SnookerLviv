@@ -1,17 +1,10 @@
 /*******  LIST  *********/
 
-.breaks_table_container {
-	margin: 0;
-	padding: 0;
-	border-radius: 8px;
-	border-top: 3px solid #61892F;	
-}
 .breaks_table {
 	width: 1080px;
 	max-width: 1080px;
 	min-width: 1080px;
-	margin: 0;
-	padding: 0;
+	margin: 0 auto;
 }
 table.breaks_table .col-2 {
  	width: 3%;
@@ -36,14 +29,9 @@ table.breaks_table .col-5 {
 	vertical-align: middle;
 	border-right: 1px solid #343A3F;
 }
-.breaks_table tr>:nth-child(5) {
-	border-right: none;
-}
+.breaks_table tr>:nth-child(5),
 .breaks_table tbody tr>:nth-child(1) {
 	border-right: none;
-}
-.breaks_table_thead {
-	color: #fff;
 }
 .breaks_table tbody tr td {
 	padding: 10px;

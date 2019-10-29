@@ -1,17 +1,10 @@
 /*******  LIST  *********/
 
-.club_list_table_container {
-	margin-bottom: 50px;
-	padding: 0;
-	border-radius: 8px;
-	border-top: 3px solid #61892F;	
-}
 .club_list_table {
 	width: 700px;
 	max-width: 700px;
 	min-width: 700px;
-	margin: 0;
-	padding: 0;
+	margin: 0 auto;
 }
 table.club_list_table .col-1 {
  	width: 1%;
@@ -38,9 +31,9 @@ table.club_list_table .col-4 {
 }
 .club_list_table tbody tr td {
 	padding: 10px;
+	font-size: 15px;
 	text-align: center;
 	border-right: 1px solid #71787F;
-	font-size: 15px;
 	height: 50px;
 	max-height: 50px;
 }

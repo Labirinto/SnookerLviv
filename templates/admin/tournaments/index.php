@@ -111,7 +111,7 @@ function listHeader($status)
 		</div>
 	</div>
 
-	<div class="calendar_table_container">
+	<div class="list_container margin-b_30">
 	<table class="calendar_table">
 		<colgroup>
 			<col class="col-1">
@@ -119,7 +119,7 @@ function listHeader($status)
 			<col class="col-3">
 			<col class="col-4">
 		</colgroup>
-		<thead class="calendar_table_thead">
+		<thead>
 			<tr>
 				<th>#</th>
 				<th>
@@ -136,7 +136,7 @@ function listHeader($status)
 				</th>
 			</tr>
 		</thead>
-		<tbody class="calendar_table_tbody">
+		<tbody>
 <?php
 }
 

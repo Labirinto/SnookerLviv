@@ -62,7 +62,7 @@ function listHeader()
 				Турніри
 			</div>
         </div>
-		<div class="player_tournaments_table_container">
+		<div class="list_container">
 		<table class="player_tournaments_table">
 			<colgroup>
 				<col class="col-1">
@@ -72,7 +72,7 @@ function listHeader()
 				<col class="col-5">
 				<col class="col-6">
 			</colgroup>
-			<thead class="player_tournaments_table_thead">
+			<thead>
 				<tr>
 					<th>#</th>
 					<th>
@@ -95,7 +95,7 @@ function listHeader()
 					</th>
 				</tr>
 			</thead>
-			<tbody class="player_tournaments_table_tbody">
+			<tbody>
 <?php
 }
 function listFooter()
