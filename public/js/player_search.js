@@ -1,11 +1,13 @@
 function player_search()
 {
     var input, filter, table, tr, td, i, txtValue, ul, li, a;
-    input = document.getElementById("myInput");
+    input = document.getElementById("player_input");
     filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
+
+    table = document.getElementById("table_list");
     tr = table.getElementsByTagName("tr");
-    ul = document.getElementById("myUL");
+    
+	ul = document.getElementById("table_bars");
     li = ul.getElementsByTagName('li');
 
     for (i = 0; i < tr.length; i++) {
