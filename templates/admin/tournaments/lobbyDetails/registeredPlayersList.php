@@ -33,7 +33,7 @@
 
 function generalHeader()
 { ?>
-	<script type="text/javascript" src="/~levko/js/player_search.js"></script>
+	<script type="text/javascript" src="<?=PATH_H?>js/player_search.js"></script>
 
 	<div class="section_header player_search">
 		<div class="participants_header">
@@ -53,7 +53,7 @@ function generalHeader()
 		</div>
 		<div class="players_list_search_field">
 			<form class="centered_search_div" action="#">
-				<input id="myInput" onkeyup="player_search()"
+				<input id="player_input" onkeyup="player_search()"
 				type="text" placeholder="Пошук.." name="search">
 			</form>
 		</div>
@@ -70,7 +70,7 @@ function listHeader()
 { ?>
 	<div id="list" class="sub-container tabcontent">
 		<div class="list_container">
-		<table id="myTable" class="list_table participants_table">
+		<table id="table_list" class="list_table participants_table">
 			<colgroup>
 				<col class="col-1">
 				<col class="col-2">
@@ -134,7 +134,7 @@ function printListPlayer($i, $id, $name, $img, $birthday, $seed, $isLast)
 function barsHeader()
 { ?>
 		<div id="bars" class="players_list_box tabcontent">
-			<ul class="players_u-list_item" id="myUL">
+			<ul class="players_u-list_item" id="table_bars">
 <?php
 }
 

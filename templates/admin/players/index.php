@@ -3,14 +3,17 @@
 
 <?php 
 
-	generalHeader();
-
 	$data = query("SELECT P.id, P.firstName, P.lastName, P.photo,
 				P.birthday FROM player P 
 				WHERE P.id NOT IN(-1,-2) ORDER BY 2");
 	$data_count = count($data);
 
+
+	generalHeader();
+
+
 	listHeader();
+
     for($i = 0; $i < $data_count; $i++)
     {
         $id = $data[$i][0]; $fName = $data[$i][1];
@@ -18,23 +21,28 @@
 		$birthday = $data[$i][4];
         printListPlayer($i+1, $id, $fName." ".$lName, $img, $birthday, ($i+1==$data_count));
     }
+
     listFooter();
 
+
     barsHeader();
+
     for($i = 0; $i < $data_count; $i++)
     {
         $id = $data[$i][0]; $fName = $data[$i][1];
         $lName = $data[$i][2]; $img = $data[$i][3];
         printBarsPlayer($id, $fName, $lName, $img);
     }
+
     barsFooter();
+
 
 	generalFooter();
 
 
 function generalHeader()
 { ?>
-	<script type="text/javascript" src="/~levko/js/player_search.js"></script>
+	<script type="text/javascript" src="<?=PATH_H?>js/player_search.js"></script>
     <div class="sub-container">
 		<div class="section_header player_search">
 			<div class="participants_header">
@@ -54,7 +62,7 @@ function generalHeader()
 			</div>
 			<div class="players_list_search_field">
 				<form class="centered_search_div" action="#">
-					<input id="myInput" onkeyup="player_search()"
+					<input id="player_input" onkeyup="player_search()"
 					type="text" placeholder="Пошук.." name="search">
 				</form>
 			</div>
@@ -71,7 +79,7 @@ function listHeader()
 { ?>
     <div id="list" class="sub-container tabcontent">
         <div class="list_container">
-        <table id="myTable" class="list_table participants_table">
+        <table id="table_list" class="list_table participants_table">
             <colgroup>
                 <col class="col-1">
                 <col class="col-2">
@@ -133,7 +141,7 @@ function printListPlayer($i, $id, $name, $img, $birthday, $isLast)
 function barsHeader()
 { ?>
         <div id="bars" class="players_list_box tabcontent">
-            <ul class="players_u-list_item" id="myUL">
+            <ul class="players_u-list_item" id="table_bars">
 <?php
 }
 
