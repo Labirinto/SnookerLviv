@@ -36,7 +36,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-	<script type="text/javascript" src="/~levko/js/functions.js">
+	<script type="text/javascript" src="<?=PATH_H?>js/functions.js">
 	</script>
 </head>
 
@@ -52,18 +52,38 @@
 
         <!-- NAV MENU -->
          <nav class="navigation" id="myTopnav">
-
-                <a href="<?=PATH_H?>admin/tournaments">Турніри</a>
-                <a href="<?=PATH_H?>admin/players">Гравці</a>
-                <a href="<?=PATH_H?>admin/clubs">Клуби</a>
-                <a href="<?=PATH_H?>admin/leagues">Ліги</a>
-                <a href="<?=PATH_H?>admin/rankings">Рейтинги</a>
-                <a href="<?=PATH_H?>admin/matches">Матчі</a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                 <i class="fa fa-bars"></i>
-                 </a>
-
+                <a href="<?=PATH_H?>admin/tournaments"
+				id="tournaments">
+					Турніри
+				</a>
+                <a href="<?=PATH_H?>admin/players"
+				id="players">
+					Гравці
+				</a>
+                <a href="<?=PATH_H?>admin/clubs"
+				id="clubs">
+					Клуби
+				</a>
+                <a href="<?=PATH_H?>admin/leagues"
+				id="leagues">
+					Ліги
+				</a>
+                <a href="<?=PATH_H?>admin/rankings"
+				id="rankings">
+					Рейтинги
+				</a>
+                <a href="<?=PATH_H?>admin/matches"
+				id="matches">
+					Матчі
+				</a>
+                <a href="javascript:void(0);" class="icon"
+				onclick="myFunction()">
+					<i class="fa fa-bars"></i>
+                </a>
         </nav>
+
+		<script type="text/javascript" src="<?=PATH_H?>js/header_highlight.js">
+		</script>
 
         <!-- BUTTONS -->
         <div class="header_buttons">
