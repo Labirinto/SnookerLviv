@@ -18,11 +18,11 @@ function render($file, $values=[])
 	{
 		extract($values);
 
-		require(HOME_DIR."/templates/default/header.php");
+		require(HOME_DIR."/templates/header.php");
 		
 		require(HOME_DIR."/templates/$file");
 		
-		require(HOME_DIR."/templates/default/footer.php");
+		require(HOME_DIR."/templates/footer.php");
 	}
 	else
 	{
@@ -45,11 +45,11 @@ function adminRender($file, $values=[])
 	{
 		extract($values);
 
-		require(HOME_DIR."/templates/admin/header.php");
+		require(HOME_DIR."/templates/header.php");
 		
 		require(HOME_DIR."/templates/admin/$file");
 		
-		require(HOME_DIR."/templates/admin/footer.php");
+		require(HOME_DIR."/templates/footer.php");
 	}
 	else
 	{
@@ -58,6 +58,70 @@ function adminRender($file, $values=[])
 		exit;
 	}
 }
+
+function navButtonsRender()
+{
+	navButtonsHeader();
+
+	if( $_SESSION["id"]["type"] == "admin" )
+	{
+		adminButton();
+		logoutButton();
+	}
+	else if( $_SESSION["id"]["type"] == "regular" )
+	{
+		playerButton($_SESSION["id"]["login"]);
+		logoutButton();
+	}
+	else
+	{
+		loginButton();
+		registerButton();
+	}
+
+	navButtonsFooter();
+}
+
+function navButtonsHeader() { ?>
+	<div class="header_buttons">
+<?php }
+function navButtonsFooter() { ?>
+	</div>
+<?php }
+
+function adminButton() { ?>
+        <form action="<?=PATH_H?>adminPanel.php" class="login" method="post">
+            <i class="fas fa-home"></i>
+            <input type="submit" value="Адмін панель">
+        </form>
+<?php }
+function playerButton($player) { ?>
+        <form action="<?=PATH_H?>playerHome.php" class="login" method="post">
+            <i class="fas fa-home"></i>
+            <input type="submit" value="<?=$player." home"?>">
+        </form>
+<?php }
+
+function loginButton() { ?>
+        <form action="<?=PATH_H?>login.php" class="login" method="post">
+            <i class="fas fa-sign-out-alt"></i>
+            <input type="submit" value="Увійти">
+        </form>
+<?php }
+function logoutButton() { ?>
+        <form action="<?=PATH_H?>logout.php" class="login" method="post">
+            <i class="fas fa-sign-out-alt"></i>
+            <input type="submit" value="Вийти">
+        </form>
+<?php }
+function registerButton() { ?>
+        <form action="<?=PATH_H?>register.php" class="login" method="post">
+            <i class="fas fa-sign-out-alt"></i>
+            <input type="submit" value="Зареєструватись">
+        </form>
+<?php }
+
+
 
 function firstGreaterPowerOf2($n)
 {
