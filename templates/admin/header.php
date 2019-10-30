@@ -66,19 +66,10 @@
 		<script type="text/javascript" src="<?=PATH_H?>js/header_highlight.js">
 		</script>
 
-        <!-- BUTTONS -->
-        <div class="header_buttons">
-        <form action="<?=PATH_H?>playerHome.php" class="login" method="post">
-            <i class="fas fa-home"></i>
-			<input type="submit" value="Дім">
-        </form>
-        <form action="<?=PATH_H?>logout.php" class="login" method="post">
-            <i class="fas fa-sign-out-alt"></i>
-			<input id="childOne" type="submit" value="Вийти">
-        </form>
-        </div>
+		<?php navButtonsRender(); ?>
 
 	</header>
 
 	<div class="container">
+
 
