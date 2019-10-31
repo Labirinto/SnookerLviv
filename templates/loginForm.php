@@ -1,9 +1,9 @@
-<fieldset id="loginForm">
-	<legend>Your credentials:</legend>
+	
+	</br></br>
 	<form action="<?=PATH_H?>login.php" method="post">
-		Username: <input autofocus name="username" type="text"/></br>
-		Password:  <input name="password" type="password"/>
+		Ім'я користувача: <input autofocus name="username" type="text"/>
 		</br>
-		<button type="submit">Log In</button>
+		Пароль:  <input name="password" type="password"/>
+		</br>
+		<button type="submit">Увійти</button>
 	</form>
-</fieldset>

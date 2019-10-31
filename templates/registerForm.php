@@ -1,15 +1,15 @@
-<fieldset>
-	<legend>Registration:</legend>
+</br>
+</br>
+	Реєстрація:
 	<form action="<?=PATH_H?>register.php" method="post">
-		First name: <input autofocus name="first" type="text"/></br>
-		Last name: <input name="last" type="text"/></br>
+		Ім'я: <input autofocus name="first" type="text"/></br>
+		Прізвище: <input name="last" type="text"/></br>
 		</br></br>
-		Username: <input name="username" type="text"/></br>
+		Ім'я користувача: <input name="username" type="text"/></br>
 		
-		Email: <input name="email" type="email"/></br>
-		Password:  <input name="pwd" type="password"/></br>
-		Confirm password: <input name="pwd2" type="password"/>
+		email: <input name="email" type="email"/></br>
+		Пароль:  <input name="pwd" type="password"/></br>
+		Підтвердіть пароль: <input name="pwd2" type="password"/>
 		</br>
-		<button type="submit">Register</button>
+		<button type="submit">Зареєструвати</button>
 	</form>
-</fieldset>
