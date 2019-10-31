@@ -416,4 +416,48 @@ function adminCheck()
 	}
 }
 
+
+function castTournamentHeader($header)
+{
+	if($header == "Live")
+		return "Наживо";
+	else if($header == "Registration")
+		return "Триває Реєстрація";
+	else if($header == "Announced")
+		return "Оголошені";
+	else if($header == "Standby")
+		return "Очікують на початок";
+	else if($header == "Finished")
+		return "Завершені";
+}
+
+function castMatchHeader($hdr)
+{
+    if($hdr == "Group")
+        return "Група ";
+
+    if($hdr == "K/O")
+        return "Knockout - раунд ";
+
+    if($hdr == "UP")
+        return "Верхня сітка - раунд ";
+
+    if($hdr == "LOW")
+        return "Нижня сітка - раунд ";
+}
+
+function castBreakHeader($hdr)
+{
+    if($hdr == "Group")
+        return "Група ";
+
+    if($hdr == "K/O")
+        return "Knockout ";
+
+    if($hdr == "UP")
+        return "Верхня сітка ";
+
+    if($hdr == "LOW")
+        return "Нижня сітка ";
+}
 ?>
