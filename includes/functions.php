@@ -6,7 +6,7 @@ function dump($variable)
 }
 
 
-function apology($error, $message="contact admin")
+function apology($error, $message="Повідомте, будь ласка, адміністратора про помилку")
 {
 	render("apology.php", ["title" => "Oops", "message" => $message, "errorType" => $error]);
 }
@@ -26,14 +26,14 @@ function render($file, $values=[])
 	}
 	else
 	{
-		$msg = "File ".$file." does not exist";
+		$msg = "Файл ".$file." не існує";
 		apology(OTHER_ERROR, $msg);
 		exit;
 	}
 }
 
 
-function adminApology($error, $message="contact admin")
+function adminApology($error, $message="Повідомте, будь ласка, адміністратора про помилку")
 {
 	adminRender("apology.php", ["title" => "Oops", "message" => $message, "errorType" => $error]);
 }
@@ -53,7 +53,7 @@ function adminRender($file, $values=[])
 	}
 	else
 	{
-		$msg = "File ".$file." does not exist";
+		$msg = "Файл ".$file." не існує";
 		adminApology(OTHER_ERROR, $msg);
 		exit;
 	}
@@ -63,15 +63,18 @@ function navButtonsRender()
 {
 	navButtonsHeader();
 
-	if( $_SESSION["id"]["type"] == "admin" )
+	if( isset($_SESSION["id"]) )
 	{
-		adminButton();
-		logoutButton();
-	}
-	else if( $_SESSION["id"]["type"] == "regular" )
-	{
-		playerButton($_SESSION["id"]["login"]);
-		logoutButton();
+		if( $_SESSION["id"]["type"] == "admin" )
+		{
+			adminButton();
+			logoutButton();
+		}
+		else if( $_SESSION["id"]["type"] == "regular" )
+		{
+			playerButton($_SESSION["id"]["login"]);
+			logoutButton();
+		}
 	}
 	else
 	{
@@ -90,32 +93,32 @@ function navButtonsFooter() { ?>
 <?php }
 
 function adminButton() { ?>
-        <form action="<?=PATH_H?>adminPanel.php" class="login" method="post">
+        <form action="<?=PATH_H?>admin/" class="login" method="get">
             <i class="fas fa-home"></i>
             <input type="submit" value="Адмін панель">
         </form>
 <?php }
 function playerButton($player) { ?>
-        <form action="<?=PATH_H?>playerHome.php" class="login" method="post">
+        <form action="<?=PATH_H?>player/" class="login" method="get">
             <i class="fas fa-home"></i>
             <input type="submit" value="<?=$player." home"?>">
         </form>
 <?php }
 
 function loginButton() { ?>
-        <form action="<?=PATH_H?>login.php" class="login" method="post">
+        <form action="<?=PATH_H?>login.php" class="login" method="get">
             <i class="fas fa-sign-out-alt"></i>
             <input type="submit" value="Увійти">
         </form>
 <?php }
 function logoutButton() { ?>
-        <form action="<?=PATH_H?>logout.php" class="login" method="post">
+        <form action="<?=PATH_H?>logout.php" class="login" method="get">
             <i class="fas fa-sign-out-alt"></i>
             <input type="submit" value="Вийти">
         </form>
 <?php }
 function registerButton() { ?>
-        <form action="<?=PATH_H?>register.php" class="login" method="post">
+        <form action="<?=PATH_H?>register.php" class="login" method="get">
             <i class="fas fa-sign-out-alt"></i>
             <input type="submit" value="Зареєструватись">
         </form>
