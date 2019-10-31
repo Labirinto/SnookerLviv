@@ -2,6 +2,6 @@
 
 require("../includes/config.php");
 
-render("loginForm.php", ["title" => "Snooker Lviv"]);
+render("tournaments/index.php", ["title" => "Snooker Lviv"]);
 
 ?>

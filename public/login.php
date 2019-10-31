@@ -4,13 +4,13 @@ require("../includes/config.php");
 
 if($_SERVER["REQUEST_METHOD"] == "GET")
 {
-    render("loginForm.php", ["title" => "Log In"]);
+    render("loginForm.php", ["title" => "Увійти"]);
 }
 else if($_SERVER["REQUEST_METHOD"] == "POST")
 {
 	if( !nonEmpty($_POST["username"],$_POST["password"]) )
     {
-        apology(INPUT_ERROR, "Provide username AND password");
+        apology(INPUT_ERROR, "Введіть ім'я користувача ТА пароль");
         exit;
     }   
         
@@ -25,14 +25,11 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 			$login = $data[0][1]; $type = $data[0][2];
             $_SESSION["id"] = ["login"=>$login, "type"=>$type];
 
-			if($_SESSION["id"]["type"] == "admin")
-        		redirect(PATH_H."admin");
-			else if($_SESSION["id"]["type"] == "regular")
-				redirect("playerHome.php");
+			redirect("index.php");
 		}
     }
 
-   	apology(INPUT_ERROR, "Wrong username OR password");
+   	apology(INPUT_ERROR, "Неправильне ім'я користувача АБО пароль");
 }
 
 ?>
