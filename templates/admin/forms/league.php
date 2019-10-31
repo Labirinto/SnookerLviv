@@ -3,6 +3,7 @@
 
 	<form action="league.php" method="post">
 		Ліга:
+</br></br>
 		Назва: <input name="name" type="text"/> 
 		</br></br>
 		
