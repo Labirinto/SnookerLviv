@@ -8,7 +8,8 @@ function set_highlight()
 	_href = document.location.href ? document.location.href : document.location;
 	
 	var _location = get_location(_href);
-	document.getElementById(_location).className = "active";
+	if( document.getElementById(_location) )
+		document.getElementById(_location).className = "active";
 }
 
 window.onload=function() {
