@@ -31,6 +31,6 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 		redirect("lobby.php?id=$clubID");
 	}
 
-	redirect("");
+	redirect(PATH_H."admin/");
 }
 ?>

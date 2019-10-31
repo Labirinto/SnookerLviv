@@ -1,12 +1,7 @@
-<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/club_list.css"> 
-<a href="create.php">Create Club</a>
-
-</br></br>
-<h3><mark>TODO (maybe) delete club</mark></h3>
-</br>
 
 <?php
-
+function displayClubs()
+{
 	$query =  "SELECT C.id, C.name, C.country, C.city, 
 			C.nrOfTables, C.photo
 			FROM club C ORDER BY 2";
@@ -27,6 +22,7 @@
 	}
 
 	displayFooter();
+}
 
 
 function displayClub($i,$id,$name,$city,$country,$tables,$img,$BR,$BL)
@@ -34,8 +30,7 @@ function displayClub($i,$id,$name,$city,$country,$tables,$img,$BR,$BL)
 	$e_o = ($i%2) ? "odd" : "even";
 ?>
 			<tr class="tbody_<?=$e_o?> pointer"
-			onclick="window.location.href=
-			'/~levko/admin/clubs/lobby.php?id=<?=$id?>';">
+			onclick="openClubLobby(<?=$id?>);">
 				<td class="<?=$e_o?>_num<?=$BL?> bold">
 					<?=$i?>
 				</td>

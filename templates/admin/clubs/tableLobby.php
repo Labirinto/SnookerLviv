@@ -1,8 +1,7 @@
 
-<h1><a href="lobby.php?id=<?=$clubID?>"><?=$clubName?></a></h1>
 <h4><mark>TODO: </br>1.start sparring(with players selection)</mark></h4>
 
-<h3>Table <?=$tableNum."(<mark>".$tableStatus."</mark>)"?></h3>
+<h1><a href="lobby.php?id=<?=$clubID?>"><?=$clubName?></a> #<?=$tableNum?></h1>
 
 <?php
 
@@ -35,7 +34,7 @@ function showAvailable($tableID, $clubID)
 			$player1 = $data[$i][2]; $player2 = $data[$i][3];
 		?><option value="<?=$matchID?>"><?=$counter?>: <?=$player1?>-<?=$player2?></option><?php
 		}
-		?><input type="submit" name="match" value="start match"/><?php
+		?><input type="submit" name="match" value="Почати матч"/><?php
 	}
 	?></form><?php 
 }
@@ -106,7 +105,7 @@ function liveForm($tableID)
 		<input type="hidden" name="id" value="<?=$tableID?>"/>
 		<input type="submit" name="first" value="1x"/>
 		<input type="submit" name="second" value="2x"/> </br></br>
-		DELETE ALL MATCH DATA <input type="submit" name="reset" value="STOP MATCH"> WATCH OUT
+		ВИДАЛИТИ ВСІ ДАНІ МАТЧУ <input type="submit" name="reset" value="ЗУПИНИТИ"> ОБЕРЕЖНО, НЕ ЖАРТИ
 	</form>
 
 <?php }
