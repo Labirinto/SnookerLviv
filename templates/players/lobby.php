@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/player_profile.css">
 <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/player_tournaments_list.css"> 
-<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/breaks.css"> 
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/player_breaks.css"> 
 
 	<div class="table_list">
 		<div class="player_profile_section01">

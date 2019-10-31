@@ -17,19 +17,6 @@ printList("Finished");
 generalFooter();
 
 
-function castHeader($header)
-{
-	if($header == "Live")
-		return "Наживо";
-	else if($header == "Registration")
-		return "Триває Реєстрація";
-	else if($header == "Announced")
-		return "Оголошені";
-	else if($header == "Standby")
-		return "Очікують на початок";
-	else if($header == "Finished")
-		return "Завершені";
-}
 
 function printList($status)
 {
@@ -40,7 +27,7 @@ function printList($status)
 
 	$data_count = count($data);
 	
-	listHeader( castHeader($status) );
+	listHeader( castTournamentHeader($status) );
 
 	for($i=0; $i < $data_count; $i++)
 	{
@@ -120,15 +107,15 @@ function listHeader($status)
 			<tr>
 				<th>#</th>
 				<th>
-					<img class="thead_icon" alt="trophy_image" src="<?=PATH_H?>img/web/trophy.png"> 
+					<i class="fas fa-trophy"></i>
 					<span>Турнір</span>
 				</th>
 				<th>
-					<img class="thead_icon" alt="location_image" src="<?=PATH_H?>img/web/location.png"> 
+					<i class="fas fa-map-marked-alt"></i>
 					<span>Місце</span>
 				</th>
 				<th>
-					<img class="thead_icon" alt="calendar_image" src="<?=PATH_H?>img/web/calendar.png"> 
+					<i class="far fa-calendar-alt"></i>
 					<span>Дата</span>
 				</th>
 			</tr>

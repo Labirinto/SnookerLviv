@@ -32,7 +32,7 @@ if($data_count > 0)
 		$img1 = $data[$i][10]; $img2 = $data[$i][11];
 		$matchID = $data[$i][12];
 		$rndType = $data[$i][13]; $rndNo = $data[$i][14];
-		$rndType = castHeader($rndType);
+		$rndType = castMatchHeader($rndType);
 
 		displayHeader($matchID, $counter, $rndType, $rndNo);
 
@@ -47,20 +47,6 @@ else
 }
 
 
-function castHeader($hdr)
-{
-    if($hdr == "Group")
-        return "Група ";
-
-    if($hdr == "K/O")
-        return "Knockout - раунд ";
-
-    if($hdr == "UP")
-        return "Верхня сітка - раунд ";
-
-    if($hdr == "LOW")
-        return "Нижня сітка - раунд ";
-}
 
 
 function printPlayer($name, $img)

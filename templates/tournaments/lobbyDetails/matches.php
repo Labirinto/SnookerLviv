@@ -39,7 +39,7 @@ function prepareRound($roundType, $R, $tournamentID)
 {
 	for($i = 1; $i <= $R; $i++)
 	{
-		roundDetails(castHeader($roundType), $i);
+		roundDetails(castMatchHeader($roundType), $i);
 
 		roundHeader();
 		
@@ -49,20 +49,6 @@ function prepareRound($roundType, $R, $tournamentID)
 	}
 }
 
-function castHeader($hdr)
-{
-	if($hdr == "Group")
-		return "Група";
-
-	if($hdr == "K/O")
-		return "Knockout - раунд";
-
-	if($hdr == "UP")
-		return "Верхня сітка - раунд";
-
-	if($hdr == "LOW")
-		return "Нижня сітка - раунд";
-}
 
 function roundDetails($type, $n)
 { ?>
@@ -91,14 +77,22 @@ function roundHeader()
 		<thead>
 			<tr>
 				<th>#</th>
-				<th class="float_right">Гравець 1</th>
+				<th class="float_right">
+					<i class="fas fa-user"></i>
+					<span>Гравець 1</span>
+				</th>
 				<th></th>
 				<th></th>
 				<th>v</th>
 				<th></th>
 				<th></th>
-				<th class="float_left">Гравець 2</th>
-				<th>TV</th>
+				<th class="float_left">
+					<span>Гравець 2</span>
+					<i class="fas fa-user"></i>
+				</th>
+				<th>
+					<i class="fab fa-youtube"></i>
+				</th>
 			</tr>
 		</thead>
 		<tbody>

@@ -80,11 +80,15 @@ function rankingHeader($hdr)
             </colgroup>
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>
-                        <span>Ім'я</span>
+						<i class="fas fa-medal"></i>
+					</th>
+                    <th>
+						<i class="fas fa-user"></i>
+                        <span>Гравець</span>
                     </th>
                     <th>
+						<i class="fas fa-star"></i>
                         <span>Очки</span>
                     </th>
                 </tr>

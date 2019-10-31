@@ -71,9 +71,11 @@ function leagueHeader()
                 <tr>
                     <th>#</th>
                     <th>
-                        <span>Назва</span>
+						<i class="fas fa-globe-americas"></i>
+                        <span>Ліга</span>
                     </th>
                     <th>
+						<i class="fas fa-trophy"></i>
                         <span>Кількість турнірів</span>
                     </th>
                 </tr>

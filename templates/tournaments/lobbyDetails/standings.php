@@ -67,10 +67,19 @@ function displayHeader()
         <thead>
             <tr>
 				<th>Жереб</th>
-                <th>Ім'я</th>
+                <th>
+					<i class="fas fa-user"></i>
+					<span>Гравець</span>
+				</th>
                 <th>...</th>
-                <th>Місце</th>
-                <th>Очки</th>
+                <th>
+					<i class="fas fa-medal"></i>
+					<span>Місце</span>
+				</th>
+                <th>
+					<i class="fas fa-star"></i>
+					<span>Очки</span>
+				</th>
             </tr>
         </thead>
         <tbody>

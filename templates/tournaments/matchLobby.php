@@ -16,7 +16,7 @@ function lobby($tournID, $tournName, $matchID)
 
 	displayHeader($tournID, $tournName);
 
-	$roundType = castHeader($roundType);	
+	$roundType = castMatchHeader($roundType);	
 	printLobby($counter, $roundType, $roundNo, $bestOF,
 		$id1, $name1, $score1, $img1, $id2, $name2, $score2, $img2);
 
@@ -30,21 +30,6 @@ function lobby($tournID, $tournName, $matchID)
 	}
 }
 
-
-function castHeader($hdr)
-{
-    if($hdr == "Group")
-        return "Група ";
-
-    if($hdr == "K/O")
-        return "Knockout - раунд ";
-
-    if($hdr == "UP")
-        return "Верхня сітка - раунд ";
-
-    if($hdr == "LOW")
-        return "Нижня сітка - раунд ";
-}
 
 
 function displayHeader($tournID, $tournName)

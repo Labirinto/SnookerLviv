@@ -1,10 +1,11 @@
-<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/breaks.css"> 
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/tournament_breaks.css"> 
 
 
 <?php
 
     $query="SELECT BV.points,BV.matchID,BV.playerID,BV.playerName, 
-		BV.opponentID,BV.opponentName,BV.playerPhoto,BV.opponentPhoto 
+		BV.opponentID,BV.opponentName,BV.playerPhoto,BV.opponentPhoto, 
+		BV.roundType, BV.roundNo
 		FROM breakView BV WHERE tournamentID=? ORDER BY 1 DESC, 4";
     $data = query($query, $tournamentID);
 	$data_count = count($data);
@@ -17,18 +18,21 @@
 		$plrID = $data[$i][2]; $plrName = $data[$i][3];
 		$oppID = $data[$i][4]; $oppName = $data[$i][5];
 		$plrPhoto = $data[$i][6]; $oppPhoto = $data[$i][7];
+		$rndType = $data[$i][8]; $rndNo = $data[$i][9];
+
+		$rndType = castBreakHeader($rndType);
 
 		$BL = ($i+1 == $data_count) ? "radius_bl" : "";
 		$BR = ($i+1 == $data_count) ? "radius_br" : "";
 	
-		printBreak($points, $i+1, $matchID, $plrName, $plrPhoto, $oppName, $oppPhoto, $BL,$BR);
+		printBreak($points, $i+1, $matchID, $plrName, $plrPhoto, $oppName, $oppPhoto, $BL,$BR, $rndType, $rndNo);
 	}
 
 	printFooter();
 
 
 
-function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR)
+function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR, $rndType, $rndNo)
 {
     $e_o = ($i%2) ? "odd" : "even";
 ?>
@@ -43,9 +47,8 @@ function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR)
                 <td class="bold <?=$e_o?>_num">
 					<?=$pts?>
 				</td>
-                <td>
-                </td>
-                <td>
+                <td class="uppercase">
+					<?=$rndType?> #<?=$rndNo?>
                 </td>
 				<td class="<?=$BR?>">
 					<div class="photo_name">
@@ -69,16 +72,26 @@ function printHeader()
 			<col class="col-2">
 			<col class="col-3">
 			<col class="col-4">
-			<col class="col-5">
 		</colgroup>
 		<thead>
 			<tr>
-				<th>Ім'я</th>
-				<th>Очки</th>
-				<th>Раунд</th>
-				<th>...</th>
-				<th>Суперник</th>
-			</tr>
+                <th>
+                    <i class="fas fa-user"></i>
+                    <span>Гравець</span>
+                </th>
+                <th>
+                    <i class="fas fa-star"></i>
+                    <span>Очки</span>
+                </th>
+                <th>
+					<i class="fas fa-clipboard"></i>
+                    <span>Раунд</span>
+                </th>
+                <th>
+                    <i class="fas fa-user-friends"></i>
+                    <span>Суперник</span>
+                </th>
+            </tr>
 		</thead>
 		<tbody>
 <?php

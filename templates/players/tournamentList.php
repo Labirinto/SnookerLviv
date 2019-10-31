@@ -76,22 +76,24 @@ function listHeader()
 				<tr>
 					<th>#</th>
 					<th>
-						<img class="thead_icon" alt="trophy_img" src="<?=PATH_H?>img/web/trophy.png">
+						<i class="fas fa-trophy"></i>
 						<span>Турнір</span>
 					</th>
 					<th>
-						<img class="thead_icon" alt="location_img" width="9" src="<?=PATH_H?>img/web/location.png">
+						<i class="fas fa-map-marked-alt"></i>
 						<span>Клуб</span>
 					</th>
 					<th>
-						<img class="thead_icon" alt="calendar_img" src="<?=PATH_H?>img/web/calendar.png">
+						<i class="far fa-calendar-alt"></i>
 						<span>Дата</span>
 					</th>
 					<th>
-						Місце
+						<i class="fas fa-medal"></i>
+						<span>Місце</span>
 					</th>
 					<th>
-						Очки
+						<i class="fas fa-star"></i>
+						<span>Очки</span>
 					</th>
 				</tr>
 			</thead>

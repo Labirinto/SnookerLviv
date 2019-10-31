@@ -96,9 +96,18 @@ function displayHeader()
         <thead>
             <tr>
                 <th>Жереб</th>
-                <th>Ім'я</th>
-                <th>Група</th>
-                <th>Місце в групі</th>
+                <th>
+					<i class="fas fa-user"></i>
+					<span>Гравець</span>
+				</th>
+                <th>
+					<i class="fas fa-users"></i>
+					<span>Група</span>
+				</th>
+                <th>
+					<i class="fas fa-medal"></i>
+					<span>Місце в групі</span>
+				</th>
                 <th>%</th>
             </tr>
         </thead>

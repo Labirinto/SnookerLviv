@@ -41,7 +41,10 @@ function tableHeader($N)
 			<table class="list_table group_table">	
 				<thead>
 					<th>#</th>
-					<th>Гравець</th>
+					<th>
+						<i class="fas fa-user"></i>
+						<span>Гравець</span>
+					</th>
 					<?php for($i=1;$i<=$N;$i++) print("<th>$i</th>"); ?>
 					<th>m</th>
 					<th>+m</th>

@@ -3,7 +3,8 @@
 function tournamentBreaksList($playerID)
 {
     $query="SELECT BV.points,BV.matchID,BV.playerID,BV.playerName, 
-		BV.opponentID,BV.opponentName,BV.playerPhoto,BV.opponentPhoto 
+		BV.opponentID,BV.opponentName,BV.playerPhoto,BV.opponentPhoto,
+		BV.tournamentName, BV.roundType, BV.roundNo 
 		FROM breakView BV WHERE BV.playerID=? ORDER BY 1 DESC, 4";
     $data = query($query, $playerID);
 	$data_count = count($data);
@@ -16,11 +17,15 @@ function tournamentBreaksList($playerID)
 		$plrID = $data[$i][2]; $plrName = $data[$i][3];
 		$oppID = $data[$i][4]; $oppName = $data[$i][5];
 		$plrPhoto = $data[$i][6]; $oppPhoto = $data[$i][7];
+		$trnName = $data[$i][8];
+		$rndType = $data[$i][9]; $rndNo = $data[$i][10];
+		
+		$rndType = castBreakHeader($rndType);
 
 		$BL = ($i+1 == $data_count) ? "radius_bl" : "";
         $BR = ($i+1 == $data_count) ? "radius_br" : "";
 	
-		printBreak($points, $i+1, $matchID, $plrName, $plrPhoto, $oppName, $oppPhoto, $BL, $BR);
+		printBreak($points, $i+1, $matchID, $plrName, $plrPhoto, $oppName, $oppPhoto, $BL, $BR, $trnName, $rndType, $rndNo);
 	}
 
 	printFooter();
@@ -28,7 +33,7 @@ function tournamentBreaksList($playerID)
 
 
 
-function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR)
+function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR, $trnName, $rndType, $rndNo)
 {
     $e_o = ($i%2) ? "odd" : "even";
  ?>
@@ -44,8 +49,10 @@ function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR)
 					<?=$pts?>
 				</td>
                 <td>
+					<?=$trnName?>
                 </td>
-                <td>
+                <td class="uppercase">
+					<?=$rndType?> <?=$rndNo?>
                 </td>
                 <td class="<?=$BR?>">
                     <div class="photo_name">
@@ -74,11 +81,26 @@ function printHeader()
 		</colgroup>
 		<thead>
 			<tr>
-				<th>Ім'я</th>
-				<th>Очки</th>
-				<th>Раунд</th>
-				<th>...</th>
-				<th>Суперник</th>
+				<th>
+					<i class="fas fa-user"></i>
+					<span>Гравець</span>
+				</th>
+				<th>
+					<i class="fas fa-star"></i>
+					<span>Очки</span>
+				</th>
+				<th>
+					<i class="fas fa-trophy"></i>
+					<span>Турнір</span>
+				</th>
+				<th>
+					<i class="fas fa-clipboard"></i>
+					<span>Раунд</span>
+				</th>
+				<th>
+					<i class="fas fa-user-friends"></i>
+					<span>Суперник</span>
+				</th>
 			</tr>
 		</thead>
 		<tbody>

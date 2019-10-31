@@ -93,10 +93,22 @@ function listHeader()
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Ім'я</th>
-                    <th>Дата народження</th>
-                    <th>Звання</th>
-                    <th>Локація</th>
+                    <th>
+						<i class="fas fa-user"></i>
+						<span>Гравець</span>
+					</th>
+                    <th>
+						<i class="far fa-calendar-alt"></i>
+						<span>Дата народження</span>
+					</th>
+                    <th>
+						<i class="fas fa-award"></i>
+						<span>Звання</span>
+					</th>
+                    <th>
+						<i class="fas fa-map-marked-alt"></i>
+						<span>Локація</span>
+					</th>
                     <th>Жереб</th>
                 </tr>
             </thead>
