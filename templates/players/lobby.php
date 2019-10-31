@@ -11,9 +11,8 @@
 	<div class="table_list">
 		<div class="player_profile_section01">
 			<div class="player_profile_photo">
-				<figure>
-					<img class="player_profile_img" src="<?=PLAYER_IMG.$img?>" alt="Фото гравця">
-				</figure>
+				<img class="player_profile_img"
+				src="<?=PLAYER_IMG.$img?>" alt="Фото гравця">
 			</div>
 			<div class="player_profile_personalInfo">
 				<table>
