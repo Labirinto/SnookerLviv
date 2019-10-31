@@ -94,20 +94,20 @@ function navButtonsFooter() { ?>
 
 function adminButton() { ?>
         <form action="<?=PATH_H?>admin/" class="login" method="get">
-            <i class="fas fa-home"></i>
+            <i class="fas fa-user-shield"></i>
             <input type="submit" value="Адмін панель">
         </form>
 <?php }
 function playerButton($player) { ?>
         <form action="<?=PATH_H?>player/" class="login" method="get">
-            <i class="fas fa-home"></i>
-            <input type="submit" value="<?=$player." home"?>">
+            <i class="fas fa-user"></i>
+            <input type="submit" value="<?=$player.""?>">
         </form>
 <?php }
 
 function loginButton() { ?>
         <form action="<?=PATH_H?>login.php" class="login" method="get">
-            <i class="fas fa-sign-out-alt"></i>
+            <i class="fas fa-sign-in-alt"></i>
             <input type="submit" value="Увійти">
         </form>
 <?php }
@@ -119,7 +119,7 @@ function logoutButton() { ?>
 <?php }
 function registerButton() { ?>
         <form action="<?=PATH_H?>register.php" class="login" method="get">
-            <i class="fas fa-sign-out-alt"></i>
+            <i class="fas fa-user"></i>
             <input type="submit" value="Зареєструватись">
         </form>
 <?php }
