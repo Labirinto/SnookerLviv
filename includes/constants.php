@@ -5,8 +5,8 @@ define("PASSWORD", "123456");
 define("SERVER", "localhost");
 define("USERNAME", "marker");
 
-define("INPUT_ERROR", "Input error");
-define("OTHER_ERROR", "Oops, something went wrong");
+define("INPUT_ERROR", "Помилка вводу");
+define("OTHER_ERROR", "Упсі, щось пішло не так");
 define("HOME_DIR", "/home/levko/snookerLviv/");
 define("PATH_H", "/~levko/");
 
