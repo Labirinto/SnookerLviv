@@ -46,7 +46,8 @@
   font-size: 17px;
   padding: 0px;
 }
-i {
+
+.fa-th-large, .fa-bars{
 	color: #54595E;
 	font-size: 25px;
 }
