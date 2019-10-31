@@ -5,7 +5,7 @@
 	margin: 40px 0 20px 0px;
 	border-bottom: 1px solid #474B4F;
 }
-.fa-user {
+.player_profile_playerName .fa-user {
 	font-size: 20px;
 	display: block;
 	margin-right: 10px;
@@ -107,8 +107,8 @@
 	transition: 0.5s;
 	box-shadow: 0px 3px 10px #131617;
 }
-.fa-trophy,
-.fa-user-friends {
+.player_profile_circle .fa-trophy,
+.player_profile_circle .fa-user-friends {
 	font-size: 33px;
 	margin-top: 32px;
 	margin-bottom: 10px;
