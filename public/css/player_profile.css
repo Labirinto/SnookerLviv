@@ -12,7 +12,7 @@
 	color: #86C232;
 }
 .player_profile_photo {
-	width: 300px;
+	width: 250px;
 	height: 336px;
 	background-color: #33373B;
 	float: left;
@@ -23,8 +23,7 @@
 }
 .player_profile_img {
 	width: 100%;
-	height: auto;
-	max-height: 100%;
+	border-radius: 4px;
 	object-fit: contain;
 }
 .player_profile_personalInfo {
@@ -70,11 +69,11 @@
 	font-size: 20px;
 }
 .max_break {
-	border: 1px solid #61892F;
+	font-weight: bold;
+	font-size: 22px;
+	color: #86C232;
 	border-radius: 50%;
-	display: inline-block;
 	padding: 10px;
-	background-color: #61892F;
 }
 .player_profile_personalInfo table th {
 	background-color: #222629;
