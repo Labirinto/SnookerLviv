@@ -48,7 +48,7 @@ function printBreak($pts,$i,$mID,$plrName,$plrPhoto,$oppName,$oppPhoto,$BL,$BR, 
 					<?=$pts?>
 				</td>
                 <td class="uppercase">
-					<?=$rndType?> #<?=$rndNo?>
+					<?=$rndType?> <?=$rndNo?>
                 </td>
 				<td class="<?=$BR?>">
 					<div class="photo_name">
