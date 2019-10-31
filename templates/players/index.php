@@ -49,7 +49,8 @@ function generalHeader()
 		<div class="section_header player_search">
 			<div class="participants_header">
 				<div class="header_sign">
-					Список гравців
+					<i class="fas fa-users"></i>
+					гравці
 				</div>
 				<div class="tab">
 					<button class="tablinks active"
