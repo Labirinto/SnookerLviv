@@ -15,9 +15,10 @@
 	
 	<link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
-	
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+
+	<script src="https://kit.fontawesome.com/45a0369c4c.js" crossorigin="anonymous">
+	</script>
 	<script type="text/javascript" src="<?=PATH_H?>js/functions.js">
 	</script>
 </head>
