@@ -57,7 +57,8 @@ function leagueHeader()
     <div class="sub-container">
         <div class="section_header_700">
             <div class="header_sign">
-                Виберіть лігу:
+				<i class="fas fa-globe-americas"></i>
+                Оберіть лігу
             </div>
         </div>
         <div class="list_container">
