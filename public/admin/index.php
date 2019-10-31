@@ -2,8 +2,8 @@
 
 require("../../includes/adminConfig.php");
 
-$title = "Admin Panel";
+$title = "Панель Адміністратора";
 
-redirect("tournaments");
+adminRender("panel.php", ["title"=>$title]);
 
 ?>
