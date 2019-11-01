@@ -89,7 +89,6 @@ function listHeader()
                 <col class="col-3">
                 <col class="col-4">
                 <col class="col-5">
-                <col class="col-6">
             </colgroup>
             <thead>
                 <tr>
@@ -110,7 +109,6 @@ function listHeader()
 						<i class="fas fa-map-marked-alt"></i>
 						<span>Локація</span>
 					</th>
-                    <th>Жереб</th>
                 </tr>
             </thead>
             <tbody>
@@ -144,10 +142,7 @@ function printListPlayer($i, $id, $name, $img, $birthday, $isLast)
                 </td>
                 <td>
                 </td>
-                <td>
-                </td>
                 <td class="<?=($isLast)?"radius_br":""?>">
-                    <span><?=$seed?></span>
                 </td>
             </tr>
 <?php
