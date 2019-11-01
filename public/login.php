@@ -4,7 +4,7 @@ require("../includes/config.php");
 
 if($_SERVER["REQUEST_METHOD"] == "GET")
 {
-    render("loginForm.php", ["title" => "Увійти"]);
+    render("loginForm.php", ["title" => "Вхід"]);
 }
 else if($_SERVER["REQUEST_METHOD"] == "POST")
 {
