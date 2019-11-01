@@ -10,7 +10,7 @@
         <div class="admin_buttons">
             <div class="buttons button_tour">
                 <span><i class="fas fa-trophy"></i>
-					 Створити турнір
+					 Додати турнір
 				</span>
 				<a href="<?=PATH_H?>admin/create/tournament.php">
                 	<button>
@@ -20,7 +20,7 @@
             </div>
             <div class="buttons button_player">
                 <span><i class="fas fa-user"></i>
-					 Створити гравця
+					 Додати гравця
 				</span>
 				<a href="<?=PATH_H?>admin/create/player.php">
 					<button>
@@ -31,7 +31,7 @@
             <div class="buttons button_club">
                 <span>
 					<i class="fas fa-shield-alt"></i>
-						 Створити клуб
+					Додати клуб
 				</span>
 				<a href="<?=PATH_H?>admin/create/club.php">
 					<button>
@@ -42,7 +42,7 @@
             <div class="buttons button_league">
                 <span>
 					<i class="fas fa-globe-americas"></i>
-						 Створити лігу
+					Додати лігу
 				</span>
                 <a href="<?=PATH_H?>admin/create/league.php">
 					<button>
