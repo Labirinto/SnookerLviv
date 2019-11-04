@@ -51,20 +51,15 @@ function printLeagues()
 		$sex = $data[$i][4];
 		
 		$leagueText = $leagueName."(".$billiard;
-		if( strcmp($age,"") || strcmp($sex,"") )
+		if( $age != "" || $sex != "" )
 		{
-			$leagueName .= $age." ".$sex;
+			$leagueText .= " ".$age." ".$sex;
 		}
 		$leagueText .= ")";
 
-		displayLeague($leagueID, $leagueText);
+		displayOption($leagueID, $leagueText);
 	}
 }
-function displayLeague($id, $name)
-{ ?>
-	<option value="<?=$id?>"><?=$name?></option>
-<?php }
-
 
 function printClubs()
 {
@@ -75,11 +70,13 @@ function printClubs()
 		$clubID = $data[$i][0]; $clubName = $data[$i][1];
 		$clubCity = $data[$i][2];
 		
-		displayClub($clubID, $clubName, $clubCity);
+		displayOption($clubID, $clubName.", ".$clubCity);
 	}
 }
-function displayClub($id, $name, $city)
+
+
+function displayOption($id, $text)
 { ?>
-	<option value="<?=$id?>"><?=$name?>, <?=$city?></option>
+	<option value="<?=$id?>"><?=$text?></option>
 <?php } ?>
 
