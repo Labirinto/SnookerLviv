@@ -11,8 +11,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 	$name = $_POST["name"];
 	$leagueID = $_POST["league"];
 	$clubID = $_POST["club"];
-	$date = $_POST["date"];
-	
+
 	if(!nonEmpty($name, $leagueID, $clubID))
 	{
 		adminApology(INPUT_ERROR, "Необхідно заповнити всі поля");
@@ -22,6 +21,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		redirect(PATH_H."admin/");
 	}
+	
 
 	if(count(query("select 1 from tournament where name=? and leagueID=? LIMIT 1", $name, $leagueID)))
 	{
@@ -29,9 +29,28 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 		exit;
 	}
 
-	$query = "INSERT INTO tournament(name, leagueID, clubID) VALUES(?,?,?)";
+
+	if(!$_POST["begDate"] || !$_POST["endDate"])
+    {
+        adminApology(INPUT_ERROR, "Необхідно ввести дату початку та закінчення турніру");
+        exit;
+    }
+
+	$begDate = date('Y:m:d', strtotime($_POST["begDate"]) );
+	$endDate = date('Y:m:d', strtotime($_POST["endDate"]) );
+    if(!$begDate || !$endDate)
+    {
+        adminApology(INPUT_ERROR, "Помилка дати");
+        exit;
+
+    }
+
 	
-	query($query, $name, $leagueID, $clubID);
+
+	$query = "INSERT INTO tournament(name,leagueID,clubID,startDate,endDate)
+		VALUES(?,?,?,?,?)";
+	
+	query($query, $name, $leagueID, $clubID, $begDate, $endDate);
 	redirect(PATH_H."admin/");
 }
 
