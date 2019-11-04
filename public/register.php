@@ -14,6 +14,22 @@ else if($_SERVER["REQUEST METHOD"] = "POST")
         apology(INPUT_ERROR, "Необхідно заповнити всі поля");
         exit;
     }
+
+    
+	if(!$_POST["birthday"])
+    {
+        adminApology(INPUT_ERROR, "Необхідно ввести дату народження");
+        exit;
+    }
+	
+	$birthday = date('Y-m-d', strtotime($_POST["birthday"]) );
+    if( !$birthday)
+    {
+        adminApology(INPUT_ERROR, "Помилка дати");
+        exit;
+
+    }
+
     if( $_POST["pwd"] != $_POST["pwd2"] )
     {
         apology(INPUT_ERROR, "Паролі не співпадають");
@@ -63,10 +79,10 @@ else if($_SERVER["REQUEST METHOD"] = "POST")
 
 
     $query1 = "INSERT INTO _user(login, hash, email, userType) VALUES(?,?,?,?)";
-    $query2 = "INSERT INTO player(firstName,lastName,photo) VALUES(?,?,?)";
+    $query2 = "INSERT INTO player(firstName,lastName,photo,birthday) VALUES(?,?,?,?)";
     
 	query($query1, $login, $pwd, $email, "regular");
-	query($query2, $fName, $lName, $photo);
+	query($query2, $fName, $lName, $photo, $birthday);
 	
 	redirect("login.php");
 }
