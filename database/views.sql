@@ -157,7 +157,8 @@ CREATE VIEW generalTournamentView AS
 SELECT
     T.id AS tournamentID, T.name AS tournament, T.status AS status,
     B.name AS billiard, A.name AS age, L.sex AS sex, 
-	T.bracket AS bracket, C.id AS clubID, C.name AS clubName
+	T.bracket AS bracket, C.id AS clubID, C.name AS clubName,
+	T.startDate, T.endDate
 FROM tournament T
     JOIN league L ON T.leagueID=L.id
     JOIN age A ON L.ageID = A.id
