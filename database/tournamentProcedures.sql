@@ -3,13 +3,8 @@
 DROP PROCEDURE IF EXISTS tournamentPointsGenerate;
 DROP PROCEDURE IF EXISTS seedPlayer;
 
-DROP PROCEDURE IF EXISTS tournamentStatusUpdate;
-DROP TRIGGER IF EXISTS tournamentInsertionDate;
-DROP PROCEDURE IF EXISTS checkTournamentStatus;
-
 DROP TRIGGER IF EXISTS finishTournament;
 
-DROP EVENT IF EXISTS tournamentEvent;
 DROP PROCEDURE IF EXISTS getFirstGreaterPowerOf2;
 
 
