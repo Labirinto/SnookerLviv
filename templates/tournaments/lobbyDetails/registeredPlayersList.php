@@ -172,7 +172,7 @@ function printBarsPlayer($id, $name, $img)
 					<div class="players_list_item_details">
 						<div class="players_list_item_name">
 							<h4 class="players_list_item_name">
-								<?=$name?><span class="surname"></span>
+								<?=$name?><span class="uppercase"></span>
 							</h4>
 						</div>
 						<p class="players_list_item_location">

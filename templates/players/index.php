@@ -169,12 +169,12 @@ function printBarsPlayer($id, $fName, $lName, $img)
 			onclick="openPlayerLobby(<?=$id?>);">
                 <div class="players_list_item_box">
                     <figure>
-                        <img class="players_list_item_photo" src="<?=PLAYER_IMG.$img?>" alt="img">
+                        <img class="players_list_item_photo" src="<?=PLAYER_IMG.$img?>" alt="фото гравця">
                     </figure>
                     <div class="players_list_item_details">
                         <div class="players_list_item_name">
                             <h4 class="players_list_item_name">
-                                <?=$fName?> <span class="surname"><?=$lName?></span>
+                                <?=$fName?> <span class="uppercase"><?=$lName?></span>
                             </h4>
                         </div>
                         <p class="players_list_item_location">
