@@ -1,6 +1,7 @@
 
 <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/register_form.css"> 
 <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/img_upload.css"> 
+
 	    <div class="margin-b_30"></div>
 		<div class="register_box">
             <div class="register_img">
