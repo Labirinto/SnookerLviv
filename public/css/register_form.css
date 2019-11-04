@@ -76,5 +76,13 @@ form .margin_b40px {
 	justify-content: space-around;
 	margin-top: 20px;
 }
+.birthday_format {
+    font-size: 12px;
+    font-style: italic;
+    color: #565C65;
+    text-align: left;
+    font-weight: bold;
+    margin-top: -15px;
+}
 
 
