@@ -8,7 +8,7 @@ function dump($variable)
 
 function apology($error, $message="Повідомте, будь ласка, адміністратора про помилку")
 {
-	render("apology.php", ["title" => "Oops", "message" => $message, "errorType" => $error]);
+	render("apology.php", ["title" => "Помилка", "message" => $message, "errorType" => $error]);
 }
 
 
@@ -35,7 +35,7 @@ function render($file, $values=[])
 
 function adminApology($error, $message="Повідомте, будь ласка, адміністратора про помилку")
 {
-	adminRender("apology.php", ["title" => "Oops", "message" => $message, "errorType" => $error]);
+	render("apology.php", ["title" => "Помилка", "message" => $message, "errorType" => $error]);
 }
 
 
