@@ -11,7 +11,7 @@
             </div>
             <form class="league_create_form" action="league.php" method="post">
                 <input type="text" name="name"
-					placeholder="Назва">
+					autofocus placeholder="Назва">
 				<div class="margin-b_30"></div>
 
 			<?php
