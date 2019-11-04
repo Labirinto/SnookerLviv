@@ -11,8 +11,8 @@
 					</div>
 				</div>
 				<div class="avatar-edit">
-					<input type='file' id="imgUpload" accept=".png, .jpg, .jpeg" name="photo"/>
-					<label for="imgUpload">
+					<input type='file' id="playerImg_upload" accept=".png, .jpg, .jpeg" name="photo"/>
+					<label for="playerImg_upload">
 						<i class="fas fa-upload"></i>
 						Завантажити
 					</label>
