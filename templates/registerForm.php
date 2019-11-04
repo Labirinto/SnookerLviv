@@ -1,30 +1,64 @@
 
-<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/login_form.css"> 
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/register_form.css"> 
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/img_upload.css"> 
 	    <div class="margin-b_30"></div>
-		<div class="login_box">
-            <div class="login_img">
+		<div class="register_box">
+            <div class="register_img">
                 <img src="img/sl_logo.png" alt="BilliardHub Logo">
             </div>
-            <div class="login_header">
+            <div class="register_header">
                 <span>Реєстрація</span>
             </div>
-            <form class="login_form" action="<?=PATH_H?>register.php" method="post">
-            	<input type="text" placeholder="Ім'я" name="first">
-            	<input type="text" placeholder="Прізвище" name="last">
-	    		
-				<div class="margin-b_30"></div>
-            	<input type="text" placeholder="Ім'я користувача" name="username">
-            	<input type="email" placeholder="E-mail" name="email">
-            	
-	    		<div class="margin-b_30"></div>
-				<input type="password" placeholder="Пароль" name="pwd">
-            	<input type="password" placeholder="Підтвердіть пароль" name="pwd2">
-              <button>Зареєструватись</button>
-            </form>
-			<a href="<?=PATH_H?>login.php">
-				<div class="login_register">
-					<span>Увійти</span>
+			<form class="register_form" method="post"
+			action="<?=PATH_H?>register.php"
+			enctype="multipart/form-data">
+				<div class="avatar-upload">
+					<div class="avatar-preview">
+						<div id="playerImg_preview">
+                        </div>
+                    </div>
+                    <div class="avatar-edit">
+                        <input type="file" id="playerImg_upload" accept=".png, .jpg, .jpeg" name="photo">
+                        <label for="playerImg_upload">
+							<i class="fas fa-upload"></i>
+							Вибрати файл
+						</label>
+                    </div>
+                    <div class="photo_requirements">
+                        <span>
+                            *Будь ласка, завантажуйте тільки горизонтальне фото.
+                        </span>
+                    </div>
+                </div>
+
+				<div class="data_field">
+					<input type="text" name="first"
+						placeholder="Ім'я">
+					<input type="text" name="last"
+						placeholder="Прізвище">
+					<div class="margin-b_30"></div>
+
+					<input type="text" name="username"
+						placeholder="Ім'я користувача">
+					<input type="email" name="email"
+						placeholder="E-mail">					
+					<div class="margin-b_30"></div>
+
+					<input type="password" name="pwd"
+						placeholder="Пароль">
+					<input type="password" name="pwd2"
+						placeholder="Підтвердіть пароль">
+					
+					<button>Зареєструватись</button>
+					<a href="<?=PATH_H?>login.php">
+						<div class="register_login">
+							<span>Увійти</span>
+						</div>
+					</a>
 				</div>
-			</a>
-        </div>
+			</form>
+		</div>
+	    <div class="margin-b_30"></div>
+
+<script type="text/javascript" src="<?=PATH_H?>js/img_upload.js"></script>
 

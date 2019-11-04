@@ -32,17 +32,43 @@ else if($_SERVER["REQUEST METHOD"] = "POST")
 		exit;
 	}
 
+	
     $fName = $_POST["first"];
     $lName = $_POST["last"];
     $login = $_POST["username"];
     $pwd = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
 
+	if( !$_FILES["photo"]["size"] )
+    {
+        $photo = "default.png";
+    }
+    else
+    {
+        $photo = $fName . "_" . $lName . ".jpg";
+        $filepath = HOME_DIR . "public/img/player/" . $photo;
+
+        if( !getimagesize($_FILES["photo"]["tmp_name"]) )
+        {
+            adminApology(INPUT_ERROR, "Завантажте фото");
+            exit;
+        }
+        if( !move_uploaded_file($_FILES["photo"]["tmp_name"], $filepath) )
+        {
+            adminApology(INPUT_ERROR, "Помилка фотографії "." ".$filepath." ".$_FILES["photo"]["name"]);
+            exit;
+        }
+    }
+
+
+
+
     $query1 = "INSERT INTO _user(login, hash, email, userType) VALUES(?,?,?,?)";
-    $query2 = "INSERT INTO player(firstName, lastName) VALUES(?,?)";
+    $query2 = "INSERT INTO player(firstName,lastName,photo) VALUES(?,?,?)";
     
 	query($query1, $login, $pwd, $email, "regular");
-	query($query2, $fName, $lName);
-    redirect("login.php");
+	query($query2, $fName, $lName, $photo);
+	
+	redirect("login.php");
 }
 
 ?>
