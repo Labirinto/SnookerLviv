@@ -25,9 +25,15 @@
                   		<?php printClubs(); ?>
 					</select>
               	</div>
-              	<input type="date" name="date">
+				<div class="margin-b_30"></div>
+              	
+				<input type="date" name="begDate">
              	<span class="date_format">
-                	*Дата проведення
+                	*Дата початку турніру
+              	</span>
+              	<input type="date" name="endDate">
+             	<span class="date_format">
+                	*Дата завершення турніру
               	</span>
 				<div class="margin-b_30"></div>
 				
