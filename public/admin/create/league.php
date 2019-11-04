@@ -39,7 +39,11 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 
 	$q = "SELECT 1 FROM league WHERE name=? AND billiardID=? 
 		  AND ageID=? AND organisationID=? AND sex=?";
-    $data = query($q, $name, $billiard, $age, $org, $sex);
+/*	adminApology(INPUT_ERROR, $name." ".$billiard." ".$age." ".$org." ".$sex);
+	exit;
+  */
+
+	$data = query($q, $name, $billiard, $age, $org, $sex);
 	if(count($data) > 0)
 	{
 		adminApology(INPUT_ERROR, "Для даної організації існує ліга з такою назвою");

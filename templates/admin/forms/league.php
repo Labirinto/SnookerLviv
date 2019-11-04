@@ -1,49 +1,64 @@
 
-</br></br>
+<link  rel="stylesheet" type="text/css" href="<?=PATH_H?>css/league_create.css">	
+	<div class="sub-container">
+		<div class="margin-b_30"></div>
+        <div class="league_create_box">
+            <div class="league_create_img">
+                <img src="<?=PATH_H?>img/sl_logo.png" alt="BilliardHub Logo">
+            </div>
+            <div class="league_create_header">
+                <span>Додати лігу</span>
+            </div>
+            <form class="league_create_form" action="league.php" method="post">
+                <input type="text" name="name"
+					placeholder="Назва">
+				<div class="margin-b_30"></div>
 
-	<form action="league.php" method="post">
-		Ліга:
-</br></br>
-		Назва: <input name="name" type="text"/> 
-		</br></br>
-		
-		Вид більярду: <select name="billiard">
-			<?php 
-			$data = query("SELECT id, name FROM billiard ORDER BY id");
-			for($i=0; $i<count($data); $i++)
-			{
-				$billiardID = $data[$i][0]; $billiard = $data[$i][1];
-				print("<option value=\"$billiardID\">$billiard</option>\n");
-			} 
-			?>
-		</select>
-		Вік: <select name="age">
 			<?php
-			$data = query("SELECT id, name FROM age ORDER BY id");
-			for($i=0; $i<count($data); $i++)
-			{
-				$ageID = $data[$i][0]; $age = $data[$i][1];
-				print("<option value=\"$ageID\">$age</option>\n");
-			}
+				displaySelect("billiard", "Вид більярду");
+				displaySelect("age", "Вік");
+				displaySelect("organisation", "Організація");
 			?>
-		</select>
-		</br></br>
+              <div class="league_create_select">
+                  <select name="sex">
+                    <option selected disabled>Стать</option>
+                    <option value="Men">Чоловіки</option>
+                    <option value="Women">Жінки</option>
+                    <option value="">Всі</option>
+                  </select>
+              </div>
+              <button>Додати</button>
+            </form>
+		</div>
+	</div>
 
-		Організація: <select name="organisation">
-			<?php 
-			$data = query("SELECT id, name FROM organisation ORDER BY id");
-			for($i=0; $i<count($data); $i++)
-			{
-				$orgID = $data[$i][0]; $org = $data[$i][1];
-				print("<option value=\"$orgID\">$org</option>\n");
-			} 
-			?>
+
+<?php
+function displaySelect($type, $type_ua)
+{ ?>
+	<div class="league_create_select">
+		<select name="<?=$type?>">
+			<option selected disabled><?=$type_ua?></option>
+			<?php displayOptions($type) ?>
 		</select>
-		</br></br>	
-		Стать:  
-			Ч <input name="sex" type="radio" value="Men"/>
-			Ж <input name="sex" type="radio" value="Women"/>
-			Всі <input name="sex" type="radio" checked="checked" value=""/>
-		</br></br>
-		<button type="submit">Створити</button>
-	</form>
+	</div>
+<?php }
+
+
+function displayOptions($type)
+{
+	$query = "SELECT id, name FROM " . $type ." ORDER BY 2";
+	$data = query($query);
+	$data_count = count($data);
+
+	for($i=0; $i < $data_count; $i++)
+	{
+		$id = $data[$i][0]; $text = $data[$i][1];
+		displayOption($id, $text);
+	}
+}
+function displayOption($id, $text)
+{ ?>
+			<option value="<?=$id?>"><?=$text?></option>
+<?php } ?>
+
