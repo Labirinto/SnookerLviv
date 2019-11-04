@@ -66,46 +66,6 @@ END;
 
 
 
--- STATUS UPDATE  depending on dates and current time --------------
-CREATE PROCEDURE tournamentStatusUpdate( INOUT status VARCHAR(20), IN regBeginDate DATETIME, IN regEndDate DATETIME )
-BEGIN
-    SET @curr = CURRENT_TIMESTAMP;
-
-	IF status = "Announced"
-	THEN
-		IF(@curr >= regBeginDate AND @curr < regEndDate)
-		THEN
-			SET status = "Registration";
-
-		ELSEIF(@curr >= regEndDate)
-		THEN
-			SET status = "Standby";
-		END IF;
-
-	ELSEIF status = "Registration"
-	THEN
-		IF(@curr >= regEndDate)
-		THEN
-			SET status = "Standby";
-		END IF;
-	END IF;
-END;
-
-
-
--- DATES BEFORE INSERT check and fill if empty -----------------------
-CREATE TRIGGER tournamentInsertionDate BEFORE INSERT ON tournament
-FOR EACH ROW
-BEGIN
--- if regEnd was not set then set it a day later after regBegin
-    IF( isnull(NEW.regEndDate) ) THEN
-        SET NEW.regEndDate = ADDDATE(NEW.regBeginDate, 1);
-    END IF; 
-
-   	CALL tournamentStatusUpdate(NEW.status, NEW.regBeginDate, NEW.regEndDate);
-END;
-
-
 
 -- update ratings for finished tournament based on points in TournamentPoints
 -- all points are provided b this time (after each match)
@@ -119,45 +79,6 @@ BEGIN
     END IF;
 END;
 
-
-
--- STATUS UPDATE for Announced and Registration-- ------------------
-CREATE PROCEDURE checkTournamentStatus ()
-BEGIN
-    DECLARE done BOOLEAN DEFAULT FALSE;
-    DECLARE id INT;
-    DECLARE status VARCHAR(20);
-    DECLARE regBeginDate,regEndDate DATETIME;
-
-	DECLARE cur CURSOR FOR
-	SELECT T.id, T.status, T.regBeginDate, T.regEndDate
-    FROM tournament T WHERE T.status IN ("Announced", "Registration");
-
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-
-    OPEN cur;
-    read_loop: LOOP
-        SET done = FALSE;
-        FETCH cur INTO id, status, regBeginDate, regEndDate;
-        
-		IF done THEN
-            LEAVE read_loop;
-        END IF;
-        CALL tournamentStatusUpdate(status, regBeginDate, regEndDate);
-        UPDATE tournament T SET T.status = status WHERE T.id = id;
-    END LOOP;
-    CLOSE cur;
-END;
-$$
-delimiter ;
-
-
-
--- EVERY 30 MINUTES UPDATE STATUSES ----------------------------------
-CREATE EVENT tournamentEvent
-    ON SCHEDULE EVERY 30 MINUTE
-DO
-    CALL checkTournamentStatus();
 
 
 
