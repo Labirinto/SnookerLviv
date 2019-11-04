@@ -21,7 +21,7 @@ generalFooter();
 function printList($status)
 {
 	$data = query("SELECT TV.tournamentID, TV.tournament, TV.billiard, 
-				TV.age, TV.sex, TV.clubName
+				TV.age, TV.sex, TV.clubName, TV.startDate, TV.endDate
 				FROM generalTournamentView TV WHERE TV.status=?
 				ORDER BY 2, 3 DESC, 4, 5", $status);
 
@@ -34,19 +34,22 @@ function printList($status)
 		$id = $data[$i][0]; $billiard = $data[$i][2];
 		$age = $data[$i][3]; $sex = $data[$i][4];
 		$clubName = $data[$i][5];
-		
+	
+		$begDate = $data[$i][6]; $endDate = $data[$i][7];
+		$date = dateFormat($begDate, $endDate);
+	
 		$name = $data[$i][1] . "(" . $billiard . ")";
 		if( strcmp($age, "") || strcmp($sex, "") )
 			$name = $name . "(" . $age . " " . $sex . ")";
 		$isLast = ($i+1==$data_count);
 
-		printTournament($i+1, $id, $name, $clubName, $isLast);
+		printTournament($i+1, $id, $name, $clubName, $date, $isLast);
 	}
 
 	listFooter();
 }
 
-function printTournament($i, $id, $name, $clubName, $isLast)
+function printTournament($i, $id, $name, $clubName, $date, $isLast)
 {
 	$e_o = ($i%2) ? "odd" : "even";
 ?>
@@ -62,7 +65,7 @@ function printTournament($i, $id, $name, $clubName, $isLast)
 					<?=$clubName?>
 				</td>
 				<td class="<?=($isLast)?"radius_br":""?>">
-					DATE TMP
+					<?=$date?>
 				</td>
 			</tr>
 <?php
@@ -131,5 +134,18 @@ function listFooter()
 	</table>
 	</div>
 <?php
+}
+
+
+function dateFormat($beg, $end)
+{
+	if($beg == $end)
+	{
+		return $beg;
+	}
+	else
+	{
+		return $beg." : ".$end;
+	}
 }
 ?>
