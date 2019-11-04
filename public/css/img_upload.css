@@ -1,38 +1,50 @@
-.avatar-upload {
-	max-width: 205px;
-	margin: 50px auto;
+/* Аватарка */
+
+.photo_requirements {
+    margin-top: 30px;
+    color: #606871;
+    font-size: 15px;
+    text-align: left;
+    font-weight: bold;
 }
-.avatar-upload .avatar-edit input {
-	display: none;
+.avatar-upload {
+    width: 200px;
+}
+ .avatar-upload .avatar-edit input {
+     display: none;
+}
+.avatar-upload .avatar-edit {
+    margin-top: 30px;
 }
 .avatar-upload .avatar-edit input + label {
-	display: inline-block;
-	padding: 10px;
-	margin-top: 10px;
-	border-radius: 4px;
-	color: white;
-	background-color: #61892F;
-	border: 1px solid transparent;
-	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
-	cursor: pointer;
-	transition: all .2s ease-in-out;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    background-color: #474B4F
 }
 .avatar-upload .avatar-edit input + label:hover {
-	background-color: #54782A;
+     background-color: #54782A;
+     cursor: pointer;
 }
 .avatar-upload .avatar-preview {
-	width: 280px;
-	height: 336px;
-	border-radius: 4px;
-	border: 3px solid #61892F;
+     width: 200px;
+     height: 260px;
+     border-radius: 4px;
+     border-top: 3px solid #61892F;
 }
 .avatar-upload .avatar-preview > div {
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+     border-radius: 4px;
+     width: 100%;
+     height: 100%;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
 }
+
+
 #playerImg_preview {
 	background-image: url(http://localhost/~levko/img/player/default.png);
 }
