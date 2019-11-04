@@ -36,6 +36,8 @@
 						placeholder="Ім'я">
 					<input type="text" name="last"
 						placeholder="Прізвище">
+					<input type="date" name="birthday">
+					<span class="birthday_format">Дата народження</span>
 					<div class="margin-b_30"></div>
 
 					<input type="text" name="username"
