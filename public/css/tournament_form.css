@@ -103,7 +103,7 @@
   margin: 0;
   margin-bottom: 20px;
   padding-left: 3px;
-  vertical-align: middle;
+  align-items: center;
 }
 .tour_select select {
   flex: 1;
