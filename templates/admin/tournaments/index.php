@@ -55,7 +55,7 @@ function printTournament($i, $id, $name,$clubName,$date,$place,$isLast)
 {
 	$e_o = ($i%2) ? "odd" : "even";
 ?>
-			<tr onclick="openTournamentLobby(<?=$id?>);"
+			<tr onclick="openAdminTournamentLobby(<?=$id?>);"
 			class="tbody_<?=$e_o?> pointer">
 				<td class="bold <?=$e_o?>_num<?=($isLast)?" radius_bl":""?>">
 					<?=$i?>

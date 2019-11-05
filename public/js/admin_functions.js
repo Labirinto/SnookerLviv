@@ -1,6 +1,9 @@
 function openClubLobby(ID) {
 	window.location.href = ('/~levko/admin/clubs/lobby.php?id='+ID);
 }
+function openAdminTournamentLobby(ID) {
+    window.location.href = ('/~levko/admin/tournaments/lobby.php?id=' + ID);
+}
 
 function admin_panel(evt, tabName) {
     var i, tabcontent, tablinks;
