@@ -23,7 +23,7 @@ function printList($status)
 				TV.age, TV.sex, TV.clubName, TV.startDate, TV.endDate,
 				TV.city, TV.country
 				FROM generalTournamentView TV WHERE TV.status=?
-				ORDER BY 2, 3 DESC, 4, 5", $status);
+				ORDER BY 7, 8, 2", $status);
 
 	$data_count = count($data);
 	

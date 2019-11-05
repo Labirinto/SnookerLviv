@@ -1,7 +1,7 @@
-<div class="tournamentNavigation">
-	<form action="registration/start.php" method="post">
-		<input type="hidden" name="id" value=<?=$tournamentID?>/>
-		<button type="submit">Почати реєстрацію</button>
-	</form>
-</div>
+<?php $header = "lobby.php?id=$tournamentID"; ?>
 
+<div class="tour_menu_box">
+	<nav class="tour_menu">
+		<a href="<?=$header?>&onClick=players">Гравці</a>
+	</nav>
+</div>

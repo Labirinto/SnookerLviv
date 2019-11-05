@@ -52,17 +52,11 @@ require("tournaments/index.php");
         <div class="admin_section02">
             <div class="admin_circle highlight_anchor"
             onclick="admin_panel(event, 'tournaments_')">
-                <div class="little_circle">
-                	0
-				</div>
                 <i class="fas fa-trophy"></i><br>
                 <span class="uppercase">турніри</span>
             </div>
             <div class="admin_circle highlight_anchor"
             onclick="admin_panel(event, 'clubs_')">
-                <div class="little_circle">
-                	0
-				</div>
                 <i class="fas fa-shield-alt"></i> <br>
                 <span class="uppercase">клуби</span>
             </div>

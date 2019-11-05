@@ -45,12 +45,8 @@ function registrationLobby($tournamentID, $onClick)
 
 
 //show appropriate data
-	if( !strcmp($onClick, "players") )
+	if( !strcmp($onClick, "players") || !strcmp($onClick, "default") )
 		require("lobbyDetails/registeredPlayersListSmall.php");
-	else if( !strcmp($onClick, "default") || !strcmp($onClick, "register") ) {
-		require("lobbyDetails/playerRegisterForm.php");
-		require("lobbyDetails/registeredPlayersListSmall.php");
-	}	
 	else
 		redirect("");
 
@@ -72,12 +68,6 @@ function standbyLobby($tournamentID, $onClick)
 //show appropriate data
 	if( !strcmp($onClick, "default") || !strcmp($onClick, "players") )
 		require("lobbyDetails/registeredPlayersListSmall.php");
-	else if( !strcmp($onClick, "KO") )
-		require("forms/KO.php");
-	else if( !strcmp($onClick, "DE") )
-		require("forms/DE.php");
-	else if( !strcmp($onClick, "GR-KO") )
-		require("forms/GR-KO.php");
 	else
 		redirect("");
 
