@@ -1,8 +1,10 @@
 .player_profile_section01 {
 	display: flex;
+	width: 1080px;
+	max-width: 1080px;
 	justify-content: space-around;
 	padding-bottom: 20px;
-	margin: 40px 0 20px 0px;
+	margin: 40px auto;
 	border-bottom: 1px solid #474B4F;
 }
 .player_profile_playerName .fa-user {
