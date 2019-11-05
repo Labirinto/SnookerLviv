@@ -87,6 +87,7 @@ function generalHeader($clubName, $clubPhoto)
 				<img class="circle_img_clb float_right" alt="logo"
 				src="<?=CLUB_IMG.$clubPhoto?>">
 			<div class="header_sign">
+				<i class="fas fa-shield-alt"></i>
 				<?=$clubName?>
 			</div>
 		</div>
