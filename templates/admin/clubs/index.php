@@ -1,4 +1,6 @@
 
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/club_list.css">
+
 <?php
 function displayClubs()
 {
@@ -8,7 +10,7 @@ function displayClubs()
 	$data = query($query);
 	$data_count = count($data);
 
-	displayHeader();
+	displayClubHeader();
 
 	for($i = 0; $i < $data_count; $i++)
 	{
@@ -21,7 +23,7 @@ function displayClubs()
 		displayClub($i+1,$id,$name,$city,$country,$tables,$img,$BR,$BL);
 	}
 
-	displayFooter();
+	displayClubFooter();
 }
 
 
@@ -48,7 +50,7 @@ function displayClub($i,$id,$name,$city,$country,$tables,$img,$BR,$BL)
 <?php }
 
 
-function displayHeader()
+function displayClubHeader()
 { ?>
 	<div class="sub-container">
 		<div class="section_header_700">
@@ -65,10 +67,12 @@ function displayHeader()
 			<thead>
 				<th>#</th>
 				<th>
-					назва
+					<i class="fas fa-shield-alt"></i>
+					<span>клуб</span>
 				</th>
 				<th>
-					локація
+					<i class="fas fa-map-marked-alt"></i>
+					<span>локація</span>
 				</th>
 				<th>
 					столи
@@ -78,7 +82,7 @@ function displayHeader()
 <?php }
 
 
-function displayFooter()
+function displayClubFooter()
 { ?>
 			</tbody>
 		</table>

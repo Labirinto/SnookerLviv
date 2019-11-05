@@ -13,10 +13,13 @@ table.calendar_table .col-2 {
  	width: 30%;
 }
 table.calendar_table .col-3 {
- 	width: 15%;
+ 	width: 20%;
 }
 table.calendar_table .col-4 {
- 	width: 15%;
+ 	width: 20%;
+}
+table.calendar_table .col-5 {
+ 	width: 20%;
 }
 
 .calendar_table tbody tr>:nth-child(1) {

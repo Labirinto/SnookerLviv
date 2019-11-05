@@ -2,19 +2,18 @@
 
 <?php
 
-generalHeader();
+function displayTournaments()
+{
+	generalHeader();
 
-printList("Live");
+	printList("Registration");
 
-printList("Registration");
+	printList("Announced");
 
-printList("Announced");
+	printList("Standby");
 
-printList("Standby");
-
-printList("Finished");
-
-generalFooter();
+	generalFooter();
+}
 
 
 
@@ -52,7 +51,7 @@ function printList($status)
 	listFooter();
 }
 
-function printTournament($i, $id, $name, $clubName, $date, $place, $isLast)
+function printTournament($i, $id, $name,$clubName,$date,$place,$isLast)
 {
 	$e_o = ($i%2) ? "odd" : "even";
 ?>

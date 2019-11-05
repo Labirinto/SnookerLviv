@@ -1,6 +1,9 @@
-<?php require("/home/levko/snookerLviv/templates/admin/clubs/index.php"); ?>
+<?php
+require("clubs/index.php");
+require("tournaments/index.php");
+?>
+
 <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/admin_panel.css">
-<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/club_list.css">
 <script type="text/javascript" src="<?=PATH_H?>js/admin_functions.js">
 </script>
 
@@ -52,5 +55,31 @@
             </div>
         </div>
 
-<?php displayClubs(); ?>
+        <div class="admin_section02">
+            <div class="admin_circle highlight_anchor"
+            onclick="admin_panel(event, 'tournaments_')">
+                <div class="little_circle">
+                	0
+				</div>
+                <i class="fas fa-trophy"></i><br>
+                <span class="uppercase">турніри</span>
+            </div>
+            <div class="admin_circle highlight_anchor"
+            onclick="admin_panel(event, 'clubs_')">
+                <div class="little_circle">
+                	0
+				</div>
+                <i class="fas fa-shield-alt"></i> <br>
+                <span class="uppercase">клуби</span>
+            </div>
+		</div>
+		<div class="admin_details">
+			<div id="tournaments_" class="details_anchor">
+				<?php displayTournaments(); ?>
+			</div>
+
+			<div id="clubs_" class="details_anchor">
+				<?php displayClubs(); ?>
+			</div>
+		</div>
 

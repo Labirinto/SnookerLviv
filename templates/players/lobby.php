@@ -1,7 +1,7 @@
 
 <?php
-	require("/home/levko/snookerLviv/templates/players/tournamentList.php");
-	require("/home/levko/snookerLviv/templates/players/tournamentBreaksList.php");
+	require("tournamentList.php");
+	require("tournamentBreaksList.php");
 ?>
 
 <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/player_profile.css">
