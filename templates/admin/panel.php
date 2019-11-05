@@ -3,13 +3,7 @@ require("clubs/index.php");
 require("tournaments/index.php");
 ?>
 
-<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/admin_panel.css">
-<script type="text/javascript" src="<?=PATH_H?>js/admin_functions.js">
-</script>
 
-        <div class="admin_header">
-            <span>Панель адміністратора</span>
-        </div>
         <div class="admin_buttons">
             <div class="buttons button_tour">
                 <span><i class="fas fa-trophy"></i>

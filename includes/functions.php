@@ -45,11 +45,11 @@ function adminRender($file, $values=[])
 	{
 		extract($values);
 
-		require(HOME_DIR."/templates/header.php");
+		require(HOME_DIR."/templates/admin/header.php");
 		
 		require(HOME_DIR."/templates/admin/$file");
 		
-		require(HOME_DIR."/templates/footer.php");
+		require(HOME_DIR."/templates/admin/footer.php");
 	}
 	else
 	{
