@@ -22,17 +22,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 	if(exists("_table", $tableID))
 	{
 	//occupied && live
-		if(isset($_POST["first"]))
-		{
-			query("CALL scoreIncrement(true, ?)", $tableID);
-		}
-	//occupied && live
-		else if(isset($_POST["second"]))
-		{
-			query("CALL scoreIncrement(false, ?)", $tableID);
-		}
-	//occupied && live
-		else if(isset($_POST["reset"]))
+		if(isset($_POST["reset"]))
 		{
 			query("CALL resetTable(?)", $tableID);
 		}
@@ -67,14 +57,18 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 
 function lobbyGenerate($tableID)
 {
-	$query = "SELECT TV._number, TV.tableStatus, TV.clubID, TV.clubName FROM tableView TV WHERE tableID=?";
+	$query = "SELECT TV._number, TV.tableStatus, TV.clubID,
+		TV.clubName, TV.clubPhoto FROM tableView TV WHERE tableID=?";
 	$data = query($query, $tableID);
-	
+
+	$clubPhoto = $data[0][4];	
 	$clubID = $data[0][2]; $clubName = $data[0][3];
 	$tableStatus = $data[0][1];
 	$tableNum = $data[0][0];
 
-	adminRender("clubs/tableLobby.php", ["title"=>$clubName.": ".$tableNum, "tableID"=>$tableID,
-		"clubName"=>$clubName, "clubID"=>$clubID, "tableStatus"=>$tableStatus, "tableNum"=>$tableNum]);
+	adminRender("clubs/tableLobby.php",
+		["title"=>$clubName.": ".$tableNum, "tableID"=>$tableID,
+		"clubName"=>$clubName, "clubID"=>$clubID, "clubPhoto"=>$clubPhoto,
+		"tableStatus"=>$tableStatus, "tableNum"=>$tableNum]);
 }
 ?>

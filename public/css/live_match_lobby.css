@@ -16,7 +16,9 @@ table {
     width: 1080px;
     margin: 0 auto;
 }
-
+.margin-b_50{
+	margin-bottom: 50px;
+}
 /***** INFO SECTION *****/
 
 .live-match-lobby {
