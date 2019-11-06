@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
 	if( !exists("league", $leagueID) )
 		redirect("");
 
-	render("rankings/ranking.php", ["leagueID"=>$leagueID]);
+	render("rankings/ranking.php", ["leagueID"=>$leagueID, "title"=>"Рейтинг"]);
 }
 else
 {
