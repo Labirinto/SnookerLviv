@@ -18,9 +18,9 @@
                     <option value="Random">Випадковий</option>
                   </select>
               </div>
-              <input type="number" name="Сіяних гравців"
+              <input type="number" name="playersSeeded"
 				placeholder="Сіяних гравців">
-              <input type="number" name="Гравців у групі"
+              <input type="number" name="groupMin"
 				placeholder="Гравців у групі">
 				<span class="additional_info">
 					*Мінімальна кількість
