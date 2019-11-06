@@ -525,7 +525,8 @@ START TRANSACTION;
 
 -- reset match scores
 	UPDATE _match M 
-	SET M.player1Score=NULL, M.player2Score=NULL, M.tableID=NULL
+	SET M.player1Score=NULL, M.player2Score=NULL,
+	M.tableID=NULL, M.youtube=NULL
 	WHERE M.id = _matchID;
 
 -- reset match status

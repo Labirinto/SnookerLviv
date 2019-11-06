@@ -29,13 +29,13 @@
 						<td>
 							<div class="player_profile_country">
 								<div class="player_profile_tableHeader">країна</div>
-								<div class="player_profile_tableMean">Україна</div>
+								<div class="player_profile_tableMean"><?=$country?></div>
 							</div>
 						</td>
 						<td>
 							<div class="player_profile_city">
 								<div class="player_profile_tableHeader">місто</div>
-								<div class="player_profile_tableMean">Львів</div>
+								<div class="player_profile_tableMean"><?=$city?></div>
 							</div>
 						</td>
 					</tr>
@@ -76,6 +76,7 @@
 				<i class="fas fa-trophy"></i> <br>
 				<span class="circle_text">брейки</span>
 			</div>
+<!--
 			<div class="player_profile_circle highlight_anchor">
 				<div class="little_circle">
 					x
@@ -90,6 +91,7 @@
 				<i class="fas fa-user-friends"></i> <br>
 				<span class="circle_text">брейки</span>
 			</div>
+-->
 		</div>
 	</div>
 	<div class="player_profile_details">

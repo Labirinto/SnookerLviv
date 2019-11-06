@@ -5,7 +5,7 @@
 	generalHeader();
 
 	$query = "SELECT PTV.seed, PTV.playerName, PTV.playerID, PTV.photo,
-		PTV.birthday
+		PTV.birthday, PTV.playerCity, PTV.playerCountry
 		FROM playerTournamentView PTV
         WHERE PTV.tournamentID=? ORDER BY 1";
     $data = query($query, $tournamentID);
@@ -17,7 +17,11 @@
 		$seed = $data[$i][0]; $player = $data[$i][1];
 		$id = $data[$i][2]; $img = $data[$i][3];
 		$birthday = $data[$i][4];
-        printListPlayer($i+1,$id,$player,$img,$birthday,$seed,($i+1==$data_count));
+
+        $country = $data[$i][5]; $city = $data[$i][6];
+        $location = $city.", ".$country;
+
+        printListPlayer($i+1,$id,$player,$img,$birthday,$seed,$location,($i+1==$data_count));
     }
 	listFooter();
 
@@ -26,8 +30,11 @@
     {
 		$seed = $data[$i][0]; $player = $data[$i][1];
 		$id = $data[$i][2]; $img = $data[$i][3];
-		$birthday = $data[$i][4];
-        printBarsPlayer($id, $player, $img);
+
+        $country = $data[$i][5]; $city = $data[$i][6];
+        $location = $city.", ".$country;
+
+        printBarsPlayer($id, $player, $img, $location);
     }
 	barsFooter();
 
@@ -119,7 +126,7 @@ function listFooter()
 }
 
 
-function printListPlayer($i, $id, $name, $img, $birthday, $seed, $isLast)
+function printListPlayer($i, $id, $name, $img, $birthday, $seed, $location, $isLast)
 {
 	$e_o = ($i%2) ? "odd" : "even";
  ?>
@@ -138,6 +145,7 @@ function printListPlayer($i, $id, $name, $img, $birthday, $seed, $isLast)
 				<td>
 				</td>
 				<td>
+					<span><?=$location?></span>
 				</td>
 				<td class="<?=($isLast)?"radius_br":""?>">
 					<span><?=$seed?></span>
@@ -162,7 +170,7 @@ function barsFooter()
 }
 
 
-function printBarsPlayer($id, $name, $img)
+function printBarsPlayer($id, $name, $img, $location)
 { ?>
 			<li onclick="openPlayerLobby(<?=$id?>);" class="pointer">
 				<div class="players_list_item_box">
@@ -176,7 +184,7 @@ function printBarsPlayer($id, $name, $img)
 							</h4>
 						</div>
 						<p class="players_list_item_location">
-							Львів, Україна
+							<?=$location?>
 						</p>
 					</div>
 				</div>

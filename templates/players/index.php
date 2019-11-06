@@ -6,7 +6,7 @@
 <?php 
 
 	$data = query("SELECT P.id, P.firstName, P.lastName, P.photo,
-				P.birthday FROM player P 
+				P.birthday, P.country, P.city FROM player P 
 				WHERE P.id NOT IN(-1,-2) ORDER BY 2");
 	$data_count = count($data);
 
@@ -21,7 +21,10 @@
         $id = $data[$i][0]; $fName = $data[$i][1];
         $lName = $data[$i][2]; $img = $data[$i][3];
 		$birthday = $data[$i][4];
-        printListPlayer($i+1, $id, $fName." ".$lName, $img, $birthday, ($i+1==$data_count));
+		$country = $data[$i][5]; $city = $data[$i][6];
+		$location = $city.", ".$country;
+
+        printListPlayer($i+1, $id, $fName." ".$lName, $img, $birthday,$location, ($i+1==$data_count));
     }
 
     listFooter();
@@ -33,7 +36,11 @@
     {
         $id = $data[$i][0]; $fName = $data[$i][1];
         $lName = $data[$i][2]; $img = $data[$i][3];
-        printBarsPlayer($id, $fName, $lName, $img);
+		
+		$country = $data[$i][5]; $city = $data[$i][6];
+		$location = $city.", ".$country;
+        
+		printBarsPlayer($id, $fName, $lName, $img, $location);
     }
 
     barsFooter();
@@ -124,7 +131,7 @@ function listFooter()
 <?php
 }
 
-function printListPlayer($i, $id, $name, $img, $birthday, $isLast)
+function printListPlayer($i, $id, $name, $img, $birthday, $location, $isLast)
 {
     $e_o = ($i%2) ? "odd" : "even";
  ?>
@@ -143,7 +150,8 @@ function printListPlayer($i, $id, $name, $img, $birthday, $isLast)
                 <td>
                 </td>
                 <td class="<?=($isLast)?"radius_br":""?>">
-                </td>
+                	<span><?=$location?></span>
+				</td>
             </tr>
 <?php
 }
@@ -163,7 +171,7 @@ function barsFooter()
 }
 
 
-function printBarsPlayer($id, $fName, $lName, $img)
+function printBarsPlayer($id, $fName, $lName, $img, $location)
 { ?>
             <li class="pointer"
 			onclick="openPlayerLobby(<?=$id?>);">
@@ -178,7 +186,7 @@ function printBarsPlayer($id, $fName, $lName, $img)
                             </h4>
                         </div>
                         <p class="players_list_item_location">
-                            Львів, Україна
+                            <?=$location?>
                         </p>
                     </div>
                 </div>

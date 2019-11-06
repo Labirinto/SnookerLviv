@@ -46,11 +46,11 @@ else {
 function matchInfo($roundType, $roundNo, $groupID){
 	if( !strcmp($roundType, "Group") ){
 		$data = query("SELECT G.groupNum FROM groupTournament G WHERE G.id=?", $groupID);
-		$info = $roundType . " " . $data[0][0];
+		$roundNo = $data[0][0];
 	}
-	else {
-		$info = $roundType . " " . $roundNo;
-	}
+
+	$info = castMatchHeader($roundType).$roundNo;
+
 
 	return $info;
 }

@@ -15,7 +15,9 @@
 	for($i = 0; $i < $data_count; $i++)
     {
 		$playerID = $data[$i][0]; $player = $data[$i][1];
-		$seed = $data[$i][2]; $place = $data[$i][3];
+		$seed = $data[$i][2];
+		$place = placeCast($data[$i][3]);
+
 		$pts = $data[$i][4]; $img = $data[$i][5];
 		$isLast = ($i+1==$data_count) ? true : false;
     	
@@ -92,5 +94,18 @@ function displayFooter()
     </table>
     </div>
 
-<?php } ?>
+<?php }
+
+function placeCast($place)
+{
+    if($place == "Last")
+        return $place;
+    else
+        $place = ltrim($place, "Place ");
+
+	if($place == "2-2")
+		return "2";
+	return $place;
+}
+?>
 

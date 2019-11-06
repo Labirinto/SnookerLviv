@@ -5,7 +5,7 @@
 	    <div class="margin-b_30"></div>
 		<div class="register_box">
             <div class="register_img">
-                <img src="img/sl_logo.png" alt="BilliardHub Logo">
+                <img src="<?=PATH_H?>img/sl_logo.png" alt="BilliardHub Logo">
             </div>
             <div class="register_header">
                 <span>Реєстрація</span>
@@ -34,7 +34,7 @@
 
 				<div class="data_field">
 					<input type="text" name="first"
-						placeholder="Ім'я">
+						autofocus placeholder="Ім'я">
 					<input type="text" name="last"
 						placeholder="Прізвище">
 					<input type="date" name="birthday">
@@ -43,16 +43,26 @@
 					</span>
 					<div class="margin-b_30"></div>
 
+
 					<input type="text" name="username"
 						placeholder="Ім'я користувача">
 					<input type="email" name="email"
 						placeholder="E-mail">					
 					<div class="margin-b_30"></div>
 
+
+					<input type="text" name="country"
+						placeholder="Країна">
+					<input type="text" name="city"
+						placeholder="Місто">					
+					<div class="margin-b_30"></div>
+				
+	
 					<input type="password" name="pwd"
 						placeholder="Пароль">
 					<input type="password" name="pwd2"
 						placeholder="Підтвердіть пароль">
+
 					
 					<button>Зареєструватись</button>
 					<a href="<?=PATH_H?>login.php">

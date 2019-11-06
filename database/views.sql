@@ -201,7 +201,7 @@ SELECT
     PT.playerID AS playerID, CONCAT(P.lastName, ' ', P.firstName) AS playerName,
     P.photo AS photo, PT.seed, PT.tournamentID, P.birthday AS birthday,
 	T.name AS tournamentName, C.name AS clubName, TS.place, TS.points,
-	T.startDate, T.endDate
+	T.startDate, T.endDate, P.country AS playerCountry, P.city AS playerCity
 FROM playerTournament PT 
     JOIN player P ON PT.playerID=P.id
 	JOIN tournament T ON PT.tournamentID=T.id

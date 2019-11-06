@@ -130,6 +130,8 @@ CREATE TABLE player(
 	country VARCHAR(30),
 	city VARCHAR(50),
 	sex VARCHAR(20),
+
+	highestBreak INT NOT NULL DEFAULT 0;
 	
 	PRIMARY KEY(id),
 	UNIQUE KEY(firstName, lastName)

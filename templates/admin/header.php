@@ -50,9 +50,9 @@
 				id="rankings">
 					Рейтинги
 				</a>
-                <a href="<?=PATH_H?>admin/matches"
-				id="matches">
-					Матчі
+                <a href="<?=PATH_H?>clubs"
+				id="clubs">
+					Клуби
 				</a>
         </nav>
 

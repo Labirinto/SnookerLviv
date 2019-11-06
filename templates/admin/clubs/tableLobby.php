@@ -1,5 +1,6 @@
 
 <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/available_tables.css">
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/table_lobby.css">
 
 <?php
 
@@ -151,66 +152,120 @@ function showAvailable($tableID, $clubID)
 
 function showOccupied($tableID, $clubID)
 { 
-$query = "SELECT TV.matchCounter, TV.matchStatus, 
-		TV.Player1, TV.Player2, 
-        TV.bestOf, TV.player1Score, TV.player2Score, 
-		TV.tournamentName, TV.tournamentID, TV.youtube, TV.matchID
+	$query = "SELECT TV.matchCounter, TV.matchStatus, 
+		TV.tournamentName, TV.youtube, TV.matchID
         FROM tableView TV WHERE TV.tableID=?";
     $data = query($query, $tableID);
-	$tournamentName = $data[0][7]; $tournamentID = $data[0][8];
-	$matchCounter = $data[0][0]; $matchStatus = $data[0][1];
-	$player1 = $data[0][2]; $player2 = $data[0][3];
-	$score1 = $data[0][5]; $score2 = $data[0][6];
-	$bestOf = $data[0][4]; $youtube = $data[0][9];
-	$matchID = $data[0][10];
-?>
 	
-	<a href="../tournaments/lobby.php?id=<?=$tournamentID?>"><h4><?=$tournamentName?></h4></a>
-</br><?php
-	
-	if( isset($youtube) ){ ?>
-		<a href=<?=(YT_HEADER.$youtube)?>>YOUTUBE</a>
-	<?php }
-	else{ ?>
-		<form action="YTstart.php" method="post">
-			<input type="hidden" name="matchID" value="<?=$matchID?>"/>
-			<input type="hidden" name="tableID" value="<?=$tableID?>"/>
-			<button type="submit">START BROADCASTING</button>
-		</form>
-	<?php } ?>
-	
-	</br></br>
-	<a href="live-match-lobby.php?tableID=<?=$tableID?>&matchID=<?=$matchID?>">LIVE TABLE</a>
-	</br></br>
+	$tournamentName = $data[0][2]; $matchCounter = $data[0][0];
+	$matchStatus = $data[0][1]; $matchID = $data[0][4];
+	$youtube = $data[0][3];
 
-<?php	
+
+	occupiedHeader($tournamentName." - Зустріч #".$matchCounter);
+
+	displayLiveTableLink($tableID, $matchID);
+	
+	
+	if( isset($youtube) )
+	{
+		displayYoutube($youtube);
+	}
+	else
+	{
+		setYoutube($matchID, $tableID);
+	}
+	
+
 	if(!strcmp($matchStatus, "Live"))
 		liveForm($tableID);
 	else if(!strcmp($matchStatus, "Finished"))
 		finishedForm($tableID, $tournamentID);
+
+	occupiedFooter();
 }
+
+function displayLiveTableLink($tableID, $matchID)
+{ ?>
+	<a href="live-match-lobby.php?tableID=<?=$tableID?>
+		&matchID=<?=$matchID?>">
+		<div class="available_form">
+			<button>ЖИВИЙ МАТЧ</button>
+		</div>
+	</a>
+
+<?php }
+
+
+function setYoutube($matchID, $tableID)
+{ ?>
+		<div class="margin-b_30"></div>
+		<div class="margin-b_30"></div>
+		<form class="available_form" action="YTstart.php"
+		method="post">
+			<input type="hidden" name="matchID" value="<?=$matchID?>">
+			<input type="hidden" name="tableID" value="<?=$tableID?>">
+			<input type="text" name="URL" placeholder="Youtube URL">
+			<button type="submit">ДОДАТИ ТРАНСЛЯЦІЮ</button>
+		</form>
+<?php }
+
+function displayYoutube($youtube)
+{ ?>
+		<div class="margin-b_30"></div>
+		<div class="margin-b_30"></div>
+		<a href=<?=(YT_HEADER.$youtube)?>>
+			<div class="available_form">
+				<button>YOUTUBE</button>
+			</div>
+		</a>
+<?php }
 
 function liveForm($tableID)
 { ?>
-
-	<form action="tableLobby.php" method="post">
+	<div class="margin-b_30"></div>
+	<div class="margin-b_30"></div>
+	<div class="margin-b_30"></div>
+	<form class="available_form" action="tableLobby.php"
+	method="post">
 		<input type="hidden" name="id" value="<?=$tableID?>"/>
-		ВИДАЛИТИ ВСІ ДАНІ МАТЧУ <input type="submit" name="reset" value="ЗУПИНИТИ"> ОБЕРЕЖНО, НЕ ЖАРТИ
+		ВИДАЛИТИ ВСІ ДАНІ МАТЧУ
+		<button type="submit" name="reset" class="red">
+			ЗУПИНИТИ МАТЧ
+		</button>
+		ОБЕРЕЖНО
 	</form>
 
 <?php }
 
 function finishedForm($tableID, $tournamentID)
 { ?>
-
-	<form action="tableLobby.php" method="post">
+	<div class="margin-b_30"></div>
+	<div class="margin-b_30"></div>
+	<form class="available_form" action="tableLobby.php"
+	method="post">
 		<input type="hidden" name="id" value="<?=$tableID?>"/>
 		<input type="hidden" name="tournament" value="<?=$tournamentID?>"/>	
-		<input type="submit" name="exit" value="exit"/>
-		<input type="submit" name="next" value="next match"/>
+		<button type="submit" name="exit" class="red">ВИЙТИ</button>
+		<button type="submit" name="next">НАСТУПНИЙ МАТЧ</button>
 	</form>
 
 <?php }
 
+function occupiedHeader($name)
+{ ?>
+    <div class="sub-container">
+        <div class="margin-b_30"></div>
+        <div class="available_box">
+            <div class="available_header">
+                <span><?=$name?></span>
+            </div>
+
+<?php }
+function occupiedFooter()
+{ ?>
+		</div>
+	</div>
+<?php }
 ?>
 

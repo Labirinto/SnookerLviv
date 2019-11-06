@@ -15,10 +15,16 @@ else if($_SERVER["REQUEST METHOD"] = "POST")
         exit;
     }
 
+	
+    if(!nonEmpty($_POST["city"], $_POST["country"]))
+	{
+        apology(INPUT_ERROR, "Введіть країну та місто");
+        exit;
+    }
     
 	if(!$_POST["birthday"])
     {
-        adminApology(INPUT_ERROR, "Необхідно ввести дату народження");
+        adminApology(INPUT_ERROR, "Введіть дату народження");
         exit;
     }
 	
@@ -54,6 +60,8 @@ else if($_SERVER["REQUEST METHOD"] = "POST")
     $login = $_POST["username"];
     $pwd = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
 
+	$city = $_POST["city"]; $country = $_POST["country"];
+
 	if( !$_FILES["photo"]["size"] )
     {
         $photo = "default.png";
@@ -77,12 +85,13 @@ else if($_SERVER["REQUEST METHOD"] = "POST")
 
 
 
-
-    $query1 = "INSERT INTO _user(login, hash, email, userType) VALUES(?,?,?,?)";
-    $query2 = "INSERT INTO player(firstName,lastName,photo,birthday) VALUES(?,?,?,?)";
+    $query1 = "INSERT INTO _user(login, hash, email, userType)
+		VALUES(?,?,?,?)";
+    $query2 = "INSERT INTO player(firstName,lastName,photo,birthday,country, city)
+		VALUES(?,?,?,?,?,?)";
     
 	query($query1, $login, $pwd, $email, "regular");
-	query($query2, $fName, $lName, $photo, $birthday);
+	query($query2, $fName, $lName, $photo, $birthday, $country, $city);
 	
 	redirect("login.php");
 }

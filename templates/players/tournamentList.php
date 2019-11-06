@@ -17,8 +17,10 @@ function tournamentList($playerID)
     for($i = 0; $i < $data_count; $i++)
     {
         $name = $data[$i][0]; $id = $data[$i][1];
-		$clubName = $data[$i][2]; $place = $data[$i][3];
-		$pts = $data[$i][4]; $isLast = ($i+1==$data_count);
+		$clubName = $data[$i][2]; $isLast = ($i+1==$data_count);
+
+		$place = placeCast($data[$i][3]);
+		$pts = $data[$i][4]; 
 
 		$begDate = $data[$i][5]; $endDate = $data[$i][6];
         $date = dateFormat($begDate, $endDate);
@@ -124,6 +126,18 @@ function dateFormat($beg, $end)
     {
         return $beg." : ".$end;
     }
+}
+
+function placeCast($place)
+{
+    if($place == "Last")
+        return $place;
+    else
+        $place = ltrim($place, "Place ");
+
+    if($place == "2-2")
+        return "2";
+    return $place;
 }
 
 ?>

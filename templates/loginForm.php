@@ -9,7 +9,8 @@
                 <span>Вхід</span>
             </div>
             <form class="login_form" action="<?=PATH_H?>login.php" method="post">
-              <input type="text" name="username" placeholder="Ім'я користувача">
+              <input type="text" name="username"
+				autofocus placeholder="Ім'я користувача">
               <input type="password" name="password" placeholder="Пароль">
               <button>Увійти</button>
             </form>

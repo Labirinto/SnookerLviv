@@ -16,7 +16,12 @@ else if($_SERVER["REQUEST_METHOD"] == "POST")
 
 	$matchHeader = getHeader($tableID);
 
-	$youtube = "-zZbkPnBtS8";
+	if(!nonEmpty($_POST["URL"]))
+	{
+		apology(INPUT_ERROR, "Введіть адресу URL трансляції на Youtube");
+		exit;
+	}
+	$youtube = $_POST["URL"]; //"-zZbkPnBtS8";
 	
 	query("UPDATE _match M SET M.youtube=? WHERE M.id=?", $youtube, $matchID);
 
