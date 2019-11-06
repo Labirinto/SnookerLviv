@@ -2,6 +2,7 @@
 
 $query = "SELECT P.id, P.playerName FROM (SELECT @getVal:=?) d,
             remainingPlayersForTournament P ORDER BY 2";
+
 $data = query($query, $tournamentID);
 if(count($data))
 {
