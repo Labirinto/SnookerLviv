@@ -101,6 +101,51 @@ header * {
     width: 1080px;
     margin: 0 auto;
 }
+.tour_menu_box_700 {
+    width: 700px;
+    margin: 0 auto;
+}
+.tournament_header {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    width: 1080px;
+}
+.tournament_header_700 {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    width: 700px;
+}
+.tournament_header_700 div,
+.tournament_header div {
+    flex: 1;
+}
+.nameOf_tour {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+.second_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 300;
+}
+.typeOf_tour {
+    display: flex;
+    flex-direction: row;
+}
+.organOf_tour {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .tour_menu {
     display: flex;
     flex-direction: row;

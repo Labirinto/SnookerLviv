@@ -156,7 +156,7 @@ CREATE VIEW ranking AS
 CREATE VIEW generalTournamentView AS
 SELECT
     T.id AS tournamentID, T.name AS tournament, T.status AS status,
-    B.name AS billiard, A.name AS age, L.sex AS sex, 
+    B.name AS billiard, A.name AS age, L.sex AS sex, L.name AS league,
 	T.bracket AS bracket, C.id AS clubID, C.name AS clubName,
 	T.startDate, T.endDate, C.city, C.country
 FROM tournament T
@@ -200,7 +200,8 @@ CREATE VIEW playerTournamentView AS
 SELECT
     PT.playerID AS playerID, CONCAT(P.lastName, ' ', P.firstName) AS playerName,
     P.photo AS photo, PT.seed, PT.tournamentID, P.birthday AS birthday,
-	T.name AS tournamentName, C.name AS clubName, TS.place, TS.points
+	T.name AS tournamentName, C.name AS clubName, TS.place, TS.points,
+	T.startDate, T.endDate
 FROM playerTournament PT 
     JOIN player P ON PT.playerID=P.id
 	JOIN tournament T ON PT.tournamentID=T.id

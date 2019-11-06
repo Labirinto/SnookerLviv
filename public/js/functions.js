@@ -7,6 +7,9 @@ function openMatchLobby(ID) {
 function openTournamentLobby(ID) {
 	window.location.href = ('/~levko/tournaments/lobby.php?id=' + ID);
 }
+function openClubLobby(ID) {
+	window.location.href = ('/~levko/clubs/lobby.php?id='+ID);
+}
 function openRating(ID) {
 	window.location.href = ('/~levko/rankings/ranking.php?id=' + ID);
 }

@@ -2,8 +2,9 @@
 
 function tournamentList($playerID)
 {
-	$query = "SELECT tournamentName,tournamentID,clubName,place,points
-			FROM playerTournamentView
+	$query = "SELECT PT.tournamentName, PT.tournamentID, PT.clubName,
+			PT.place, PT.points, PT.startDate, PT.endDate
+			FROM playerTournamentView PT
 			WHERE playerID=? AND place IS NOT NULL
 			ORDER BY 5 DESC, 4;";
 
@@ -18,14 +19,18 @@ function tournamentList($playerID)
         $name = $data[$i][0]; $id = $data[$i][1];
 		$clubName = $data[$i][2]; $place = $data[$i][3];
 		$pts = $data[$i][4]; $isLast = ($i+1==$data_count);
-	 	displayTournament($i+1,$id,$name,$clubName,$isLast,$place,$pts);
+
+		$begDate = $data[$i][5]; $endDate = $data[$i][6];
+        $date = dateFormat($begDate, $endDate);
+
+	 	displayTournament($i+1,$id,$name,$clubName,$date,$isLast,$place,$pts);
 	}
 
 	listFooter();
 }
 
 
-function displayTournament($i, $id, $name, $clubName, $isLast, $place,$pts)
+function displayTournament($i, $id, $name, $clubName, $date, $isLast, $place,$pts)
 {
     $e_o = ($i%2) ? "odd" : "even";
 ?>
@@ -41,7 +46,7 @@ function displayTournament($i, $id, $name, $clubName, $isLast, $place,$pts)
                     <?=$clubName?>
                 </td>
                 <td>
-                    ДАТА
+                    <?=$date?>
                 </td>
                 <td>
                     <?=$place?>
@@ -107,6 +112,18 @@ function listFooter()
 		</div>
     </div>
 <?php
+}
+
+function dateFormat($beg, $end)
+{
+    if($beg == $end)
+    {
+        return $beg;
+    }
+    else
+    {
+        return $beg." : ".$end;
+    }
 }
 
 ?>

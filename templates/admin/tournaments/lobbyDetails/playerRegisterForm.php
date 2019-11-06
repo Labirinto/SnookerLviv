@@ -7,7 +7,7 @@ if(count($data))
 {
 ?>
 	<form action="playerRegister.php" method="post">
-		Register: <select name="player">
+		<select name="player">
 			<?php
 				
 			for($i=0; $i<count($data); $i++)
@@ -18,9 +18,8 @@ if(count($data))
 				<option value="<?=$playerID?>"><?=$playerName?></option>
 	  <?php } ?>
 		</select>
-		</br>
 		<input type="hidden" name="tournament" value="<?=$tournamentID?>"/>
-		<button type="submit">Register</button>
+		<button type="submit">Зареєструвати гравця</button>
 	</form>
 <?php
 }

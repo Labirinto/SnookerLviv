@@ -1,20 +1,23 @@
-<?php list($tournamentName, $tournamentID, $status) = getMainData($matchID);?>
 
 <link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/match_lobby.css"> 
 <div class="sub-container">
 
+
 <?php
 
-	lobby($tournamentID, $tournamentName, $matchID);
+	list($tournamentName,$tournamentID,$status,$name,$billiard,$details,$league) = 
+		getMainData($matchID);
+
+	tournamentHeader($tournamentID, $tournamentName, $billiard, $details, $league);
+	lobby($matchID);
 
 
-function lobby($tournID, $tournName, $matchID)
+
+function lobby($matchID)
 {
 	list($counter, $roundType, $roundNo, $bestOF,
 		$id1, $name1, $score1, $img1,
 		$id2, $name2, $score2, $img2) = getMatchData($matchID);
-
-	displayHeader($tournID, $tournName);
 
 	$roundType = castMatchHeader($roundType);	
 	printLobby($counter, $roundType, $roundNo, $bestOF,
@@ -32,15 +35,28 @@ function lobby($tournID, $tournName, $matchID)
 
 
 
-function displayHeader($tournID, $tournName)
+function tournamentHeader($id, $name, $billiard, $details, $league)
 { ?>
-	<div class="section_header_700">
-		<div class="header_sign pointer"
-		onclick="openTournamentLobby(<?=$tournID?>)">
-			<?=$tournName?>
-		</div>
+    <div class="tour_menu_box_700">
+        <div class="tournament_header_700 pointer"
+		onclick="openTournamentLobby(<?=$id?>)">
+            <div class="nameOf_tour">
+                <i class="fas fa-trophy"></i>
+                <span style="margin-left:5px;"><?=$name?></span>
+            </div>
+            <div class="second_row">
+                <div class="typeOf_tour">
+                    <span><?=$billiard?> &nbsp;</span>
+                    <span><?=$details?></span>
+                </div>
+                <div class="organOf_tour">
+                    <span><?=$league?></span>
+                </div>
+            </div>
+        </div>
 	</div>
 <?php }
+
 
 
 function printLobby($counter, $roundType, $roundNo, $bestOF, 
@@ -219,13 +235,43 @@ function getMatchData($matchID)
 
 function getMainData($matchID)
 {
+//match + tournament data
 	$query = "SELECT MV.tournamentID, MV.tournamentName, MV.status
     FROM matchView MV WHERE matchID = ?"; 
 	$data = query($query, $matchID);
 
 	$tournamentName = $data[0][1]; $tournamentID = $data[0][0];
 	$status = $data[0][2];
-	return array($tournamentName, $tournamentID, $status);
+
+//tournament header data
+	$query = "SELECT TV.billiard, TV.age, TV.sex, TV.league 
+        FROM generalTournamentView TV WHERE tournamentID=?";
+    $data = query($query, $tournamentID);
+
+    $billiard = $data[0][0]; $league = $data[0][3];
+    $details = castDetails($data[0][1], $data[0][2]);
+
+
+	return array($tournamentName,$tournamentID,$status,$name,$billiard,$details,$league);
 }
 
-?> </div>
+function castDetails($age, $sex)
+{
+    $details = "";
+    if( $age != "" )
+    {
+        $details .= "(".$age;
+        if( $sex != "" )
+            $details .= " ".$sex.")";
+        else
+            $details .= ")";
+    }
+    else if( $sex != "" )
+    {
+        $details = "(".$sex.")";
+    }
+
+    return $details;
+} ?>
+
+	</div>
