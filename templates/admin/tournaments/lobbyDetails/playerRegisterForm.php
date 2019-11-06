@@ -7,6 +7,7 @@ $data = query($query, $tournamentID);
 if(count($data))
 {
 ?>
+	<div class="margin-b_30"></div>
 	<form action="playerRegister.php" method="post">
 		<select name="player">
 			<?php
@@ -21,7 +22,16 @@ if(count($data))
 		</select>
 		<input type="hidden" name="tournament" value="<?=$tournamentID?>"/>
 		<button type="submit">Зареєструвати гравця</button>
+		<div class="margin-b_30"></div>
 	</form>
 <?php
-}
-?>
+} ?>
+
+
+<div class="tournamentNavigation">
+	<form action="registration/stop.php" method="post">
+		<input type="hidden" name="id" value="<?=$tournamentID?>"/>
+		<button type="submit">Закінчити реєстрацію</button>
+	</form>
+</div>
+

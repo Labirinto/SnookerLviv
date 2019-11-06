@@ -6,12 +6,7 @@
 		<a href="<?=$header?>&onClick=players">Гравці</a>
 		<a href="<?=$header?>&onClick=register">Зареєструвати</a>
 	</nav>
+	<div class="margin-b_30"></div>
 </div>
 
-<div class="tournamentNavigation">
-	<form action="registration/stop.php" method="post">
-		<input type="hidden" name="id" value="<?=$tournamentID?>"/>
-		<button type="submit">Закінчити реєстрацію</button>
-	</form>
-</div>
 
