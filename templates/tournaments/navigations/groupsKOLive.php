@@ -10,4 +10,5 @@
 		<a href="<?=$header?>&onClick=players">Гравці</a>
 		<a href="<?=$header?>&onClick=breaks">Брейки</a>
 	</nav>
+	<div class="margin-b_30"></div>
 </div>

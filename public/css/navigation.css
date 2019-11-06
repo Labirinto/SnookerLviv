@@ -128,6 +128,7 @@ header * {
     text-transform: uppercase;
     margin-bottom: 20px;
     font-size: 25px;
+	font-weight: bold;
 }
 .second_row {
     display: flex;

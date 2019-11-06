@@ -9,4 +9,5 @@
 		<a href="<?=$header?>&onClick=matches">Матчі</a>
 		<a href="<?=$header?>&onClick=breaks">Брейки</a>
 	</nav>
+	<div class="margin-b_30"></div>
 </div>

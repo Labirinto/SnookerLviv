@@ -46,7 +46,7 @@ function displayLeague($i, $id, $name, $trnmt_n, $BL, $BR)
 				<span><?=$name?></span>
 			</td>
 			<td class="<?=$BR?>">
-				<?=$trnmt_n?>
+				<span class="bold"><?=$trnmt_n?></span>
 			</td>
 		</tr>
 <?php }
