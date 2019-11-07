@@ -49,6 +49,7 @@
 }
 .list_table thead th,
 .list_table_700 thead th {
+	background-color: #222629;
     text-transform: uppercase;
     padding: 15px;
     font-size: 13px;
@@ -56,6 +57,15 @@
     vertical-align: middle;
     border-right: 1px solid #343A3F;
 }
+.list_table tr:first-child th:last-child, 
+.list_table_700 tr:first-child th:last-child{
+	border-top-right-radius: 8px;
+}
+.list_table tr:first-child th:first-child,
+.list_table_700 tr:first-child th:first-child{
+	border-top-left-radius: 8px;
+}
+
 .list_table tbody tr td,
 .list_table_700 tbody tr td {
     padding: 10px;
