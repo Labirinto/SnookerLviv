@@ -109,7 +109,14 @@
 	padding: 3px 0 0 3px;
 	text-align: left;
 }
-
+.live_match_bracket {
+	color: #C30000;
+	grid-column: 3;
+	grid-row: 1;
+	font-size: 13px;
+	padding: 5px;
+	text-align: left
+}
 
 .K\/O-1 .bracket_item, .UP-1 .bracket_item {
     padding-top: 10%;

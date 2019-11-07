@@ -89,16 +89,17 @@ function printRound($tournID, $Rno, $Rtype, $lowFlag)
         $player1Score = $data[$i][8]; $player2Score = $data[$i][9];
         $status = $data[$i][10]; $youtube = $data[$i][11];
 
+		$liveFlag = ($status=="Live");
 		if( !strcmp($Rtype, "UP") && $Rno > 1 )
 			$upFlag = true;
 		else
 			$upFlag = false;
 
-		printBracketMatch($i, $matchID, $counter, $player1, $player1Score, $seed1, $player2, $player2Score, $seed2, $lowFlag, $upFlag, $loserMatch, $winnerMatch, $youtube);
+		printBracketMatch($i, $matchID, $counter, $player1, $player1Score, $seed1, $player2, $player2Score, $seed2, $lowFlag, $upFlag, $loserMatch, $winnerMatch, $youtube, $liveFlag);
     }
 }
 
-function printBracketMatch($i, $matchID, $matchNum, $player1, $score1, $seed1, $player2, $score2, $seed2, $lowFlag, $upFlag, $loserID, $winnerID, $youtube)
+function printBracketMatch($i, $matchID, $matchNum, $player1, $score1, $seed1, $player2, $score2, $seed2, $lowFlag, $upFlag, $loserID, $winnerID, $youtube, $liveFlag)
 { ?>
 		<div class="bracket_item<?=($i==0)?" first-match":""?>">
 		<div class="null"></div>
@@ -131,9 +132,17 @@ function printBracketMatch($i, $matchID, $matchNum, $player1, $score1, $seed1, $
 		<div class="points_02">
 			<?=$score2?>
 		</div>
+<?php if($liveFlag){ ?>
+		<div class="live_match_bracket">live</div>
+<?php } ?>
+
 		<div class="looser">
-<?php if($upFlag){ ?> переможений на <b><?=$loserID?></b> <?php } ?>
-<?php if($lowFlag){ ?> переможець на <b><?=$winnerID?></b> <?php } ?>
+<?php if($upFlag){ ?>
+		переможений на <b><?=$loserID?></b>
+<?php } ?>
+<?php if($lowFlag){ ?>
+		переможець на <b><?=$winnerID?></b>
+<?php } ?>
 		</div>
 	</div>
 <?php } ?>
