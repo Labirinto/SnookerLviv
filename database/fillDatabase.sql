@@ -1,24 +1,11 @@
--- BILLIARD TYPES -----------------------------------------------------
-INSERT INTO billiard (name)
-VALUES("Snooker"), ("6-RED");
--- --------------------------------------------------------------------
-
--- BRACKETS -----------------------------------------------------------
-INSERT INTO bracket (name)
-VALUES("Knockout"), ("Double_Elimination");
--- --------------------------------------------------------------------
-
--- AGE RESTRICTIONS ---------------------------------------------------
-INSERT INTO age (name)
-VALUES(""), ("U16"), ("U18"), ("U21"), ("Seniors");
--- --------------------------------------------------------------------
 
 -- ORGANISATIONS ------------------------------------------------------
 INSERT INTO organisation (name)
-VALUES("None"), ("NFSU");
+VALUES("NSFU");
 -- --------------------------------------------------------------------
 
--- LEAGUES -------------------------------------------------------------
+
+-- LEAGUES ------------------------------------------------------------
 INSERT INTO league(name)
 VALUES('None');
 
@@ -142,42 +129,6 @@ INSERT INTO rating(leagueID, playerID, points) VALUES
 
 -- USERS -------------------------------------------------------------
 INSERT INTO _user(login, hash, email, userType) VALUES
--- ("aaaa", "aaaa", "aaaa", "$2y$10$Nobrb35RQUTICy6PakDHMOxMg//bxqX6a/IoByzPCfZDZ5lf/xudm"),
--- ("bbbb", "bbbb", "bbbb", "$2y$10$GJBnvP9EOGVVOfp7pOPzCOnqGlCT6aqmZFCybpHxbEgxST9Dogyr6"),
--- ("cccc", "cccc", "cccc", "$2y$10$ycgxZjfol3GJPKHDPADVuurJ4NgL6FlLwQXcn4ujzYFNypvDy7B/2"),
--- ("dddd", "dddd", "dddd", "$2y$10$fMP2dL1xwRPj.i.L2iHjteNIh6z8Z5V8KeGXdGnfI6xH1EYNU77zO"),
--- ("eeee", "eeee", "eeee", "$2y$10$cjeMN07JgkjbJ/FVyGkLRuuMzdtZ6bVv/lvjqeFLAUbBAAYknWtBG"),
--- ("ffff", "ffff", "ffff", "$2y$10$h0heE/HJJHNSzGWgG8PgOeEvgr8/hWjVxF//SgC.bD10g9psZEOe."),
--- ("gggg", "gggg", "gggg", "$2y$10$/7bd3wRf5yubzV6DH9R28.aIJtzXSHHzuCu26kpcA51EgaDapmGQC"),
--- ("hhhh", "hhhh", "hhhh", "$2y$10$P6wKSZFmMHEheeHFhvhEkehsKBs70ZthgOTObsN37pCsuE.MqbXpK"),
--- -- 8
--- ("iiii", "iiii", "iiii", "$2y$10$P6wKSZFmMHEheeHFhvhEkehsKBs70ZthgOTObsN37pCsuE.MqbXpK"),
--- ("jjjj", "jjjj", "jjjj", "$2y$10$P6wKSZFmMHEheeHFhvhEkehsKBs70ZthgOTObsN37pCsuE.MqbXpK"),
--- ("kkkk", "kkkk", "kkkk", "$2y$10$P6wKSZFmMHEheeHFhvhEkehsKBs70ZthgOTObsN37pCsuE.MqbXpK"),
--- ("llll", "llll", "llll", "$2y$10$P6wKSZFmMHEheeHFhvhEkehsKBs70ZthgOTObsN37pCsuE.MqbXpK"),
--- ("mmmm", "mmmm", "mmmm", "$2y$10$P6wKSZFmMHEheeHFhvhEkehsKBs70ZthgOTObsN37pCsuE.MqbXpK"),
--- ("nnnn", "nnnn", "nnnn", "$2y$10$P6wKSZFmMHEheeHFhvhEkehsKBs70ZthgOTObsN37pCsuE.MqbXpK"),
--- ("oooo", "oooo", "oooo", "$2y$10$PfcUx6leZxSq5vX3uANE0uSqaoBzQMLQsacrucRqa6Gdk8lTB8nra"),
--- ("pppp", "pppp", "pppp", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- 16
--- ("qqqq", "qqqq", "qqqq", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("rrrr", "rrrr", "rrrr", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("ssss", "ssss", "ssss", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("tttt", "tttt", "tttt", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("uuuu", "uuuu", "uuuu", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("vvvv", "vvvv", "vvvv", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("wwww", "wwww", "wwww", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("xxxx", "xxxx", "xxxx", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- -- 24
--- ("yyyy", "yyyy", "yyyy", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("zzzz", "zzzz", "zzzz", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("abcd", "abcd", "abcd", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("efgh", "efgh", "efgh", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("ijkl", "ijkl", "ijkl", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("mnop", "mnop", "mnop", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("qrst", "qrst", "qrst", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- ("uvwx", "uvwx", "uvwx", "$2y$10$.nPCymKfMAs04E0H36m6demzI5UO3HNPWD4jS7WLPfWgi/OUsOSOi"),
--- 32
 ("admin", "$2y$10$E.aTBwM/JvVd62Uz7uwlMeNkcLxk3dQxuSjjSDj77MXilPeMozJNS", "levko@gmail.com", "admin");
 
 INSERT INTO _user(login, hash, email, userType) VALUES

@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS organisation CASCADE;
 DROP TABLE IF EXISTS billiard CASCADE;
 DROP TABLE IF EXISTS club CASCADE;
 DROP TABLE IF EXISTS age CASCADE;
+-- DROP TABLE IF EXISTS sex CASCADE;
 DROP TABLE IF EXISTS bracket CASCADE;
 
 DROP FUNCTION IF EXISTS getVal;
@@ -43,7 +44,7 @@ return @getVal;
 -- BILLIARD TYPE ------------------------------------------------------
 CREATE TABLE billiard(
 	id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(200) NOT NULL UNIQUE,
+	name VARCHAR(50) NOT NULL UNIQUE,
 
 	PRIMARY KEY(id)
 );
@@ -54,7 +55,7 @@ CREATE TABLE billiard(
 -- BRACKET ------------------------------------------------------------
 CREATE TABLE bracket(
 	id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(50) NOT NULL UNIQUE,
+	name VARCHAR(100) NOT NULL UNIQUE,
 
 	PRIMARY KEY(id)
 );
@@ -65,7 +66,7 @@ CREATE TABLE bracket(
 -- AGE ----------------------------------------------------------------
 CREATE TABLE age(
 	id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(20) NOT NULL UNIQUE,
+	name VARCHAR(50) NOT NULL UNIQUE,
 
 	PRIMARY KEY(id)
 );
@@ -73,10 +74,21 @@ CREATE TABLE age(
 
 
 
+-- SEX ----------------------------------------------------------------
+-- CREATE TABLE sex(
+--	id INT NOT NULL AUTO_INCREMENT,
+--	name VARCHAR(50) NOT NULL UNIQUE,
+
+--	PRIMARY KEY(id)
+-- );
+-- --------------------------------------------------------------------
+
+
+
 -- ORGANISATION -------------------------------------------------------
 CREATE TABLE organisation(
 	id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(50) NOT NULL UNIQUE,
+	name VARCHAR(100) NOT NULL UNIQUE,
 
 	PRIMARY KEY(id)
 );
@@ -87,17 +99,19 @@ CREATE TABLE organisation(
 -- LEAGUE -------------------------------------------------------------
 CREATE TABLE league(
 	id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(50) NOT NULL,
+	name VARCHAR(100) NOT NULL,
 
 	organisationID INT NOT NULL DEFAULT 1,
 	billiardID INT NOT NULL DEFAULT 1,
 	ageID INT NOT NULL DEFAULT 1,
-	sex VARCHAR(20) NOT NULL DEFAULT "",
+	sex VARCHAR(20) NOT NULL DEFAULT "";
+--	sexID VARCHAR(20) NOT NULL DEFAULT 1,
 
 	PRIMARY KEY (id),
 	FOREIGN KEY (organisationID) REFERENCES organisation(id),
 	FOREIGN KEY (billiardID) REFERENCES billiard(id),
 	FOREIGN KEY (ageID) REFERENCES age(id),
+--	FOREIGN KEY (sexID) REFERENCES sex(id),
 	UNIQUE KEY(name, organisationID, billiardID, ageID, sex)
 );
 -- --------------------------------------------------------------------
