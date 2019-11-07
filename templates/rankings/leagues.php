@@ -1,4 +1,6 @@
 
+<link rel="stylesheet" type="text/css" href="<?=PATH_H?>css/rating.css"> 
+
 <?php
 	$query = "SELECT LV.leagueID, LV.league, LV.billiard,
 		LV.age, LV.sex, LV.tournaments 
